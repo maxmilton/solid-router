@@ -18,7 +18,47 @@ yarn add @maxmilton/solid-router
 
 ## Usage
 
-TypeScript:
+Simple + JavaScript:
+
+```js
+import { NavLink, Route, Router, routeTo } from '@maxmilton/solid-router';
+import { lazy } from 'solid-js';
+import { render, Suspense } from 'solid-js/web';
+
+const routes = [
+  {
+    path: '/example',
+    component: lazy(() => import('./pages/example')),
+  },
+  {
+    path: '/example/:id',
+    component: lazy(() => import('./pages/example/[id]')),
+  },
+  {
+    path: '/',
+    component: lazy(() => import('./pages/home')),
+  },
+];
+
+const App = () => (
+  <>
+    <div>
+      <NavLink href="/">Home</NavLink>
+      <NavLink href="/example" deepMatch>
+        Examples
+      </NavLink>
+    </div>
+
+    <Suspense fallback={'Loading...'}>
+      <Router routes={routes} fallback={'Page Not Found'} />
+    </Suspense>
+  </>
+);
+
+render(App, document.body);
+```
+
+All features + TypeScript:
 
 ```ts
 import { NavLink, Route, Router, routeTo } from '@maxmilton/solid-router';
