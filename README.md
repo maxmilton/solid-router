@@ -20,7 +20,7 @@ yarn add @maxmilton/solid-router
 
 Simple + JavaScript:
 
-```js
+```jsx
 import { NavLink, Route, Router, routeTo } from '@maxmilton/solid-router';
 import { lazy } from 'solid-js';
 import { render, Suspense } from 'solid-js/web';
@@ -60,7 +60,7 @@ render(App, document.body);
 
 All features + TypeScript:
 
-```ts
+```tsx
 import { NavLink, Route, Router, routeTo } from '@maxmilton/solid-router';
 import { Component, JSX, lazy } from 'solid-js';
 import { ErrorBoundary, render, Suspense } from 'solid-js/web';
