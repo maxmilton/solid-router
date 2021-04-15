@@ -14,7 +14,7 @@
     "build": "NODE_ENV=production tsc",
     "dev": "NODE_ENV=development tsc --watch --preserveWatchOutput",
     "lint": "yarn run lint:js && yarn run lint:ts",
-    "lint:js": "eslint --ignore-path .gitignore --ext .ts,.tsx,.js,.jsx,.mjs,.cjs .",
+    "lint:js": "eslint --ignore-pattern test --ignore-path .gitignore --ext .ts,.tsx,.js,.jsx,.mjs,.cjs .",
     "lint:ts": "tsc --noEmit",
     "prebuild": "rm -rf dist; mkdir dist",
     "test": "echo 'TODO: Testing'; exit 0"

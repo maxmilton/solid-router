@@ -30,5 +30,5 @@
     "noUnusedParameters": true,
     "useDefineForClassFields": true
   },
-  "exclude": ["dist", "node_modules", "test/coverage"]
+  "exclude": ["dist", "node_modules", "test/coverage", "test"]
 }
