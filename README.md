@@ -13,6 +13,12 @@ A light-weight History API based router for [Solid](https://github.com/ryansolid
 ## Installation
 
 ```sh
+npm -i @maxmilton/solid-router
+```
+
+or
+
+```sh
 yarn add @maxmilton/solid-router
 ```
 
