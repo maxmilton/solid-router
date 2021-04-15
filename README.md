@@ -7,7 +7,7 @@ A light-weight History API based router for [Solid](https://github.com/ryansolid
 - SPA routing using [browser History API](https://developer.mozilla.org/en-US/docs/Web/API/History_API)
 - Simple — single top level router, no nesting, no context, handles all `<a>` clicks
 - Light — doesn't try to reinvent the wheel; under the hood it's an abstraction on top of Solid's built-in Switch and Match components
-- Dynamic paths — static paths, parameters, optional parameters, wildcards, and fallback when no match
+- Flexible path matching — static paths, parameters, optional parameters, wildcards, and optional fallback when no match
 - URL search query parsing
 
 ## Installation
