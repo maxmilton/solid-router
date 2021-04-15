@@ -1,0 +1,55 @@
+{
+  "name": "@maxmilton/solid-router",
+  "version": "0.0.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "A light-weight History API based router for Solid",
+  "license": "MIT",
+  "repository": "maxmilton/solid-router",
+  "author": "Max Milton <max@happycode.ltd>",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "NODE_ENV=production tsc",
+    "dev": "NODE_ENV=development tsc --watch --preserveWatchOutput",
+    "lint": "yarn run lint:js && yarn run lint:ts",
+    "lint:js": "eslint --ignore-path .gitignore --ext .ts,.tsx,.js,.jsx,.mjs,.cjs .",
+    "lint:ts": "tsc --noEmit",
+    "prebuild": "rm -rf dist; mkdir dist",
+    "test": "echo 'TODO: Testing'; exit 0"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "peerDependencies": {
+    "solid-js": "^0.26.0"
+  },
+  "dependencies": {
+    "qss": "^2.0.3",
+    "regexparam": "^1.3.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "4.22.0",
+    "@typescript-eslint/parser": "4.22.0",
+    "eslint": "7.24.0",
+    "eslint-config-airbnb-typescript": "12.3.1",
+    "eslint-plugin-import": "2.22.1",
+    "prettier": "2.2.1",
+    "solid-js": "0.26.0",
+    "typescript": "4.2.4"
+  },
+  "prettier": {
+    "arrowParens": "always",
+    "endOfLine": "lf",
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
+  "renovate": {
+    "extends": [
+      "@wearegenki"
+    ]
+  },
+  "sideEffects": false
+}
