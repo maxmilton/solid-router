@@ -13,9 +13,7 @@ const [location, setLocation] = createSignal(window.location.pathname);
 const [, transition] = useTransition();
 
 export function routeTo(url: string, replace?: boolean): void {
-  // @ts-expect-error - FIXME
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-  window.history[`${replace ? 'replace' : 'push'}State`]({}, '', url);
+  window.history[`${replace ? 'replace' : 'push'}State` as const]({}, '', url);
   transition(() => setLocation(/[^?#]*/.exec(url)![0]));
 }
 
@@ -47,8 +45,7 @@ function handleClick(event: MouseEvent): void {
   routeTo(href);
 }
 
-// eslint-disable-next-line @typescript-eslint/ban-types
-export type RouteComponent<P = {}> = (
+export type RouteComponent<P = Record<string, any>> = (
   props: P & {
     children?: JSX.Element;
     readonly params: Record<string, string | null>;
