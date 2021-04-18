@@ -21,6 +21,8 @@ module.exports = {
   ],
   rules: {
     'no-plusplus': OFF,
+    // used safely in this project
+    '@typescript-eslint/no-non-null-assertion': OFF,
   },
   overrides: [
     {
