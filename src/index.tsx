@@ -13,9 +13,7 @@ const [location, setLocation] = createSignal(window.location.pathname);
 const [, transition] = useTransition();
 
 export function routeTo(url: string, replace?: boolean): void {
-  // @ts-expect-error - FIXME
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-  window.history[`${replace ? 'replace' : 'push'}State`]({}, '', url);
+  window.history[`${replace ? 'replace' : 'push'}State` as const]({}, '', url);
   transition(() => setLocation(/[^?#]*/.exec(url)![0]));
 }
 
@@ -47,8 +45,7 @@ function handleClick(event: MouseEvent): void {
   routeTo(href);
 }
 
-// eslint-disable-next-line @typescript-eslint/ban-types
-export type RouteComponent<P = {}> = (
+export type RouteComponent<P = Record<string, any>> = (
   props: P & {
     children?: JSX.Element;
     readonly params: Record<string, string | null>;
@@ -81,32 +78,34 @@ export const Router: Component<RouterProps> = ({ fallback, routes }) => {
     window.removeEventListener('click', handleClick);
   });
 
-  const children = routes.map((route) => {
-    const { keys, pattern } = regexparam(route.path);
+  return (
+    <Switch fallback={fallback}>
+      {routes.map((route) => {
+        const { keys, pattern } = regexparam(route.path);
 
-    return (
-      <Match when={pattern.exec(location())}>
-        {(matches) => {
-          const search = window.location.search.slice(1);
-          const params: Record<string, string | null> = {};
-          let i = 0;
+        return (
+          <Match when={pattern.exec(location())}>
+            {(matches) => {
+              const search = window.location.search.slice(1);
+              const params: Record<string, string | null> = {};
+              let i = 0;
 
-          while (i < keys.length) {
-            params[keys[i]] = matches[++i] || null;
-          }
+              while (i < keys.length) {
+                params[keys[i]] = matches[++i] || null;
+              }
 
-          return (
-            <route.component
-              params={params}
-              query={search ? decode(search) : {}}
-            />
-          );
-        }}
-      </Match>
-    );
-  });
-
-  return <Switch fallback={fallback}>{children}</Switch>;
+              return (
+                <route.component
+                  params={params}
+                  query={search ? decode(search) : {}}
+                />
+              );
+            }}
+          </Match>
+        );
+      })}
+    </Switch>
+  );
 };
 
 interface NavLinkProps extends JSX.AnchorHTMLAttributes<HTMLAnchorElement> {
@@ -118,6 +117,7 @@ interface NavLinkProps extends JSX.AnchorHTMLAttributes<HTMLAnchorElement> {
    * Otherwise only an exact match counts as active e.g., `/path`.
    */
   deepMatch?: boolean;
+  // required
   href: string;
 }
 
