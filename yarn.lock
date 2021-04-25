@@ -1321,10 +1321,10 @@ slice-ansi@^4.0.0:
     astral-regex "^2.0.0"
     is-fullwidth-code-point "^3.0.0"
 
-solid-js@0.26.1:
-  version "0.26.1"
-  resolved "https://registry.yarnpkg.com/solid-js/-/solid-js-0.26.1.tgz#1bb6b06537f9a308f75ee4d800b2e1a45b8e6b0b"
-  integrity sha512-y3eiVBY+dF4r048rwrLJXUQuDtsimAVxtI57E5gtt0NbYbB3hzH7h7xXiCsaoBUoiZFxh9XI++Tm4VHIC+XwBw==
+solid-js@0.26.3:
+  version "0.26.3"
+  resolved "https://registry.yarnpkg.com/solid-js/-/solid-js-0.26.3.tgz#7938c41514f45264fb0e71affb24d196a7b24317"
+  integrity sha512-ixl/SWvkZjQrNBS5DrD/IqdgphTOnC0/JtEPisx8c9/L5O0xQjlR0WljD4DLwzXFN9wfmLakpfreWO0cy+ckfw==
 
 spdx-correct@^3.0.0:
   version "3.1.1"
