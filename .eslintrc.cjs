@@ -16,7 +16,6 @@ module.exports = {
     'airbnb-typescript/base',
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
-    'plugin:jsx-a11y/recommended',
   ],
   // add .tsx to airbnb-typescript/base
   settings: {
