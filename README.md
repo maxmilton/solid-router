@@ -1,3 +1,9 @@
+[![Build status](https://img.shields.io/github/workflow/status/maxmilton/solid-router/ci)](https://github.com/maxmilton/solid-router/actions)
+[![Coverage status](https://img.shields.io/codeclimate/coverage/maxmilton/solid-router)](https://codeclimate.com/github/maxmilton/solid-router)
+[![NPM version](https://img.shields.io/npm/v/@maxmilton/solid-router.svg)](https://www.npmjs.com/package/@maxmilton/solid-router)
+[![NPM bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/@maxmilton/solid-router.svg)](https://bundlephobia.com/result?p=@maxmilton/solid-router)
+[![Licence](https://img.shields.io/github/license/maxmilton/solid-router.svg)](https://github.com/maxmilton/solid-router/blob/master/LICENSE)
+
 # @maxmilton/solid-router
 
 A light-weight History API based router for [Solid](https://github.com/solidui/solid) with the features you expect.
@@ -160,7 +166,7 @@ TODO: Write me
 
 ## License
 
-`@maxmilton/solid-router` is an MIT licensed open source project. See [LICENSE](https://github.com/MaxMilton/solid-router/blob/master/LICENSE).
+`@maxmilton/solid-router` is an MIT licensed open source project. See [LICENSE](https://github.com/maxmilton/solid-router/blob/master/LICENSE).
 
 ---
 
