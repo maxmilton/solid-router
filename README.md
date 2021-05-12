@@ -158,9 +158,9 @@ TODO: Write me
 <!-- [regexparam](https://github.com/lukeed/regexparam) -->
 <!-- [qss](https://github.com/lukeed/qss) -->
 
-## Licence
+## License
 
-`@maxmilton/solid-router` is an MIT licensed open source project. See [LICENCE](https://github.com/MaxMilton/solid-router/blob/master/LICENCE).
+`@maxmilton/solid-router` is an MIT licensed open source project. See [LICENSE](https://github.com/MaxMilton/solid-router/blob/master/LICENSE).
 
 ---
 
