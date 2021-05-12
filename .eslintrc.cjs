@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-
 const OFF = 0;
 
 // eslint-disable-next-line max-len
@@ -18,10 +16,19 @@ module.exports = {
     'airbnb-typescript/base',
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
+    'plugin:jsx-a11y/recommended',
   ],
+  // add .tsx to airbnb-typescript/base
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.json', '.ts', '.tsx', '.d.ts'],
+      },
+    },
+  },
   rules: {
-    'no-plusplus': OFF,
     // used safely in this project
     '@typescript-eslint/no-non-null-assertion': OFF,
+    'no-plusplus': OFF,
   },
 };
