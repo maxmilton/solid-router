@@ -10,6 +10,7 @@
   "author": "Max Milton <max@happycode.ltd>",
   "main": "dist/index.jsx",
   "types": "dist/index.d.ts",
+  "sideEffects": false,
   "scripts": {
     "build": "NODE_ENV=production tsc",
     "dev": "NODE_ENV=development tsc --watch --preserveWatchOutput",
@@ -45,11 +46,5 @@
     "endOfLine": "lf",
     "singleQuote": true,
     "trailingComma": "all"
-  },
-  "renovate": {
-    "extends": [
-      "@wearegenki"
-    ]
-  },
-  "sideEffects": false
+  }
 }
