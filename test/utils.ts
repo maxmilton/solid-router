@@ -1,3 +1,5 @@
+// FIXME: Solid need to be transpiled with babel + babel-preset-solid
+
 import { JSDOM } from 'jsdom';
 
 const mountedContainers = new Set<{ container: HTMLDivElement }>();

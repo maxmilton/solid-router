@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+
 const OFF = 0;
 
 // eslint-disable-next-line max-len
@@ -5,6 +7,8 @@ const OFF = 0;
 module.exports = {
   root: true,
   reportUnusedDisableDirectives: true,
+  // FIXME: Remove this once solid compatible test tooling is implemented!
+  ignorePatterns: ['test'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     extraFileExtensions: ['.mjs', '.cjs'],

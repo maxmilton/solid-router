@@ -1,7 +1,11 @@
+// FIXME: Solid need to be transpiled with babel + babel-preset-solid
+
 import { test } from 'uvu';
 import * as assert from 'uvu/assert';
 import * as allExports from '../src/index';
-import { mocksSetup, mocksTeardown, setup, teardown } from './utils';
+import {
+  mocksSetup, mocksTeardown, setup, teardown,
+} from './utils';
 
 test.before(setup);
 test.before(mocksSetup);
@@ -16,7 +20,7 @@ const publicExports = [
 
 publicExports.forEach(([name, type]) => {
   test(`exports public "${name}" ${type}`, () => {
-    assert.is(name in allExports, true, `is exported`);
+    assert.is(name in allExports, true, 'is exported');
     assert.type(allExports[name], type);
   });
 });
