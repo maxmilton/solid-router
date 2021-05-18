@@ -29,13 +29,10 @@ jobs:
   #     - uses: actions/setup-node@v2
   #       with:
   #         node-version: 16
-  #     - uses: maxmilton/action-setup-playwright@v1
-  #       with:
-  #         browsers: chromium
-  #         headless: false
   #     - run: yarn install --frozen-lockfile
+  #     - run: yarn playwright install-deps chromium
   #     - run: yarn run build
-  #     - run: xvfb-run --auto-servernum -- yarn run test-e2e
+  #     - run: yarn run test-e2e
   lint:
     runs-on: ubuntu-latest
     steps:
