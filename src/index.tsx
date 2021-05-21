@@ -7,6 +7,7 @@ import {
   onCleanup,
   useTransition,
 } from 'solid-js';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { Match, Switch } from 'solid-js/web';
 
 const [location, setLocation] = createSignal(window.location.pathname);
