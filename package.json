@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "qss": "^2.0.3",
-    "regexparam": "^1.3.0"
+    "regexparam": "^2.0.0"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "4.25.0",
