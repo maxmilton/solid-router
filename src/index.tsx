@@ -1,5 +1,5 @@
 import { decode } from 'qss';
-import regexparam from 'regexparam';
+import { parse } from 'regexparam';
 import {
   Component,
   createSignal,
@@ -82,7 +82,7 @@ export const Router: Component<RouterProps> = ({ fallback, routes }) => {
   return (
     <Switch fallback={fallback}>
       {routes.map((route) => {
-        const { keys, pattern } = regexparam(route.path);
+        const { keys, pattern } = parse(route.path);
 
         return (
           <Match when={pattern.exec(location())}>
