@@ -21,7 +21,7 @@ A light-weight History API based router for [Solid](https://github.com/solidui/s
 ## Installation
 
 ```sh
-npm -i @maxmilton/solid-router
+npm install @maxmilton/solid-router
 ```
 
 or

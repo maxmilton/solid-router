@@ -11,10 +11,10 @@
   "main": "dist/index.jsx",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "NODE_ENV=production tsc",
-    "dev": "NODE_ENV=development tsc --watch --preserveWatchOutput",
-    "lint": "yarn run lint:js && yarn run lint:ts",
-    "lint:js": "eslint --ignore-pattern test --ignore-path .gitignore --ext .ts,.tsx,.js,.jsx,.mjs,.cjs .",
+    "build": "tsc",
+    "dev": "tsc --watch --preserveWatchOutput",
+    "lint": "pnpm run lint:js && pnpm run lint:ts",
+    "lint:js": "eslint --ignore-pattern test --ignore-path .gitignore --ext .cjs,.js,.jsx,.mjs,.ts,.tsx .",
     "lint:ts": "tsc --noEmit",
     "prebuild": "rm -rf dist; mkdir dist",
     "test": "echo 'TODO: Setup solid compatible test tooling'; exit 0",
@@ -37,10 +37,10 @@
     "@typescript-eslint/parser": "4.25.0",
     "eslint": "7.27.0",
     "eslint-config-airbnb-typescript": "12.3.1",
-    "eslint-plugin-import": "2.23.3",
+    "eslint-plugin-import": "2.23.4",
     "prettier": "2.3.0",
     "solid-js": "0.26.5",
-    "typescript": "4.2.4"
+    "typescript": "4.3.2"
   },
   "TODO: Add test tooling deps": {
     "@types/node": "15.0.2",
