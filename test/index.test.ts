@@ -35,6 +35,6 @@ test('has no default export', () => {
   // XXX: `allExports.default` is a synthetic default created by TS at test runtime
   // @ts-expect-error - yes default does not exist
   expect(allExports.default).toBeUndefined();
-  expect(typeof require('../dist/index.js')).toBe('object'); // eslint-disable-line global-require
+  expect(typeof require('../dist/index.js')).toBe('object'); // eslint-disable-line
   expect(require('../dist/index.js').default).toBeUndefined(); // eslint-disable-line
 });
