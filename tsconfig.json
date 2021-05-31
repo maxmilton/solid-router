@@ -31,5 +31,12 @@
     "noUnusedParameters": true,
     "useDefineForClassFields": true
   },
-  "exclude": ["coverage", "dist", "node_modules", "test"]
+  "exclude": [
+    "coverage",
+    "dist",
+    "node_modules",
+    "test",
+    "*.config.js",
+    "jest.resolver.js"
+  ]
 }

@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-
 const OFF = 0;
 
 // eslint-disable-next-line max-len

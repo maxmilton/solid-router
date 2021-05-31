@@ -1,16 +1,6 @@
-// FIXME: Solid need to be transpiled with babel + babel-preset-solid
+/** @jest-environment jsdom */
 
-import { test } from 'uvu';
-import * as assert from 'uvu/assert';
 import * as allExports from '../src/index';
-import {
-  mocksSetup, mocksTeardown, setup, teardown,
-} from './utils';
-
-test.before(setup);
-test.before(mocksSetup);
-test.after(mocksTeardown);
-test.after(teardown);
 
 const publicExports = [
   ['routeTo', 'function'],
@@ -20,31 +10,31 @@ const publicExports = [
 
 publicExports.forEach(([name, type]) => {
   test(`exports public "${name}" ${type}`, () => {
-    assert.is(name in allExports, true, 'is exported');
-    assert.type(allExports[name], type);
+    expect.assertions(2);
+    expect(name in allExports).toStrictEqual(true);
+    expect(typeof allExports[name]).toBe(type);
   });
 });
 
 test('does not export any private internals', () => {
+  expect.assertions(2);
   const allPublicExportNames = [
     ...publicExports.map((x) => x[0]),
-    'default', // synthetic default created by esbuild at test runtime
+    'default', // synthetic default created by TS at test runtime
   ];
   const remainingExports = Object.keys(allExports);
-  assert.is(remainingExports.length >= publicExports.length, true);
+  expect(remainingExports.length >= publicExports.length).toStrictEqual(true);
   allPublicExportNames.forEach((name) => {
     remainingExports.splice(remainingExports.indexOf(name), 1);
   });
-  assert.is(remainingExports.length, 0);
+  expect(remainingExports).toHaveLength(0);
 });
 
 test('has no default export', () => {
-  // XXX: `allExports.default` is a synthetic default created by esbuild at test runtime
-
-  // @ts-expect-error - created by esbuild at runtime
-  assert.is(allExports.default.default, undefined); // eslint-disable-line
-  assert.type(require('../dist/index'), 'object'); // eslint-disable-line
-  assert.is(require('../dist/index').default, undefined); // eslint-disable-line
+  expect.assertions(3);
+  // XXX: `allExports.default` is a synthetic default created by TS at test runtime
+  // @ts-expect-error - created by TS at runtime
+  expect(allExports.default).toBeUndefined(); // eslint-disable-line
+  expect(typeof require('../dist/index')).toBe('object'); // eslint-disable-line
+  expect(require('../dist/index').default).toBeUndefined(); // eslint-disable-line
 });
-
-test.run();
