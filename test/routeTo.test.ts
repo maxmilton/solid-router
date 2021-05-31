@@ -1,5 +1,6 @@
 /** @jest-environment jsdom */
 
+// eslint-disable-next-line jest/no-export
 export {};
 
 // import { routeTo } from '../src';

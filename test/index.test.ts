@@ -33,8 +33,8 @@ test('does not export any private internals', () => {
 test('has no default export', () => {
   expect.assertions(3);
   // XXX: `allExports.default` is a synthetic default created by TS at test runtime
-  // @ts-expect-error - created by TS at runtime
-  expect(allExports.default).toBeUndefined(); // eslint-disable-line
-  expect(typeof require('../dist/index')).toBe('object'); // eslint-disable-line
+  // @ts-expect-error - yes default does not exist
+  expect(allExports.default).toBeUndefined();
+  expect(typeof require('../dist/index')).toBe('object'); // eslint-disable-line global-require
   expect(require('../dist/index').default).toBeUndefined(); // eslint-disable-line
 });
