@@ -22,7 +22,7 @@ test('throws without required props', () => {
 test('renders correctly with required props', () => {
   expect.assertions(1);
   const routes = [{ path: '/', component: () => <p>x</p> }];
-  const rendered = render(<Router routes={routes} />);
+  const rendered = render(() => <Router routes={routes} />);
   expect(rendered.container.innerHTML).toMatchInlineSnapshot('"<p>x</p>"');
 });
 
@@ -30,26 +30,26 @@ test('renders matching route', () => {
   expect.assertions(1);
   // FIXME: Set URL via jest or manually rather than relying on an internal function
   routeTo('/c');
-  const rendered = render(<Router routes={abcRoutes} />);
+  const rendered = render(() => <Router routes={abcRoutes} />);
   expect(rendered.container.textContent).toStrictEqual('c');
 });
 
 test('renders component fallback when no matching path', () => {
   expect.assertions(1);
-  const rendered = render(<Router routes={[]} fallback={<p>f</p>} />);
+  const rendered = render(() => <Router routes={[]} fallback={<p>f</p>} />);
   expect(rendered.container.innerHTML).toMatchInlineSnapshot('"<p>f</p>"');
 });
 
 test('calls function fallback when no matching path', () => {
   expect.assertions(1);
   const mock = jest.fn();
-  render(<Router routes={[]} fallback={mock} />);
+  render(() => <Router routes={[]} fallback={mock} />);
   expect(mock).toHaveBeenCalledTimes(1);
 });
 
 test('renders nothing when no matching path and no fallback', () => {
   expect.assertions(2);
-  const rendered = render(<Router routes={[]} />);
+  const rendered = render(() => <Router routes={[]} />);
   expect(rendered.container.innerHTML).toStrictEqual('');
   expect(rendered.container.childNodes).toHaveLength(0);
 });
