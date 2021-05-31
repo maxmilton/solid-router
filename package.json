@@ -1,60 +1,67 @@
 {
   "name": "@maxmilton/solid-router",
   "version": "0.0.5",
-  "publishConfig": {
-    "access": "public"
-  },
   "description": "A light-weight History API based router for Solid",
-  "license": "MIT",
   "repository": "maxmilton/solid-router",
   "author": "Max Milton <max@happycode.ltd>",
+  "license": "MIT",
   "main": "dist/index.jsx",
   "types": "dist/index.d.ts",
-  "scripts": {
-    "build": "tsc",
-    "dev": "tsc --watch --preserveWatchOutput",
-    "lint": "pnpm run lint:js && pnpm run lint:ts",
-    "lint:js": "eslint --ignore-pattern test --ignore-path .gitignore --ext .cjs,.js,.jsx,.mjs,.ts,.tsx .",
-    "lint:ts": "tsc --noEmit",
-    "prebuild": "rm -rf dist; mkdir dist",
-    "test": "echo 'TODO: Setup solid compatible test tooling'; exit 0",
-    "__test": "c8 --all --include=src --reporter=text --reporter=lcovonly uvu -r esbuild-register test '\\.test\\.ts$'",
-    "__test-e2e": "uvu -r esbuild-register test/e2e '\\.test\\.ts$'"
-  },
   "files": [
     "dist",
     "src"
   ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch --preserveWatchOutput",
+    "lint": "pnpm run lint:js && pnpm run lint:ts",
+    "lint:js": "eslint --ignore-path .gitignore --ext .cjs,.js,.jsx,.mjs,.ts,.tsx .",
+    "lint:ts": "tsc --noEmit --project test",
+    "prebuild": "rm -rf dist; mkdir dist",
+    "test": "jest --coverage",
+    "test-e2e": "echo 'TODO: e2e tests'; exit 0"
+  },
   "peerDependencies": {
-    "solid-js": "^0.26.0"
+    "solid-js": "^1.0.0-rc.2"
   },
   "dependencies": {
     "qss": "^2.0.3",
     "regexparam": "^2.0.0"
   },
   "devDependencies": {
+    "@babel/core": "7.14.3",
+    "@babel/plugin-transform-modules-commonjs": "7.14.0",
+    "@babel/preset-typescript": "7.13.0",
+    "@testing-library/jest-dom": "5.12.0",
+    "@types/jest": "26.0.23",
+    "@types/node": "15.6.1",
     "@typescript-eslint/eslint-plugin": "4.25.0",
     "@typescript-eslint/parser": "4.25.0",
+    "babel-preset-solid": "0.26.5",
     "eslint": "7.27.0",
     "eslint-config-airbnb-typescript": "12.3.1",
     "eslint-plugin-import": "2.23.4",
+    "jest": "27.0.3",
+    "playwright-chromium": "1.11.1",
     "prettier": "2.3.0",
-    "solid-js": "0.26.5",
+    "prettier-plugin-pkg": "0.9.0",
+    "prettier-plugin-sh": "0.6.1",
+    "sirv": "1.0.12",
+    "solid-js": "1.0.0-rc.2",
+    "solid-testing-library": "0.1.2",
     "typescript": "4.3.2"
   },
-  "TODO: Add test tooling deps": {
-    "@types/node": "15.0.2",
-    "@types/jsdom": "16.2.10",
-    "c8": "7.7.2",
-    "esbuild-register": "2.5.0",
-    "playwright-chromium": "1.11.0",
-    "jsdom": "16.5.3",
-    "uvu": "0.5.1"
+  "publishConfig": {
+    "access": "public"
   },
   "prettier": {
     "arrowParens": "always",
     "endOfLine": "lf",
     "singleQuote": true,
-    "trailingComma": "all"
+    "trailingComma": "all",
+    "plugins": [
+      "./node_modules/prettier-plugin-pkg",
+      "./node_modules/prettier-plugin-sh"
+    ]
   }
 }
