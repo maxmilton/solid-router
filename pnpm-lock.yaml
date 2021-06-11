@@ -16,7 +16,7 @@ specifiers:
   eslint-plugin-jest: 24.3.6
   jest: 27.0.4
   playwright-chromium: 1.12.1
-  prettier: 2.3.0
+  prettier: 2.3.1
   prettier-plugin-pkg: 0.9.0
   prettier-plugin-sh: 0.6.1
   qss: ^2.0.3
@@ -46,9 +46,9 @@ devDependencies:
   eslint-plugin-jest: 24.3.6_a75a172e4514a00a289d53a59e2370f9
   jest: 27.0.4
   playwright-chromium: 1.12.1
-  prettier: 2.3.0
-  prettier-plugin-pkg: 0.9.0_prettier@2.3.0
-  prettier-plugin-sh: 0.6.1_prettier@2.3.0
+  prettier: 2.3.1
+  prettier-plugin-pkg: 0.9.0_prettier@2.3.1
+  prettier-plugin-sh: 0.6.1_prettier@2.3.1
   sirv: 1.0.12
   solid-js: 1.0.0-rc.2
   solid-testing-library: 0.1.2_solid-js@1.0.0-rc.2
@@ -3540,25 +3540,25 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /prettier-plugin-pkg/0.9.0_prettier@2.3.0:
+  /prettier-plugin-pkg/0.9.0_prettier@2.3.1:
     resolution: {integrity: sha512-Wpxe5KuNMGriJl96Zs5GookaDxs+byl3qcDq4+qMOabxeK8un0am5yGNpyuVsSEWdTTEQ96chC8fPRxl/n+euA==}
     peerDependencies:
       prettier: ^2.0.5
     dependencies:
-      prettier: 2.3.0
+      prettier: 2.3.1
     dev: true
 
-  /prettier-plugin-sh/0.6.1_prettier@2.3.0:
+  /prettier-plugin-sh/0.6.1_prettier@2.3.1:
     resolution: {integrity: sha512-Weelg53FBb1Z5Q1/GpQIb4s//BdhmPAABjJfe6VTQ3m8upQjM36sVVboNOUVvYn3K+LMwzW4vkxhqLQ+vvfBKQ==}
     peerDependencies:
       prettier: ^2.0.5
     dependencies:
       mvdan-sh: 0.5.0
-      prettier: 2.3.0
+      prettier: 2.3.1
     dev: true
 
-  /prettier/2.3.0:
-    resolution: {integrity: sha512-kXtO4s0Lz/DW/IJ9QdWhAf7/NmPWQXkFr/r/WkR3vyI+0v8amTDxiaQSLzs8NBlytfLWX/7uQUMIW677yLKl4w==}
+  /prettier/2.3.1:
+    resolution: {integrity: sha512-p+vNbgpLjif/+D+DwAZAbndtRrR0md0MwfmOVN9N+2RgyACMT+7tfaRnT+WDPkqnuVwleyuBIG2XBxKDme3hPA==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
