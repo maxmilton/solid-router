@@ -88,10 +88,10 @@ export const Router: Component<RouterProps> = ({ fallback, routes }) => {
             {(matches) => {
               const search = window.location.search.slice(1);
               const params: Record<string, string | null> = {};
-              let i = 0;
+              let index = 0;
 
-              while (i < keys.length) {
-                params[keys[i]] = matches[++i] || null;
+              while (index < keys.length) {
+                params[keys[index]] = matches[++index] || null;
               }
 
               return (
