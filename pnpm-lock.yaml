@@ -4,7 +4,7 @@ specifiers:
   '@babel/core': 7.14.3
   '@babel/plugin-transform-modules-commonjs': 7.14.0
   '@babel/preset-typescript': 7.13.0
-  '@testing-library/jest-dom': 5.12.0
+  '@testing-library/jest-dom': 5.14.1
   '@types/jest': 26.0.23
   '@types/node': 15.6.1
   '@typescript-eslint/eslint-plugin': 4.26.1
@@ -34,7 +34,7 @@ devDependencies:
   '@babel/core': 7.14.3
   '@babel/plugin-transform-modules-commonjs': 7.14.0_@babel+core@7.14.3
   '@babel/preset-typescript': 7.13.0_@babel+core@7.14.3
-  '@testing-library/jest-dom': 5.12.0
+  '@testing-library/jest-dom': 5.14.1
   '@types/jest': 26.0.23
   '@types/node': 15.6.1
   '@typescript-eslint/eslint-plugin': 4.26.1_c8cbd5e7f5f92609ec78d991aced454b
@@ -742,8 +742,8 @@ packages:
       pretty-format: 26.6.2
     dev: true
 
-  /@testing-library/jest-dom/5.12.0:
-    resolution: {integrity: sha512-N9Y82b2Z3j6wzIoAqajlKVF1Zt7sOH0pPee0sUHXHc5cv2Fdn23r+vpWm0MBBoGJtPOly5+Bdx1lnc3CD+A+ow==}
+  /@testing-library/jest-dom/5.14.1:
+    resolution: {integrity: sha512-dfB7HVIgTNCxH22M1+KU6viG5of2ldoA5ly8Ar8xkezKHKXjRvznCdbMbqjYGgO2xjRbwnR+rR8MLUIqF3kKbQ==}
     engines: {node: '>=8', npm: '>=6', yarn: '>=1'}
     dependencies:
       '@babel/runtime': 7.14.0
@@ -752,6 +752,7 @@ packages:
       chalk: 3.0.0
       css: 3.0.0
       css.escape: 1.5.1
+      dom-accessibility-api: 0.5.6
       lodash: 4.17.21
       redent: 3.0.0
     dev: true
@@ -1642,6 +1643,10 @@ packages:
 
   /dom-accessibility-api/0.5.5:
     resolution: {integrity: sha512-8qdiSHWFg/rzd/oDByhKtBCR+1QtpNPcHDr94m3K+SLkFaPEhdCPA/Rm9hOPN9WUK9mEfNXH1zaM6F5e0yhw/A==}
+    dev: true
+
+  /dom-accessibility-api/0.5.6:
+    resolution: {integrity: sha512-DplGLZd8L1lN64jlT27N9TVSESFR5STaEJvX+thCby7fuCHonfPpAlodYc3vuUYbDuDec5w8AMP7oCM5TWFsqw==}
     dev: true
 
   /domexception/2.0.1:
