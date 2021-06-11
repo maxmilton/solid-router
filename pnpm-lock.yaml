@@ -15,7 +15,7 @@ specifiers:
   eslint-plugin-import: 2.23.4
   eslint-plugin-jest: 24.3.6
   jest: 27.0.4
-  playwright-chromium: 1.11.1
+  playwright-chromium: 1.12.1
   prettier: 2.3.0
   prettier-plugin-pkg: 0.9.0
   prettier-plugin-sh: 0.6.1
@@ -45,7 +45,7 @@ devDependencies:
   eslint-plugin-import: 2.23.4_eslint@7.28.0
   eslint-plugin-jest: 24.3.6_a75a172e4514a00a289d53a59e2370f9
   jest: 27.0.4
-  playwright-chromium: 1.11.1
+  playwright-chromium: 1.12.1
   prettier: 2.3.0
   prettier-plugin-pkg: 0.9.0_prettier@2.3.0
   prettier-plugin-sh: 0.6.1_prettier@2.3.0
@@ -3494,8 +3494,8 @@ packages:
       find-up: 2.1.0
     dev: true
 
-  /playwright-chromium/1.11.1:
-    resolution: {integrity: sha512-tpIj3I5Ase+GVrO/Yq/vIHK7g0apjoUmQiCCHbmgPZcfn4atlohYAsjdDT/opmxbaKE98HKf25dadvWTUiVuOg==}
+  /playwright-chromium/1.12.1:
+    resolution: {integrity: sha512-a6AXk2Sd7NjXk6tQYf5BW53a9YlBU5+AITpQ8L3MYhMqtMHRFk7X0z2EavtklbmahbbDdxYLUeOL3NDFtPq88w==}
     engines: {node: '>=12'}
     hasBin: true
     requiresBuild: true
