@@ -1,0 +1,31 @@
+import { lazy } from 'solid-js';
+import { render, Suspense } from 'solid-js/web';
+import { NavLink, Route, Router } from '../../../src';
+
+const Page1 = lazy(() => import('./page1'));
+const Page2 = lazy(() => import('./page2'));
+const Home = lazy(() => import('./home'));
+
+const routes: Route[] = [
+  { path: '/page1', component: Page1 },
+  { path: '/page2', component: Page2 },
+  { path: '/', component: Home },
+];
+
+const App = () => (
+  <>
+    <nav>
+      <NavLink href="/">Home</NavLink>
+      <NavLink href="/page1">Page 1</NavLink>
+      <NavLink href="/page2">Page 2</NavLink>
+    </nav>
+
+    <main>
+      <Suspense fallback={'Loading...'}>
+        <Router routes={routes} fallback={'Not Found'} />
+      </Suspense>
+    </main>
+  </>
+);
+
+render(App, document.body);
