@@ -35,7 +35,7 @@ yarn add @maxmilton/solid-router
 Simple + JavaScript:
 
 ```jsx
-import { NavLink, Route, Router, routeTo } from '@maxmilton/solid-router';
+import { NavLink, Router, routeTo } from '@maxmilton/solid-router';
 import { lazy } from 'solid-js';
 import { render, Suspense } from 'solid-js/web';
 
