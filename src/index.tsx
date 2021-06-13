@@ -9,12 +9,12 @@ import {
 } from 'solid-js';
 import { Match, Switch } from 'solid-js/web';
 
-const [location, setLocation] = createSignal(window.location.pathname);
+const [urlPath, setUrlPath] = createSignal(location.pathname);
 const [, transition] = useTransition();
 
 export function routeTo(url: string, replace?: boolean): void {
-  window.history[`${replace ? 'replace' : 'push'}State` as const]({}, '', url);
-  transition(() => setLocation(/[^?#]*/.exec(url)![0]));
+  history[`${replace ? 'replace' : 'push'}State` as const]({}, '', url);
+  transition(() => setUrlPath(/[^?#]*/.exec(url)![0]));
 }
 
 function handleClick(event: MouseEvent): void {
@@ -35,7 +35,7 @@ function handleClick(event: MouseEvent): void {
   if (
     !href
     || link!.target
-    || link!.host !== window.location.host
+    || link!.host !== location.host
     || href[0] === '#'
   ) {
     return;
@@ -64,18 +64,18 @@ interface RouterProps {
 }
 
 export const Router: Component<RouterProps> = ({ fallback, routes }) => {
-  const handleHistoryState = () => transition(() => setLocation(window.location.pathname));
+  const handleHistoryState = () => transition(() => setUrlPath(location.pathname));
 
-  window.addEventListener('popstate', handleHistoryState);
-  window.addEventListener('replacestate', handleHistoryState);
-  window.addEventListener('pushstate', handleHistoryState);
-  window.addEventListener('click', handleClick);
+  addEventListener('popstate', handleHistoryState);
+  addEventListener('replacestate', handleHistoryState);
+  addEventListener('pushstate', handleHistoryState);
+  addEventListener('click', handleClick);
 
   onCleanup(() => {
-    window.removeEventListener('popstate', handleHistoryState);
-    window.removeEventListener('replacestate', handleHistoryState);
-    window.removeEventListener('pushstate', handleHistoryState);
-    window.removeEventListener('click', handleClick);
+    removeEventListener('popstate', handleHistoryState);
+    removeEventListener('replacestate', handleHistoryState);
+    removeEventListener('pushstate', handleHistoryState);
+    removeEventListener('click', handleClick);
   });
 
   return (
@@ -84,9 +84,9 @@ export const Router: Component<RouterProps> = ({ fallback, routes }) => {
         const { keys, pattern } = parse(route.path);
 
         return (
-          <Match when={pattern.exec(location())}>
+          <Match when={pattern.exec(urlPath())}>
             {(matches) => {
-              const search = window.location.search.slice(1);
+              const search = location.search.slice(1);
               const params: Record<string, string | null> = {};
               let index = 0;
 
@@ -132,8 +132,8 @@ export const NavLink: Component<NavLinkProps> = ({ deepMatch, ...props }) => (
   <a
     aria-current={
       (deepMatch
-        ? new RegExp(`^${props.href}(?:\\/.*)?$`).test(location())
-        : props.href === location()) || undefined
+        ? new RegExp(`^${props.href}(?:\\/.*)?$`).test(urlPath())
+        : props.href === urlPath()) || undefined
     }
     {...props}
   />

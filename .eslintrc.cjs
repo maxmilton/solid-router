@@ -1,4 +1,5 @@
 const OFF = 0;
+const WARN = 1;
 
 // eslint-disable-next-line max-len
 /** @type {import('eslint').Linter.Config & { parserOptions: import('@typescript-eslint/types').ParserOptions }} */
@@ -29,6 +30,7 @@ module.exports = {
     // used safely in this project
     '@typescript-eslint/no-non-null-assertion': OFF,
     'no-plusplus': OFF,
+    'no-restricted-globals': WARN,
   },
   overrides: [
     {
