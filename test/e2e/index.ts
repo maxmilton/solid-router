@@ -27,8 +27,8 @@ describe('simple fixture', () => {
     expect(await page.$('nav')).not.toBeNull();
     expect(await page.$('main')).not.toBeNull();
     await sleep(200);
-    expect(context.consoleMessages).toHaveLength(0);
     expect(context.unhandledErrors).toHaveLength(0);
+    expect(context.consoleMessages).toHaveLength(0);
   });
 
   test('updates URL when clicking nav items', async () => {
@@ -42,8 +42,8 @@ describe('simple fixture', () => {
     expect(page.url()).toBe(`${urlBase}/page2`);
     await page.click('nav>a.home');
     expect(page.url()).toBe(`${urlBase}/`);
-    expect(context.consoleMessages).toHaveLength(0);
     expect(context.unhandledErrors).toHaveLength(0);
+    expect(context.consoleMessages).toHaveLength(0);
   });
 
   test('updates content when clicking nav items', async () => {
@@ -56,8 +56,8 @@ describe('simple fixture', () => {
     expect(await page.innerText('main')).toBe('Page 2');
     await page.click('nav>a.home');
     expect(await page.innerText('main')).toBe('Home');
-    expect(context.consoleMessages).toHaveLength(0);
     expect(context.unhandledErrors).toHaveLength(0);
+    expect(context.consoleMessages).toHaveLength(0);
   });
 });
 
@@ -76,8 +76,8 @@ describe('lazyload fixture', () => {
     expect(await page.$('nav')).not.toBeNull();
     expect(await page.$('main')).not.toBeNull();
     await sleep(200);
-    expect(context.consoleMessages).toHaveLength(0);
     expect(context.unhandledErrors).toHaveLength(0);
+    expect(context.consoleMessages).toHaveLength(0);
   });
 
   test('updates URL when clicking nav items', async () => {
@@ -91,8 +91,8 @@ describe('lazyload fixture', () => {
     expect(page.url()).toBe(`${urlBase}/page2`);
     await page.click('nav>a.home');
     expect(page.url()).toBe(`${urlBase}/`);
-    expect(context.consoleMessages).toHaveLength(0);
     expect(context.unhandledErrors).toHaveLength(0);
+    expect(context.consoleMessages).toHaveLength(0);
   });
 
   test('updates content when clicking nav items', async () => {
@@ -105,7 +105,7 @@ describe('lazyload fixture', () => {
     expect(await page.innerText('main')).toBe('Page 2');
     await page.click('nav>a.home');
     expect(await page.innerText('main')).toBe('Home');
-    expect(context.consoleMessages).toHaveLength(0);
     expect(context.unhandledErrors).toHaveLength(0);
+    expect(context.consoleMessages).toHaveLength(0);
   });
 });

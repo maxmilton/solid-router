@@ -34,7 +34,7 @@ export default fixtures.map((name) => ({
       skipPreflightCheck: true,
     }),
     {
-      name: 'html',
+      name: 'custom',
       generateBundle() {
         this.emitFile({
           fileName: 'index.html',
@@ -43,7 +43,7 @@ export default fixtures.map((name) => ({
         });
         this.emitFile({
           fileName: 'favicon.ico',
-          source: '',
+          source: '', // empty
           type: 'asset',
         });
       },
