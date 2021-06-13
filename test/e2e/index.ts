@@ -212,10 +212,15 @@ describe('full fixture', () => {
   test.todo('renders correct page when using browser forward/back buttons');
   test.todo('renders fallback state when no matching route');
   test.todo("renders loading state when loading a lazy route's bundle");
-  test.todo('passes through route params in dynamic route');
-  test.todo('passes through URL search query params');
+  test.todo(
+    'provides component params prop with route params in dynamic route',
+  );
+  test.todo('provides component query prop with URL search query params');
 
   describe('NavLink', () => {
     test.todo('has aria-current attribute when href matches URL path');
+    test.todo(
+      'has aria-current attribute when href matches URL path with deepMatch',
+    );
   });
 });

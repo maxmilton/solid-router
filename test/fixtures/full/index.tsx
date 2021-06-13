@@ -26,7 +26,7 @@ const App = () => (
       <NavLink href="/" class="home">
         Home
       </NavLink>
-      <NavLink href="/page1" class="page1">
+      <NavLink href="/page1" class="page1" deepMatch>
         Page 1
       </NavLink>
       <NavLink href="/page2" class="page2">
