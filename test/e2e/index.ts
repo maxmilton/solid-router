@@ -158,7 +158,26 @@ describe('lazyload fixture', () => {
     expect(context.consoleMessages).toHaveLength(0);
   });
 
+  // FIXME: Solid suspense does not trigger when we want it
+  //  ↳ https://github.com/solidjs/solid/blob/main/packages/solid/src/static/rendering.ts#L406
   test.todo("renders loading state when loading a lazy route's bundle");
+  // test("renders loading state when loading a lazy route's bundle", async () => {
+  //   expect.assertions(3);
+  //   const page = await createPage(context);
+  //   const client = await page.context().newCDPSession(page);
+  //   // throttle network speeds
+  //   await client.send('Network.emulateNetworkConditions', {
+  //     offline: false,
+  //     downloadThroughput: (30 * 1024 * 1024) / 8, // 30 MB/s
+  //     uploadThroughput: (15 * 1024 * 1024) / 8, // 15 MB/s
+  //     latency: 100,
+  //   });
+  //   expect(await page.innerText('main')).toBe('Home');
+  //   await page.click('nav>.page1');
+  //   expect(await page.innerText('main')).toBe('Loading...');
+  //   await sleep(150);
+  //   expect(await page.innerText('main')).toBe('Page 1');
+  // });
 });
 
 describe('full fixture', () => {
@@ -209,9 +228,28 @@ describe('full fixture', () => {
     expect(context.consoleMessages).toHaveLength(0);
   });
 
-  test.todo('renders correct page when using browser forward/back buttons');
-  test.todo('renders fallback state when no matching route');
+  // FIXME: Solid suspense does not trigger when we want it
+  //  ↳ https://github.com/solidjs/solid/blob/main/packages/solid/src/static/rendering.ts#L406
   test.todo("renders loading state when loading a lazy route's bundle");
+  // test("renders loading state when loading a lazy route's bundle", async () => {
+  //   expect.assertions(3);
+  //   const page = await createPage(context);
+  //   const client = await page.context().newCDPSession(page);
+  //   await client.send('Network.emulateNetworkConditions', {
+  //     offline: false,
+  //     downloadThroughput: (30 * 1024 * 1024) / 8,
+  //     uploadThroughput: (15 * 1024 * 1024) / 8,
+  //     latency: 100,
+  //   });
+  //   expect(await page.innerText('main')).toBe('Home');
+  //   await page.click('nav>.page1');
+  //   expect(await page.innerText('main')).toBe('Loading...');
+  //   await sleep(150);
+  //   expect(await page.innerText('main')).toBe('Page 1');
+  // });
+
+  test.todo('renders fallback state when no matching route');
+  test.todo('renders correct page when using browser forward/back buttons');
   test.todo(
     'provides component params prop with route params in dynamic route',
   );
