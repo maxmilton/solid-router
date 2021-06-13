@@ -1,6 +1,6 @@
 {
   "name": "@maxmilton/solid-router",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A light-weight History API based router for Solid",
   "repository": "maxmilton/solid-router",
   "author": "Max Milton <max@happycode.ltd>",
