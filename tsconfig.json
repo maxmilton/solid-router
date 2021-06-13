@@ -32,11 +32,11 @@
     "useDefineForClassFields": true
   },
   "exclude": [
-    "coverage",
-    "dist",
-    "node_modules",
-    "test",
     "*.config.js",
-    "jest.resolver.js"
+    "**/dist",
+    "**/node_modules",
+    "coverage",
+    "jest.resolver.js",
+    "test"
   ]
 }
