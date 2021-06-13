@@ -19,7 +19,8 @@
     "lint:ts": "tsc --noEmit --project test",
     "prebuild": "rm -rf dist; mkdir dist",
     "test": "jest --coverage",
-    "test-e2e": "echo 'TODO: e2e tests'; exit 0"
+    "test-build-fixtures": "pnpm run --dir test/fixtures build",
+    "test-e2e": "pnpm run test-build-fixtures && jest --testRegex='test/e2e/index.ts$' test/e2e/index.ts"
   },
   "peerDependencies": {
     "solid-js": "^1.0.0-rc.3"
