@@ -1,5 +1,5 @@
 import { render } from 'solid-js/web';
-import { NavLink, Route, Router } from '../../../src';
+import { Route, Router } from '../../../src';
 
 const Page1 = () => <div>Page 1</div>;
 const Page2 = () => <div>Page 2</div>;
@@ -14,19 +14,19 @@ const routes: Route[] = [
 const App = () => (
   <>
     <nav>
-      <NavLink href="/" class="home">
+      <a href="/" class="home">
         Home
-      </NavLink>
-      <NavLink href="/page1" class="page1">
+      </a>
+      <a href="/page1" class="page1">
         Page 1
-      </NavLink>
-      <NavLink href="/page2" class="page2">
+      </a>
+      <a href="/page2" class="page2">
         Page 2
-      </NavLink>
+      </a>
     </nav>
 
     <main>
-      <Router routes={routes} fallback={'Not Found'} />
+      <Router routes={routes} />
     </main>
   </>
 );

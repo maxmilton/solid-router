@@ -1,0 +1,11 @@
+{
+  "name": "fixtures",
+  "version": "0.0.0",
+  "scripts": {
+    "build": "pnpm run prebuild && ../../node_modules/.bin/rollup --config",
+    "prebuild": "rm -rf dist"
+  },
+  "dependencies": {
+    "solid-js": "*"
+  }
+}
