@@ -4,7 +4,7 @@ import babel from '@rollup/plugin-babel';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import path from 'path';
 
-const fixtures = ['lazyload', 'simple'];
+const fixtures = ['full', 'lazyload', 'minimal', 'simple'];
 const extensions = ['.ts', '.tsx', '.js', '.jsx', '.mjs', '.cjs'];
 const htmlTemplate = `<!doctype html>
 <meta charset=utf-8>

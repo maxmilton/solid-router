@@ -48,15 +48,11 @@ export async function teardown(): Promise<void> {
   global.browser = null;
 }
 
-export async function loadFixture(
-  name: string,
-  single?: boolean,
-): Promise<TestContext> {
+export async function loadFixture(name: string): Promise<TestContext> {
   const filesDir = path.join(__dirname, '../fixtures/dist', name);
   const port = await getPort();
   const server = http.createServer(
     sirv(filesDir, {
-      single,
       onNoMatch(req) {
         throw new Error(`No matching URL: ${req.url!}`);
       },
