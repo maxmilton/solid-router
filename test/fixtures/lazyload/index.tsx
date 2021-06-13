@@ -15,9 +15,15 @@ const routes: Route[] = [
 const App = () => (
   <>
     <nav>
-      <NavLink href="/">Home</NavLink>
-      <NavLink href="/page1">Page 1</NavLink>
-      <NavLink href="/page2">Page 2</NavLink>
+      <NavLink href="/" class="home">
+        Home
+      </NavLink>
+      <NavLink href="/page1" class="page1">
+        Page 1
+      </NavLink>
+      <NavLink href="/page2" class="page2">
+        Page 2
+      </NavLink>
     </nav>
 
     <main>
