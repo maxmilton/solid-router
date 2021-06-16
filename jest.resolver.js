@@ -2,7 +2,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-return */
-/* eslint-disable no-nested-ternary */
 
 /* !BROKEN!* @type {import('jest-resolve/build/defaultResolver')} */
 // Use defaultResolver to leverage its cache, error handling, etc.
@@ -17,9 +16,9 @@ module.exports = (request, options) => options.defaultResolver(request, {
         main:
               typeof pkg.browser === 'object'
                 ? pkg.browser[Object.keys(pkg.browser)[0]]
-                : typeof pkg.browser === 'string'
+                : (typeof pkg.browser === 'string'
                   ? pkg.browser
-                  : pkg.main,
+                  : pkg.main),
       }
       : pkg;
   },

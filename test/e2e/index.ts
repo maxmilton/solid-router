@@ -49,13 +49,13 @@ describe('minimal fixture', () => {
   test('updates content when clicking nav items', async () => {
     expect.assertions(6);
     const page = await createPage(context);
-    expect(await page.innerText('main')).toBe('Home');
+    expect(await page.textContent('main')).toBe('Home');
     await page.click('nav>.page1');
-    expect(await page.innerText('main')).toBe('Page 1');
+    expect(await page.textContent('main')).toBe('Page 1');
     await page.click('nav>.page2');
-    expect(await page.innerText('main')).toBe('Page 2');
+    expect(await page.textContent('main')).toBe('Page 2');
     await page.click('nav>.home');
-    expect(await page.innerText('main')).toBe('Home');
+    expect(await page.textContent('main')).toBe('Home');
     expect(context.unhandledErrors).toHaveLength(0);
     expect(context.consoleMessages).toHaveLength(0);
   });
@@ -98,13 +98,13 @@ describe('simple fixture', () => {
   test('updates content when clicking nav items', async () => {
     expect.assertions(6);
     const page = await createPage(context);
-    expect(await page.innerText('main')).toBe('Home');
+    expect(await page.textContent('main')).toBe('Home');
     await page.click('nav>.page1');
-    expect(await page.innerText('main')).toBe('Page 1');
+    expect(await page.textContent('main')).toBe('Page 1');
     await page.click('nav>.page2');
-    expect(await page.innerText('main')).toBe('Page 2');
+    expect(await page.textContent('main')).toBe('Page 2');
     await page.click('nav>.home');
-    expect(await page.innerText('main')).toBe('Home');
+    expect(await page.textContent('main')).toBe('Home');
     expect(context.unhandledErrors).toHaveLength(0);
     expect(context.consoleMessages).toHaveLength(0);
   });
@@ -147,13 +147,13 @@ describe('lazyload fixture', () => {
   test('updates content when clicking nav items', async () => {
     expect.assertions(6);
     const page = await createPage(context);
-    expect(await page.innerText('main')).toBe('Home');
+    expect(await page.textContent('main')).toBe('Home');
     await page.click('nav>.page1');
-    expect(await page.innerText('main')).toBe('Page 1');
+    expect(await page.textContent('main')).toBe('Page 1');
     await page.click('nav>.page2');
-    expect(await page.innerText('main')).toBe('Page 2');
+    expect(await page.textContent('main')).toBe('Page 2');
     await page.click('nav>.home');
-    expect(await page.innerText('main')).toBe('Home');
+    expect(await page.textContent('main')).toBe('Home');
     expect(context.unhandledErrors).toHaveLength(0);
     expect(context.consoleMessages).toHaveLength(0);
   });
@@ -217,13 +217,13 @@ describe('full fixture', () => {
   test('updates content when clicking nav items', async () => {
     expect.assertions(6);
     const page = await createPage(context);
-    expect(await page.innerText('main')).toBe('Home');
+    expect(await page.textContent('main')).toBe('Home');
     await page.click('nav>.page1');
-    expect(await page.innerText('main')).toBe('Page 1');
+    expect(await page.textContent('main')).toBe('Page 1');
     await page.click('nav>.page2');
-    expect(await page.innerText('main')).toBe('Page 2');
+    expect(await page.textContent('main')).toBe('Page 2');
     await page.click('nav>.home');
-    expect(await page.innerText('main')).toBe('Home');
+    expect(await page.textContent('main')).toBe('Home');
     expect(context.unhandledErrors).toHaveLength(0);
     expect(context.consoleMessages).toHaveLength(0);
   });
