@@ -1,4 +1,5 @@
 /** @jest-environment jsdom */
+/* eslint-disable no-restricted-syntax */
 
 import * as allExports from '../src/index';
 
@@ -8,13 +9,13 @@ const publicExports = [
   ['NavLink', 'function'],
 ] as const;
 
-publicExports.forEach(([name, type]) => {
+for (const [name, type] of publicExports) {
   test(`exports public "${name}" ${type}`, () => {
     expect.assertions(2);
     expect(name in allExports).toStrictEqual(true);
     expect(typeof allExports[name]).toBe(type);
   });
-});
+}
 
 test('does not export any private internals', () => {
   expect.assertions(2);
@@ -24,9 +25,9 @@ test('does not export any private internals', () => {
   ];
   const remainingExports = Object.keys(allExports);
   expect(remainingExports.length >= publicExports.length).toStrictEqual(true);
-  allPublicExportNames.forEach((name) => {
+  for (const name of allPublicExportNames) {
     remainingExports.splice(remainingExports.indexOf(name), 1);
-  });
+  }
   expect(remainingExports).toHaveLength(0);
 });
 
