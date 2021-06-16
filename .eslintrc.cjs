@@ -17,6 +17,7 @@ module.exports = {
     'airbnb-typescript/base',
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
+    'plugin:unicorn/recommended',
   ],
   // add .tsx to airbnb-typescript/base
   settings: {
@@ -31,6 +32,15 @@ module.exports = {
     '@typescript-eslint/no-non-null-assertion': OFF,
     'no-plusplus': OFF,
     'no-restricted-globals': WARN,
+    'unicorn/filename-case': OFF,
+    'unicorn/no-abusive-eslint-disable': WARN,
+    'unicorn/no-null': OFF,
+    'unicorn/prefer-add-event-listener': OFF,
+    'unicorn/prefer-dom-node-append': OFF,
+    'unicorn/prefer-module': OFF,
+    'unicorn/prefer-node-protocol': OFF,
+    'unicorn/prefer-query-selector': OFF,
+    'unicorn/prevent-abbreviations': OFF,
   },
   overrides: [
     {
