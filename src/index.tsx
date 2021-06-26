@@ -94,6 +94,7 @@ export const Router: Component<RouterProps> = ({ fallback, routes }) => {
                 params[keys[index]] = matches[++index] || null;
               }
 
+              // FIXME: Lazy loaded components do not trigger <Suspense>
               return (
                 <route.component
                   params={params}
@@ -110,7 +111,7 @@ export const Router: Component<RouterProps> = ({ fallback, routes }) => {
 
 interface NavLinkProps extends JSX.AnchorHTMLAttributes<HTMLAnchorElement> {
   /**
-   * Also set as active when matches deeper path rather than an exact path.
+   * Also set as active when matches deeper path rather than just on exact path.
    *
    * For example, if href="/path" the following locations would count as active:
    * `/path`, `/path/`, or `/path/subpath/subsubpath`, but not `/path2`.
