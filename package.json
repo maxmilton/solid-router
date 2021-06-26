@@ -12,7 +12,7 @@
     "src"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "pnpm run prebuild && tsc",
     "dev": "tsc --watch --preserveWatchOutput",
     "lint": "pnpm run lint:js && pnpm run lint:ts",
     "lint:js": "eslint --ignore-path .gitignore --ext .cjs,.js,.jsx,.mjs,.ts,.tsx .",
