@@ -172,11 +172,11 @@ describe('lazyload fixture', () => {
   //     uploadThroughput: (15 * 1024 * 1024) / 8, // 15 MB/s
   //     latency: 100,
   //   });
-  //   expect(await page.innerText('main')).toBe('Home');
+  //   expect(await page.textContent('main')).toBe('Home');
   //   await page.click('nav>.page1');
-  //   expect(await page.innerText('main')).toBe('Loading...');
+  //   expect(await page.textContent('main')).toBe('Loading...');
   //   await sleep(150);
-  //   expect(await page.innerText('main')).toBe('Page 1');
+  //   expect(await page.textContent('main')).toBe('Page 1');
   // });
 });
 
@@ -241,11 +241,11 @@ describe('full fixture', () => {
   //     uploadThroughput: (15 * 1024 * 1024) / 8,
   //     latency: 100,
   //   });
-  //   expect(await page.innerText('main')).toBe('Home');
+  //   expect(await page.textContent('main')).toBe('Home');
   //   await page.click('nav>.page1');
-  //   expect(await page.innerText('main')).toBe('Loading...');
+  //   expect(await page.textContent('main')).toBe('Loading...');
   //   await sleep(150);
-  //   expect(await page.innerText('main')).toBe('Page 1');
+  //   expect(await page.textContent('main')).toBe('Page 1');
   // });
 
   test.todo('renders fallback state when no matching route');
