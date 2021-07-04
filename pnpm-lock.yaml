@@ -18,7 +18,7 @@ specifiers:
   eslint-plugin-jest: 24.3.6
   eslint-plugin-unicorn: 34.0.1
   get-port: 5.1.1
-  jest: 27.0.5
+  jest: 27.0.6
   kleur: 4.1.4
   playwright-chromium: 1.12.3
   prettier: 2.3.2
@@ -54,7 +54,7 @@ devDependencies:
   eslint-plugin-jest: 24.3.6_815c04256d563f95e4895592597c28aa
   eslint-plugin-unicorn: 34.0.1_eslint@7.29.0
   get-port: 5.1.1
-  jest: 27.0.5
+  jest: 27.0.6
   kleur: 4.1.4
   playwright-chromium: 1.12.3
   prettier: 2.3.2
@@ -3133,8 +3133,8 @@ packages:
       supports-color: 8.1.1
     dev: true
 
-  /jest/27.0.5:
-    resolution: {integrity: sha512-4NlVMS29gE+JOZvgmSAsz3eOjkSsHqjTajlIsah/4MVSmKvf3zFP/TvgcLoWe2UVHiE9KF741sReqhF0p4mqbQ==}
+  /jest/27.0.6:
+    resolution: {integrity: sha512-EjV8aETrsD0wHl7CKMibKwQNQc3gIRBXlTikBmmHUeVMKaPFxdcUIBfoDqTSXDoGJIivAYGqCWVlzCSaVjPQsA==}
     engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
     hasBin: true
     peerDependencies:

@@ -47,7 +47,7 @@
     "eslint-plugin-jest": "24.3.6",
     "eslint-plugin-unicorn": "34.0.1",
     "get-port": "5.1.1",
-    "jest": "27.0.5",
+    "jest": "27.0.6",
     "kleur": "4.1.4",
     "playwright-chromium": "1.12.3",
     "prettier": "2.3.2",
