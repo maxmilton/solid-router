@@ -5,7 +5,7 @@ specifiers:
   '@babel/plugin-transform-modules-commonjs': 7.14.5
   '@babel/preset-typescript': 7.14.5
   '@rollup/plugin-babel': 5.3.0
-  '@rollup/plugin-node-resolve': 13.0.2
+  '@rollup/plugin-node-resolve': 13.0.4
   '@testing-library/jest-dom': 5.14.1
   '@types/jest': 26.0.24
   '@types/node': 15.12.5
@@ -41,7 +41,7 @@ devDependencies:
   '@babel/plugin-transform-modules-commonjs': 7.14.5_@babel+core@7.14.8
   '@babel/preset-typescript': 7.14.5_@babel+core@7.14.8
   '@rollup/plugin-babel': 5.3.0_@babel+core@7.14.8+rollup@2.53.3
-  '@rollup/plugin-node-resolve': 13.0.2_rollup@2.53.3
+  '@rollup/plugin-node-resolve': 13.0.4_rollup@2.53.3
   '@testing-library/jest-dom': 5.14.1
   '@types/jest': 26.0.24
   '@types/node': 15.12.5
@@ -813,8 +813,8 @@ packages:
       rollup: 2.53.3
     dev: true
 
-  /@rollup/plugin-node-resolve/13.0.2_rollup@2.53.3:
-    resolution: {integrity: sha512-hv+eAMcA2hQ7qvPVcXbtIyc0dtue4jMyA2sCW4IMkrmh+SeDDEHg1MXTv65VPpKdtjvWzN3+4mHAEl4rT+zgzQ==}
+  /@rollup/plugin-node-resolve/13.0.4_rollup@2.53.3:
+    resolution: {integrity: sha512-eYq4TFy40O8hjeDs+sIxEH/jc9lyuI2k9DM557WN6rO5OpnC2qXMBNj4IKH1oHrnAazL49C5p0tgP0/VpqJ+/w==}
     engines: {node: '>= 10.0.0'}
     peerDependencies:
       rollup: ^2.42.0
