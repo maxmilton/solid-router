@@ -5,16 +5,15 @@ import {
   createSignal,
   JSX,
   onCleanup,
-  useTransition,
+  startTransition,
 } from 'solid-js';
 import { Match, Switch } from 'solid-js/web';
 
 const [urlPath, setUrlPath] = createSignal(location.pathname);
-const [, transition] = useTransition();
 
 export function routeTo(url: string, replace?: boolean): void {
   history[`${replace ? 'replace' : 'push'}State` as const]({}, '', url);
-  transition(() => setUrlPath(/[^#?]*/.exec(url)![0]));
+  startTransition(() => setUrlPath(/[^#?]*/.exec(url)![0]));
 }
 
 function handleClick(event: MouseEvent): void {
@@ -63,7 +62,7 @@ interface RouterProps {
   routes: Route[];
 }
 
-const handleHistoryState = () => transition(() => setUrlPath(location.pathname));
+const handleHistoryState = () => startTransition(() => setUrlPath(location.pathname));
 
 export const Router: Component<RouterProps> = ({ fallback, routes }) => {
   addEventListener('popstate', handleHistoryState);
