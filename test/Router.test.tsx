@@ -85,3 +85,5 @@ test.todo('does not handle click when href is missing');
 test.todo('does not handle click when href is empty');
 test.todo('does not handle click when href is to another host');
 test.todo('does not handle click when href is to a hash');
+// to verify Solid startTransition works as expected
+test.todo('updates all location signals in the same tick');
