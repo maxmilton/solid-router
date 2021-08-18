@@ -20,7 +20,7 @@ specifiers:
   get-port: 5.1.1
   jest: 27.0.6
   kleur: 4.1.4
-  playwright-chromium: 1.13.1
+  playwright-chromium: 1.14.0
   prettier: 2.3.2
   prettier-plugin-pkg: 0.10.0
   prettier-plugin-sh: 0.7.1
@@ -56,7 +56,7 @@ devDependencies:
   get-port: 5.1.1
   jest: 27.0.6
   kleur: 4.1.4
-  playwright-chromium: 1.13.1
+  playwright-chromium: 1.14.0
   prettier: 2.3.2
   prettier-plugin-pkg: 0.10.0_prettier@2.3.2
   prettier-plugin-sh: 0.7.1_prettier@2.3.2
@@ -3749,8 +3749,8 @@ packages:
       find-up: 2.1.0
     dev: true
 
-  /playwright-chromium/1.13.1:
-    resolution: {integrity: sha512-aJnhWAbDHoI3rTTeeJJJa/PjrysSLKfURiiVM+3EauVxsouK/XCbNdere+1q/a64OlipXWIZeqzoCDlVZiaL0g==}
+  /playwright-chromium/1.14.0:
+    resolution: {integrity: sha512-qWQN9VTPhvEZdRpn1564EOtiNU+hRHhogKg1heBX9VsfGy6WHytR9XPFJjD4M6fhNAV1WKM2McVPYIbi1EOYww==}
     engines: {node: '>=12'}
     hasBin: true
     requiresBuild: true
