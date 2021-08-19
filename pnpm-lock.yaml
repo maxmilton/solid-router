@@ -28,7 +28,7 @@ specifiers:
   regexparam: ^2.0.0
   rollup: 2.56.2
   sirv: 1.0.14
-  solid-js: 1.1.0
+  solid-js: 1.1.1
   solid-testing-library: 0.2.1
   typescript: 4.3.5
 
@@ -62,8 +62,8 @@ devDependencies:
   prettier-plugin-sh: 0.7.1_prettier@2.3.2
   rollup: 2.56.2
   sirv: 1.0.14
-  solid-js: 1.1.0
-  solid-testing-library: 0.2.1_solid-js@1.1.0
+  solid-js: 1.1.1
+  solid-testing-library: 0.2.1_solid-js@1.1.1
   typescript: 4.3.5
 
 packages:
@@ -4110,18 +4110,18 @@ packages:
       is-fullwidth-code-point: 3.0.0
     dev: true
 
-  /solid-js/1.1.0:
-    resolution: {integrity: sha512-QcYxp0AnJW3luQKRF/vOhEC5G0ao/f5OqkRuY4JOEmSjWcl4fh8UGiaEOYnri+uJmfGo7KehTKC/+Se40Qh+Lg==}
+  /solid-js/1.1.1:
+    resolution: {integrity: sha512-BtNNMUjBGtkx4viW5q/oqU4DOHa3WRhylN302cVVIeiBUGw6uzAE+NhNF12bAvSYJOCHLyGHpUEIeWklkeGgsg==}
     dev: true
 
-  /solid-testing-library/0.2.1_solid-js@1.1.0:
+  /solid-testing-library/0.2.1_solid-js@1.1.1:
     resolution: {integrity: sha512-r56W42vDfphLJEXAwb+Wo8FVpRNCBwSYwxokZTkaAvC0pRAK4Vd4sI/sGQI8vqoaaK7/KKHQIfDF461S6Qwk3g==}
     engines: {node: '>= 12'}
     peerDependencies:
       solid-js: ^1.0.0
     dependencies:
       '@testing-library/dom': 7.31.2
-      solid-js: 1.1.0
+      solid-js: 1.1.1
     dev: true
 
   /source-map-resolve/0.6.0:
