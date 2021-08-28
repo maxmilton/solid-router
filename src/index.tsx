@@ -31,12 +31,7 @@ function handleClick(event: MouseEvent): void {
   const link = (event.target as HTMLElement).closest('a');
   const href = link && link.getAttribute('href');
 
-  if (
-    !href
-    || link!.target
-    || link!.host !== location.host
-    || href[0] === '#'
-  ) {
+  if (!href || link.target || link.host !== location.host || href[0] === '#') {
     return;
   }
 
@@ -129,6 +124,7 @@ interface NavLinkProps extends JSX.AnchorHTMLAttributes<HTMLAnchorElement> {
  * regular `<a ...>` HTMLAnchorElement. The router will still react to clicks.
  */
 export const NavLink: Component<NavLinkProps> = ({ deepMatch, ...props }) => (
+  // @ts-expect-error - FIXME: aria-current should take undefined
   <a
     aria-current={
       (deepMatch
