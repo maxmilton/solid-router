@@ -9,13 +9,18 @@ import {
 } from 'playwright-chromium';
 import sirv from 'sirv';
 
+// declare global {
+//   // eslint-disable-next-line @typescript-eslint/no-namespace
+//   namespace NodeJS {
+//     interface Global {
+//       browser: Browser;
+//     }
+//   }
+// }
+// TODO: Once types are fixed in @types/jest maybe switch back to standard way of extending global
 declare global {
-  // eslint-disable-next-line @typescript-eslint/no-namespace
-  namespace NodeJS {
-    interface Global {
-      browser: Browser;
-    }
-  }
+  // eslint-disable-next-line no-var, vars-on-top
+  var browser: Browser;
 }
 
 export interface TestContext {
