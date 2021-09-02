@@ -28,7 +28,7 @@ function handleClick(event: MouseEvent): void {
     return;
   }
 
-  const link = (event.target as HTMLElement).closest('a');
+  const link = (event.target as Element).closest('a');
   const href = link && link.getAttribute('href');
 
   if (!href || link.target || link.host !== location.host || href[0] === '#') {
@@ -55,11 +55,20 @@ export interface Route {
 interface RouterProps {
   fallback?: JSX.Element;
   routes: Route[];
+  /** Optional callback function run after the route has changed. */
+  onRouted?: () => void;
 }
 
-const handleHistoryState = () => startTransition(() => setUrlPath(location.pathname));
+export const Router: Component<RouterProps> = ({
+  fallback,
+  routes,
+  onRouted = () => {},
+}) => {
+  const handleHistoryState = () => {
+    startTransition(() => setUrlPath(location.pathname));
+    onRouted();
+  };
 
-export const Router: Component<RouterProps> = ({ fallback, routes }) => {
   addEventListener('popstate', handleHistoryState);
   addEventListener('replacestate', handleHistoryState);
   addEventListener('pushstate', handleHistoryState);

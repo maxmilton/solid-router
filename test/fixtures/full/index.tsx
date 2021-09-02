@@ -42,7 +42,11 @@ const App = () => (
 
     <main>
       <Suspense fallback={'Loading...'}>
-        <Router routes={routes} fallback={'Not Found'} />
+        <Router
+          routes={routes}
+          fallback={'Not Found'}
+          onRouted={() => window.scrollTo(0, 0)}
+        />
       </Suspense>
     </main>
   </>

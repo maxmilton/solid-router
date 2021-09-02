@@ -40,7 +40,7 @@ test('renders component fallback when no matching path', () => {
   expect(rendered.container.innerHTML).toMatchInlineSnapshot('"<p>f</p>"');
 });
 
-test('calls function fallback when no matching path', () => {
+test('calls fallback function when no matching path', () => {
   expect.assertions(1);
   const mock = jest.fn();
   render(() => <Router routes={[]} fallback={mock} />);
@@ -68,6 +68,10 @@ test.todo('passes correct params to route component props');
 test.todo('passes correct query to route component props');
 test.todo('adds event listeners on mount');
 test.todo('removes event listeners on unmount');
+test.todo('calls onRouted function after location pushstate event');
+test.todo('calls onRouted function after location replacestate event');
+test.todo('calls onRouted function after location popstate event');
+test.todo('calls onRouted function after link click');
 
 test.todo('handles click on <a>');
 test.todo('handles click inside <a>');

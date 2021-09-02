@@ -150,6 +150,7 @@ const App = (): JSX.Element => (
             error.code = 404;
             throw error;
           }}
+          onRouted={() => window.scrollTo(0, 0)}
         />
       </Suspense>
     </ErrorBoundary>
