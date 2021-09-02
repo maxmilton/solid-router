@@ -64,10 +64,10 @@ export const Router: Component<RouterProps> = ({
   routes,
   onRouted = () => {},
 }) => {
-  const handleHistoryState = () => startTransition(() => {
-    setUrlPath(location.pathname);
+  const handleHistoryState = () => {
+    startTransition(() => setUrlPath(location.pathname));
     onRouted();
-  });
+  };
 
   addEventListener('popstate', handleHistoryState);
   addEventListener('replacestate', handleHistoryState);
