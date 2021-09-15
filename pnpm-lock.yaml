@@ -17,7 +17,7 @@ specifiers:
   eslint-config-airbnb-typescript: 14.0.0
   eslint-plugin-import: 2.24.2
   eslint-plugin-jest: 24.4.0
-  eslint-plugin-unicorn: 35.0.0
+  eslint-plugin-unicorn: 36.0.0
   get-port: 5.1.1
   jest: 27.1.0
   kleur: 4.1.4
@@ -54,7 +54,7 @@ devDependencies:
   eslint-config-airbnb-typescript: 14.0.0_a4f3c4b8c7b8adfe1c9629c889dc0579
   eslint-plugin-import: 2.24.2_eslint@7.32.0
   eslint-plugin-jest: 24.4.0_c59ad1753f394c982c539a8e2c3d4e25
-  eslint-plugin-unicorn: 35.0.0_eslint@7.32.0
+  eslint-plugin-unicorn: 36.0.0_eslint@7.32.0
   get-port: 5.1.1
   jest: 27.1.0
   kleur: 4.1.4
@@ -134,14 +134,14 @@ packages:
       - supports-color
     dev: true
 
-  /@babel/eslint-parser/7.15.0_@babel+core@7.15.0+eslint@7.32.0:
+  /@babel/eslint-parser/7.15.0_@babel+core@7.15.5+eslint@7.32.0:
     resolution: {integrity: sha512-+gSPtjSBxOZz4Uh8Ggqu7HbfpB8cT1LwW0DnVVLZEJvzXauiD0Di3zszcBkRmfGGrLdYeHUwcflG7i3tr9kQlw==}
     engines: {node: ^10.13.0 || ^12.13.0 || >=14.0.0}
     peerDependencies:
       '@babel/core': '>=7.11.0'
       eslint: '>=7.5.0'
     dependencies:
-      '@babel/core': 7.15.0
+      '@babel/core': 7.15.5
       eslint: 7.32.0
       eslint-scope: 5.1.1
       eslint-visitor-keys: 2.1.0
@@ -2149,11 +2149,11 @@ packages:
       - typescript
     dev: true
 
-  /eslint-plugin-unicorn/35.0.0_eslint@7.32.0:
-    resolution: {integrity: sha512-FHsaO68tDPQILfs/mGF8eSISJp8RswR4FpUuBDnueK2wyEHC6zmsc9WxjYyldXoIsBuVmru6jQyFCbCWPoW/KQ==}
+  /eslint-plugin-unicorn/36.0.0_eslint@7.32.0:
+    resolution: {integrity: sha512-xxN2vSctGWnDW6aLElm/LKIwcrmk6mdiEcW55Uv5krcrVcIFSWMmEgc/hwpemYfZacKZ5npFERGNz4aThsp1AA==}
     engines: {node: '>=12'}
     peerDependencies:
-      eslint: '>=7.28.0'
+      eslint: '>=7.32.0'
     dependencies:
       '@babel/helper-validator-identifier': 7.14.9
       ci-info: 3.2.0
@@ -2185,8 +2185,8 @@ packages:
     peerDependencies:
       eslint: '>=7.0.0'
     dependencies:
-      '@babel/core': 7.15.0
-      '@babel/eslint-parser': 7.15.0_@babel+core@7.15.0+eslint@7.32.0
+      '@babel/core': 7.15.5
+      '@babel/eslint-parser': 7.15.0_@babel+core@7.15.5+eslint@7.32.0
       eslint: 7.32.0
       eslint-visitor-keys: 2.1.0
       esquery: 1.4.0
