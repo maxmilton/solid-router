@@ -50,7 +50,7 @@
     "get-port": "5.1.1",
     "jest": "27.2.1",
     "kleur": "4.1.4",
-    "playwright-chromium": "1.14.1",
+    "playwright-chromium": "1.15.0",
     "prettier": "2.4.0",
     "prettier-plugin-pkg": "0.10.0",
     "prettier-plugin-sh": "0.7.1",
