@@ -133,7 +133,7 @@ interface NavLinkProps extends JSX.AnchorHTMLAttributes<HTMLAnchorElement> {
  * regular `<a ...>` HTMLAnchorElement. The router will still react to clicks.
  */
 export const NavLink: Component<NavLinkProps> = ({ deepMatch, ...props }) => (
-  // @ts-expect-error - FIXME: aria-current should take undefined
+  // @ts-expect-error - FIXME: aria-current should also accept undefined|null
   <a
     aria-current={
       (deepMatch
