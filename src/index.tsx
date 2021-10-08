@@ -5,6 +5,7 @@ import {
   createSignal,
   JSX,
   onCleanup,
+  splitProps,
   startTransition,
 } from 'solid-js';
 import { Match, Switch } from 'solid-js/web';
@@ -55,18 +56,14 @@ export interface Route {
 interface RouterProps {
   fallback?: JSX.Element;
   routes: Route[];
-  /** Optional callback function run after the route has changed. */
+  /** Optional callback function that is called after the route has changed. */
   onRouted?: () => void;
 }
 
-export const Router: Component<RouterProps> = ({
-  fallback,
-  routes,
-  onRouted = () => {},
-}) => {
+export const Router: Component<RouterProps> = (props) => {
   const handleHistoryState = () => {
     startTransition(() => setUrlPath(location.pathname));
-    onRouted();
+    if (props.onRouted) props.onRouted();
   };
 
   addEventListener('popstate', handleHistoryState);
@@ -82,8 +79,8 @@ export const Router: Component<RouterProps> = ({
   });
 
   return (
-    <Switch fallback={fallback}>
-      {routes.map((route) => {
+    <Switch fallback={props.fallback}>
+      {props.routes.map((route) => {
         const { keys, pattern } = parse(route.path);
 
         return (
@@ -121,7 +118,10 @@ interface NavLinkProps extends JSX.AnchorHTMLAttributes<HTMLAnchorElement> {
    * Otherwise only an exact match counts as active e.g., `/path`.
    */
   deepMatch?: boolean;
-  // required
+  /**
+   * The hyperlink's URL.
+   * @required
+   */
   href: string;
 }
 
@@ -132,14 +132,18 @@ interface NavLinkProps extends JSX.AnchorHTMLAttributes<HTMLAnchorElement> {
  * Note: When you only need a regular link without active detection, use a
  * regular `<a ...>` HTMLAnchorElement. The router will still react to clicks.
  */
-export const NavLink: Component<NavLinkProps> = ({ deepMatch, ...props }) => (
-  // @ts-expect-error - FIXME: aria-current should also accept undefined|null
-  <a
-    aria-current={
-      (deepMatch
-        ? new RegExp(`^${props.href}(?:\\/.*)?$`).test(urlPath())
-        : props.href === urlPath()) || undefined
-    }
-    {...props}
-  />
-);
+export const NavLink: Component<NavLinkProps> = (props) => {
+  const [, rest] = splitProps(props, ['deepMatch']);
+
+  return (
+    // @ts-expect-error - FIXME: aria-current should also accept undefined|null
+    <a
+      {...rest}
+      aria-current={
+        (props.deepMatch
+          ? new RegExp(`^${props.href}(?:\\/.*)?$`).test(urlPath())
+          : props.href === urlPath()) || undefined
+      }
+    />
+  );
+};
