@@ -16,7 +16,7 @@ A light-weight History API based router for [Solid](https://github.com/solidui/s
 - Flexible path matching — static paths, parameters, optional parameters, wildcards, and optional fallback when no match
 - URL search query params parsing
 
-> Note: This package is not designed to work with SSR or DOM-less pre-rendering. If you need universal solution use [solid-app-router](https://github.com/solidui/solid-app-router) instead.
+> Note: This package is not designed to work with SSR or DOM-less pre-rendering. If you need a universal solution use [solid-app-router](https://github.com/solidui/solid-app-router) instead.
 
 ## Installation
 
