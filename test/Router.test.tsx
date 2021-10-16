@@ -31,7 +31,7 @@ test('renders matching route', () => {
   // FIXME: Set URL via jest or manually rather than relying on an internal function
   routeTo('/c');
   const rendered = render(() => <Router routes={abcRoutes} />);
-  expect(rendered.container.textContent).toStrictEqual('c');
+  expect(rendered.container.textContent).toBe('c');
 });
 
 test('renders component fallback when no matching path', () => {
@@ -50,7 +50,7 @@ test('calls fallback function when no matching path', () => {
 test('renders nothing when no matching path and no fallback', () => {
   expect.assertions(2);
   const rendered = render(() => <Router routes={[]} />);
-  expect(rendered.container.innerHTML).toStrictEqual('');
+  expect(rendered.container.innerHTML).toBe('');
   expect(rendered.container.childNodes).toHaveLength(0);
 });
 

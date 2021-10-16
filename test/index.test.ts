@@ -12,7 +12,7 @@ const publicExports = [
 for (const [name, type] of publicExports) {
   test(`exports public "${name}" ${type}`, () => {
     expect.assertions(2);
-    expect(name in allExports).toStrictEqual(true);
+    expect(name in allExports).toBe(true);
     expect(typeof allExports[name]).toBe(type);
   });
 }
@@ -24,7 +24,7 @@ test('does not export any private internals', () => {
     'default', // synthetic default created by TS at test runtime
   ];
   const remainingExports = Object.keys(allExports);
-  expect(remainingExports.length >= publicExports.length).toStrictEqual(true);
+  expect(remainingExports.length >= publicExports.length).toBe(true);
   for (const name of allPublicExportNames) {
     remainingExports.splice(remainingExports.indexOf(name), 1);
   }
