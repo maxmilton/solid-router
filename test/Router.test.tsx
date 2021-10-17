@@ -9,6 +9,14 @@ const abcRoutes = [
   { path: '/c', component: () => <>c</> },
 ];
 
+// solid v1.1.6+ uses queueMicrotask in transitions so it's necessary to wait
+// a tick before any changes are reflected
+function routeToAsync(url: string, replace?: boolean) {
+  return new Promise((resolve) => {
+    routeTo(url, replace, () => resolve(1));
+  });
+}
+
 afterEach(cleanup);
 
 test('throws without required props', () => {
@@ -26,10 +34,13 @@ test('renders correctly with required props', () => {
   expect(rendered.container.innerHTML).toMatchInlineSnapshot('"<p>x</p>"');
 });
 
-test('renders matching route', () => {
+test('renders matching route', async () => {
   expect.assertions(1);
-  // FIXME: Set URL via jest or manually rather than relying on an internal function
-  routeTo('/c');
+  // TODO: Set URL via jest or manually rather than relying on an internal
+  // function but note that currently there's a global createSignal with a
+  // location.pathname value which means the signal is created when the file
+  // is first imported!
+  await routeToAsync('/c');
   const rendered = render(() => <Router routes={abcRoutes} />);
   expect(rendered.container.textContent).toBe('c');
 });
