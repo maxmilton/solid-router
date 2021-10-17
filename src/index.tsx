@@ -12,9 +12,13 @@ import { Match, Switch } from 'solid-js/web';
 
 const [urlPath, setUrlPath] = createSignal(location.pathname);
 
-export function routeTo(url: string, replace?: boolean): void {
+export function routeTo(
+  url: string,
+  replace?: boolean,
+  callback?: () => void,
+): void {
   history[`${replace ? 'replace' : 'push'}State` as const]({}, '', url);
-  startTransition(() => setUrlPath(/[^#?]*/.exec(url)![0]));
+  startTransition(() => setUrlPath(/[^#?]*/.exec(url)![0]), callback);
 }
 
 function handleClick(event: MouseEvent): void {
@@ -62,8 +66,7 @@ interface RouterProps {
 
 export const Router: Component<RouterProps> = (props) => {
   const handleHistoryState = () => {
-    startTransition(() => setUrlPath(location.pathname));
-    if (props.onRouted) props.onRouted();
+    startTransition(() => setUrlPath(location.pathname), props.onRouted);
   };
 
   addEventListener('popstate', handleHistoryState);

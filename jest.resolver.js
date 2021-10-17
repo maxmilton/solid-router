@@ -1,3 +1,5 @@
+// TODO: Fix types and remove these lint exceptions once typescript-eslint can handle js/mjs
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
