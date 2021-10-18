@@ -4,36 +4,55 @@
   "configurations": [
     {
       "name": "Attach by Process ID",
+      "type": "pwa-node",
       "processId": "${command:PickProcess}",
       "request": "attach",
       "sourceMaps": true,
       "skipFiles": ["<node_internals>/**"],
-      "smartStep": true,
-      "type": "pwa-node"
+      "smartStep": true
     },
     // https://github.com/Microsoft/vscode-recipes/tree/master/debugging-jest-tests
     {
-      "name": "uvu All",
+      "name": "Jest All",
       "type": "pwa-node",
       "request": "launch",
       "sourceMaps": true,
-      "skipFiles": ["<node_internals>/**"],
-      "program": "${workspaceFolder}/node_modules/.bin/uvu",
-      "args": ["-r", "esbuild-register", "./test", "\\.test\\.ts$"],
+      "skipFiles": [
+        "<node_internals>/**",
+        "${workspaceFolder}/node_modules/jest/**"
+      ],
+      "program": "${workspaceFolder}/node_modules/.bin/jest",
+      "args": ["--runInBand"],
       "console": "integratedTerminal",
-      // "internalConsoleOptions": "neverOpen",
+      "internalConsoleOptions": "neverOpen",
+      "disableOptimisticBPs": true,
       "windows": {
-        "program": "${workspaceFolder}/node_modules/uvu/bin.js"
+        "program": "${workspaceFolder}/node_modules/jest/bin/jest"
       }
     },
     {
-      "name": "uvu Current File",
+      "name": "Jest Current File",
       "type": "pwa-node",
       "request": "launch",
       "sourceMaps": true,
-      "skipFiles": ["<node_internals>/**"],
-      "args": ["-r", "esbuild-register", "${relativeFile}"],
-      "console": "integratedTerminal"
+      "skipFiles": [
+        "<node_internals>/**",
+        "${workspaceFolder}/node_modules/jest/**"
+      ],
+      "program": "${workspaceFolder}/node_modules/.bin/jest",
+      // https://github.com/microsoft/vscode-recipes/issues/205#issuecomment-533645097
+      "args": [
+        "--runTestsByPath",
+        "${relativeFile}",
+        "--config",
+        "jest.config.cjs"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "disableOptimisticBPs": true,
+      "windows": {
+        "program": "${workspaceFolder}/node_modules/jest/bin/jest"
+      }
     }
   ]
 }

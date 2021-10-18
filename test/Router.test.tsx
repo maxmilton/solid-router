@@ -9,8 +9,9 @@ const abcRoutes = [
   { path: '/c', component: () => <>c</> },
 ];
 
-// solid v1.1.6+ uses queueMicrotask in transitions so it's necessary to wait
-// a tick before any changes are reflected
+// Starting from solid v1.1.6, transitions use queueMicrotask so it's now
+// necessary to wait a tick before any changes are reflected
+// @see https://github.com/solidjs/solid/commit/be5ac4f204871739b2399a50852f454353194841
 function routeToAsync(url: string, replace?: boolean) {
   return new Promise((resolve) => {
     routeTo(url, replace, () => resolve(1));
