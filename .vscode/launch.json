@@ -42,7 +42,7 @@
         "--runTestsByPath",
         "${relativeFile}",
         "--config",
-        "jest.config.cjs"
+        "jest.config.js"
       ],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen",
