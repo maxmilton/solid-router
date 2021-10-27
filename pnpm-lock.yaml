@@ -11,7 +11,7 @@ specifiers:
   '@types/node': 16.11.6
   '@typescript-eslint/eslint-plugin': 5.2.0
   '@typescript-eslint/parser': 5.2.0
-  babel-preset-solid: 1.1.5
+  babel-preset-solid: 1.2.0
   eslint: 7.32.0
   eslint-config-airbnb-base: 14.2.1
   eslint-config-airbnb-typescript: 14.0.0
@@ -48,7 +48,7 @@ devDependencies:
   '@types/node': 16.11.6
   '@typescript-eslint/eslint-plugin': 5.2.0_61d834be236e22b473474e20e53cb311
   '@typescript-eslint/parser': 5.2.0_eslint@7.32.0+typescript@4.4.4
-  babel-preset-solid: 1.1.5_@babel+core@7.15.8
+  babel-preset-solid: 1.2.0_@babel+core@7.15.8
   eslint: 7.32.0
   eslint-config-airbnb-base: 14.2.1_560ef94424f7023f0ab025f67f79aa67
   eslint-config-airbnb-typescript: 14.0.0_0259290e89b4d86c681a05bdfb24a6cb
@@ -1329,12 +1329,13 @@ packages:
       '@types/babel__traverse': 7.14.2
     dev: true
 
-  /babel-plugin-jsx-dom-expressions/0.29.17_@babel+core@7.15.8:
-    resolution: {integrity: sha512-RGd2bUEu6Ym+t/eqS+CwhTMRBnoIgVUEPDD+rUx5GhwLLuGBbJI2tTC0Q92ScX1I5hQpJgveAvaaoDjjyGkgPA==}
+  /babel-plugin-jsx-dom-expressions/0.30.0_@babel+core@7.15.8:
+    resolution: {integrity: sha512-X8Vom2eCu1q43XngO/Rq7rUVDH3hnNWBvlS8F99gYCqPkp98Atnr6s1rszhNvfP6mKYMEznc/RMXoeiZx74XOw==}
     dependencies:
       '@babel/helper-module-imports': 7.15.4
       '@babel/plugin-syntax-jsx': 7.14.5_@babel+core@7.15.8
       '@babel/types': 7.15.6
+      html-entities: 2.3.2
     transitivePeerDependencies:
       - '@babel/core'
     dev: true
@@ -1370,10 +1371,10 @@ packages:
       babel-preset-current-node-syntax: 1.0.1_@babel+core@7.15.8
     dev: true
 
-  /babel-preset-solid/1.1.5_@babel+core@7.15.8:
-    resolution: {integrity: sha512-u+s+3zwErLfQzNqE6BfMRxfalxjSCm7BY/ua4pkCHlUuS5KrCFF/i4Bv5G98Z2uC9fWRXoD1nAu5zXA79vwkZA==}
+  /babel-preset-solid/1.2.0_@babel+core@7.15.8:
+    resolution: {integrity: sha512-fg2iE60U6loQqENHCMrx6xnTdnYoX/bsLOxPHODWI2shWQWoqy+CCoam4hqs5qM5Xm6kN6Uh0thYDVhnDDwEuA==}
     dependencies:
-      babel-plugin-jsx-dom-expressions: 0.29.17_@babel+core@7.15.8
+      babel-plugin-jsx-dom-expressions: 0.30.0_@babel+core@7.15.8
     transitivePeerDependencies:
       - '@babel/core'
     dev: true
@@ -2367,6 +2368,10 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       whatwg-encoding: 1.0.5
+    dev: true
+
+  /html-entities/2.3.2:
+    resolution: {integrity: sha512-c3Ab/url5ksaT0WyleslpBEthOzWhrjQbg75y7XUsfSzi3Dgzt0l8w5e7DylRn15MTlMMD58dTfzddNS2kcAjQ==}
     dev: true
 
   /html-escaper/2.0.2:
