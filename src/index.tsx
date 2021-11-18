@@ -21,29 +21,6 @@ export function routeTo(
   startTransition(() => setUrlPath(/[^#?]*/.exec(url)![0]), callback);
 }
 
-function handleClick(event: MouseEvent): void {
-  if (
-    event.ctrlKey
-    || event.metaKey
-    || event.altKey
-    || event.shiftKey
-    || event.button
-    || event.defaultPrevented
-  ) {
-    return;
-  }
-
-  const link = (event.target as Element).closest('a');
-  const href = link && link.getAttribute('href');
-
-  if (!href || link.target || link.host !== location.host || href[0] === '#') {
-    return;
-  }
-
-  event.preventDefault();
-  routeTo(href);
-}
-
 export type RouteComponent<P = Record<string, any>> = (
   props: P & {
     children?: JSX.Element;
@@ -67,6 +44,34 @@ interface RouterProps {
 export const Router: Component<RouterProps> = (props) => {
   const handleHistoryState = () => {
     startTransition(() => setUrlPath(location.pathname), props.onRouted);
+  };
+
+  const handleClick = (event: MouseEvent): void => {
+    if (
+      event.ctrlKey
+      || event.metaKey
+      || event.altKey
+      || event.shiftKey
+      || event.button
+      || event.defaultPrevented
+    ) {
+      return;
+    }
+
+    const link = (event.target as Element).closest('a');
+    const href = link && link.getAttribute('href');
+
+    if (
+      !href
+      || link.target
+      || link.host !== location.host
+      || href[0] === '#'
+    ) {
+      return;
+    }
+
+    event.preventDefault();
+    routeTo(href, false, props.onRouted);
   };
 
   addEventListener('popstate', handleHistoryState);
