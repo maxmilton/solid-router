@@ -70,14 +70,10 @@ export const Router: Component<RouterProps> = (props) => {
   };
 
   addEventListener('popstate', handleHistoryState);
-  addEventListener('replacestate', handleHistoryState);
-  addEventListener('pushstate', handleHistoryState);
   addEventListener('click', handleClick);
 
   onCleanup(() => {
     removeEventListener('popstate', handleHistoryState);
-    removeEventListener('replacestate', handleHistoryState);
-    removeEventListener('pushstate', handleHistoryState);
     removeEventListener('click', handleClick);
   });
 
