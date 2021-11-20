@@ -18,7 +18,6 @@
     "jsxImportSource": "solid-js",
 
     "declaration": true,
-    "declarationMap": true,
     "sourceMap": true,
 
     "strict": true,

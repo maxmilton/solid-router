@@ -6,17 +6,17 @@
 
 # @maxmilton/solid-router
 
-A light-weight History API based router for [Solid](https://github.com/solidui/solid) with the features you expect.
+A lightweight History API based router for [Solid](https://github.com/solidjs/solid) with the features you expect.
 
 **Features:**
 
 - <abbr title="Single Page App">SPA</abbr> routing using [browser History API](https://developer.mozilla.org/en-US/docs/Web/API/History_API)
 - Simple — single top level router, no nesting, no context, handles all `<a>` clicks
 - Light — [few dependencies](https://npm.anvaka.com/#/view/2d/%2540maxmilton%252Fsolid-router); under the hood it's mostly an abstraction on top of Solid's built-in Switch and Match components + a little handling logic
-- Flexible path matching — static paths, parameters, optional parameters, wildcards, and optional fallback when no match
+- Flexible path matching — static paths, parameters, optional parameters, wildcards, and no match fallback
 - URL search query params parsing
 
-> Note: This package is not designed to work with SSR or DOM-less pre-rendering. If you need a universal solution use [solid-app-router](https://github.com/solidui/solid-app-router) instead.
+> Note: This package is not designed to work with SSR or DOM-less pre-rendering. If you need a universal solution use [solid-app-router](https://github.com/solidjs/solid-app-router) instead.
 
 ## Installation
 

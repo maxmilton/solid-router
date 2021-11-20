@@ -1,15 +1,14 @@
 {
   "name": "@maxmilton/solid-router",
   "version": "0.1.0",
-  "description": "A light-weight History API based router for Solid",
+  "description": "A lightweight History API based router for Solid",
   "repository": "maxmilton/solid-router",
   "author": "Max Milton <max@happycode.ltd>",
   "license": "MIT",
   "main": "dist/index.jsx",
   "types": "dist/index.d.ts",
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "scripts": {
     "build": "pnpm run prebuild && tsc",
@@ -60,8 +59,5 @@
     "solid-js": "1.2.5",
     "solid-testing-library": "0.2.1",
     "typescript": "4.5.2"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
+  }
 }
