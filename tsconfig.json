@@ -37,7 +37,7 @@
     "**/dist",
     "**/node_modules",
     "coverage",
-    "jest.resolver.js",
+    "jest-resolver.js",
     "test"
   ]
 }
