@@ -1,5 +1,6 @@
 const OFF = 0;
 const WARN = 1;
+const ERROR = 2;
 
 // eslint-disable-next-line max-len
 // /** @type {import('eslint').Linter.Config & { parserOptions: import('@typescript-eslint/types').ParserOptions }} */
@@ -29,6 +30,7 @@ module.exports = {
     },
   },
   rules: {
+    '@typescript-eslint/explicit-module-boundary-types': ERROR,
     // used safely in this project
     '@typescript-eslint/no-non-null-assertion': OFF,
     'no-plusplus': OFF,
