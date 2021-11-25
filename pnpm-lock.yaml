@@ -16,7 +16,7 @@ specifiers:
   eslint-config-airbnb-base: 15.0.0
   eslint-config-airbnb-typescript: 16.0.0
   eslint-plugin-import: 2.25.3
-  eslint-plugin-jest: 25.2.4
+  eslint-plugin-jest: 25.3.0
   eslint-plugin-unicorn: 38.0.1
   get-port: 6.0.0
   jest: 27.3.1
@@ -54,7 +54,7 @@ devDependencies:
   eslint-config-airbnb-base: 15.0.0_a32f4f7b9ceb1e357b5ea9f682f0210a
   eslint-config-airbnb-typescript: 16.0.0_069bfbc98d3cac76be829d6acfcc8e7e
   eslint-plugin-import: 2.25.3_eslint@8.3.0
-  eslint-plugin-jest: 25.2.4_4e52e098c69dc02e5d836ed593524821
+  eslint-plugin-jest: 25.3.0_4e52e098c69dc02e5d836ed593524821
   eslint-plugin-unicorn: 38.0.1_eslint@8.3.0
   get-port: 6.0.0
   jest: 27.3.1
@@ -1870,8 +1870,8 @@ packages:
       tsconfig-paths: 3.11.0
     dev: true
 
-  /eslint-plugin-jest/25.2.4_4e52e098c69dc02e5d836ed593524821:
-    resolution: {integrity: sha512-HRyinpgmEdkVr7pNPaYPHCoGqEzpgk79X8pg/xCeoAdurbyQjntJQ4pTzHl7BiVEBlam/F1Qsn+Dk0HtJO7Aaw==}
+  /eslint-plugin-jest/25.3.0_4e52e098c69dc02e5d836ed593524821:
+    resolution: {integrity: sha512-79WQtuBsTN1S8Y9+7euBYwxIOia/k7ykkl9OCBHL3xuww5ecursHy/D8GCIlvzHVWv85gOkS5Kv6Sh7RxOgK1Q==}
     engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
     peerDependencies:
       '@typescript-eslint/eslint-plugin': ^4.0.0 || ^5.0.0
