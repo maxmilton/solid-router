@@ -6,7 +6,7 @@ specifiers:
   '@babel/preset-typescript': 7.16.0
   '@rollup/plugin-babel': 5.3.0
   '@rollup/plugin-node-resolve': 13.0.6
-  '@testing-library/jest-dom': 5.15.1
+  '@testing-library/jest-dom': 5.16.1
   '@types/jest': 27.0.3
   '@types/node': 16.11.12
   '@typescript-eslint/eslint-plugin': 5.5.0
@@ -44,7 +44,7 @@ devDependencies:
   '@babel/preset-typescript': 7.16.0_@babel+core@7.16.0
   '@rollup/plugin-babel': 5.3.0_@babel+core@7.16.0+rollup@2.60.2
   '@rollup/plugin-node-resolve': 13.0.6_rollup@2.60.2
-  '@testing-library/jest-dom': 5.15.1
+  '@testing-library/jest-dom': 5.16.1
   '@types/jest': 27.0.3
   '@types/node': 16.11.12
   '@typescript-eslint/eslint-plugin': 5.5.0_7dce1c1998d507f579fc8c88aa3ea163
@@ -864,13 +864,13 @@ packages:
       pretty-format: 26.6.2
     dev: true
 
-  /@testing-library/jest-dom/5.15.1:
-    resolution: {integrity: sha512-kmj8opVDRE1E4GXyLlESsQthCXK7An28dFWxhiMwD7ZUI7ZxA6sjdJRxLerD9Jd8cHX4BDc1jzXaaZKqzlUkvg==}
+  /@testing-library/jest-dom/5.16.1:
+    resolution: {integrity: sha512-ajUJdfDIuTCadB79ukO+0l8O+QwN0LiSxDaYUTI4LndbbUsGi6rWU1SCexXzBA2NSjlVB9/vbkasQIL3tmPBjw==}
     engines: {node: '>=8', npm: '>=6', yarn: '>=1'}
     dependencies:
       '@babel/runtime': 7.16.3
       '@types/testing-library__jest-dom': 5.14.2
-      aria-query: 4.2.2
+      aria-query: 5.0.0
       chalk: 3.0.0
       css: 3.0.0
       css.escape: 1.5.1
@@ -1230,6 +1230,11 @@ packages:
     dependencies:
       '@babel/runtime': 7.16.3
       '@babel/runtime-corejs3': 7.16.3
+    dev: true
+
+  /aria-query/5.0.0:
+    resolution: {integrity: sha512-V+SM7AbUwJ+EBnB8+DXs0hPZHO0W6pqBcc0dW90OwtVG02PswOu/teuARoLQjdDOH+t9pJgGnW5/Qmouf3gPJg==}
+    engines: {node: '>=6.0'}
     dev: true
 
   /array-includes/3.1.4:
