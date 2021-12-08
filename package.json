@@ -51,7 +51,7 @@
     "jest-resolve": "27.4.2",
     "kleur": "4.1.4",
     "playwright-chromium": "1.17.1",
-    "prettier": "2.5.0",
+    "prettier": "2.5.1",
     "prettier-plugin-pkg": "0.11.1",
     "prettier-plugin-sh": "0.8.1",
     "rollup": "2.60.2",
