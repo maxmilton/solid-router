@@ -58,6 +58,6 @@
     "sirv": "1.0.19",
     "solid-js": "1.2.5",
     "solid-testing-library": "0.2.1",
-    "typescript": "4.5.2"
+    "typescript": "4.5.4"
   }
 }
