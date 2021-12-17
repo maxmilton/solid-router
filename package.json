@@ -54,7 +54,7 @@
     "prettier": "2.5.1",
     "prettier-plugin-pkg": "0.11.1",
     "prettier-plugin-sh": "0.8.1",
-    "rollup": "2.60.2",
+    "rollup": "2.61.1",
     "sirv": "1.0.19",
     "solid-js": "1.2.5",
     "solid-testing-library": "0.2.1",
