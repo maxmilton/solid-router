@@ -17,7 +17,7 @@ specifiers:
   eslint-config-airbnb-typescript: 16.1.0
   eslint-plugin-import: 2.25.3
   eslint-plugin-jest: 25.3.2
-  eslint-plugin-unicorn: 39.0.0
+  eslint-plugin-unicorn: 40.0.0
   get-port: 6.0.0
   jest: 27.4.5
   jest-resolve: 27.4.5
@@ -55,7 +55,7 @@ devDependencies:
   eslint-config-airbnb-typescript: 16.1.0_efa150d1ccbc692b0981c6e3a771139c
   eslint-plugin-import: 2.25.3_eslint@8.6.0
   eslint-plugin-jest: 25.3.2_9e2b47fbc938d582ebd6ede2fd4c78bb
-  eslint-plugin-unicorn: 39.0.0_eslint@8.6.0
+  eslint-plugin-unicorn: 40.0.0_eslint@8.6.0
   get-port: 6.0.0
   jest: 27.4.5
   jest-resolve: 27.4.5
@@ -105,20 +105,6 @@ packages:
       source-map: 0.5.7
     transitivePeerDependencies:
       - supports-color
-    dev: true
-
-  /@babel/eslint-parser/7.16.5_@babel+core@7.16.5+eslint@8.6.0:
-    resolution: {integrity: sha512-mUqYa46lgWqHKQ33Q6LNCGp/wPR3eqOYTUixHFsfrSQqRxH0+WOzca75iEjFr5RDGH1dDz622LaHhLOzOuQRUA==}
-    engines: {node: ^10.13.0 || ^12.13.0 || >=14.0.0}
-    peerDependencies:
-      '@babel/core': '>=7.11.0'
-      eslint: ^7.5.0 || ^8.0.0
-    dependencies:
-      '@babel/core': 7.16.5
-      eslint: 8.6.0
-      eslint-scope: 5.1.1
-      eslint-visitor-keys: 2.1.0
-      semver: 6.3.0
     dev: true
 
   /@babel/generator/7.16.7:
@@ -1987,8 +1973,8 @@ packages:
       - typescript
     dev: true
 
-  /eslint-plugin-unicorn/39.0.0_eslint@8.6.0:
-    resolution: {integrity: sha512-fd5RK2FtYjGcIx3wra7csIE/wkkmBo22T1gZtRTsLr1Mb+KsFKJ+JOdSqhHXQUrI/JTs/Mon64cEYzTgSCbltw==}
+  /eslint-plugin-unicorn/40.0.0_eslint@8.6.0:
+    resolution: {integrity: sha512-5GRXISfBk8jMmYk1eeNDw8zSRnWTxBjWkzx2Prre6E2/yLu2twozZ3EomLWCBu9nWms/ZE361BItyMQwfnG1qA==}
     engines: {node: '>=12'}
     peerDependencies:
       eslint: '>=7.32.0'
@@ -1997,7 +1983,6 @@ packages:
       ci-info: 3.3.0
       clean-regexp: 1.0.0
       eslint: 8.6.0
-      eslint-template-visitor: 2.3.2_eslint@8.6.0
       eslint-utils: 3.0.0_eslint@8.6.0
       esquery: 1.4.0
       indent-string: 4.0.0
@@ -2009,8 +1994,6 @@ packages:
       safe-regex: 2.1.1
       semver: 7.3.5
       strip-indent: 3.0.0
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /eslint-scope/5.1.1:
@@ -2027,21 +2010,6 @@ packages:
     dependencies:
       esrecurse: 4.3.0
       estraverse: 5.3.0
-    dev: true
-
-  /eslint-template-visitor/2.3.2_eslint@8.6.0:
-    resolution: {integrity: sha512-3ydhqFpuV7x1M9EK52BPNj6V0Kwu0KKkcIAfpUhwHbR8ocRln/oUHgfxQupY8O1h4Qv/POHDumb/BwwNfxbtnA==}
-    peerDependencies:
-      eslint: '>=7.0.0'
-    dependencies:
-      '@babel/core': 7.16.5
-      '@babel/eslint-parser': 7.16.5_@babel+core@7.16.5+eslint@8.6.0
-      eslint: 8.6.0
-      eslint-visitor-keys: 2.1.0
-      esquery: 1.4.0
-      multimap: 1.1.0
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /eslint-utils/3.0.0_eslint@8.6.0:
@@ -3479,10 +3447,6 @@ packages:
 
   /ms/2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
-    dev: true
-
-  /multimap/1.1.0:
-    resolution: {integrity: sha512-0ZIR9PasPxGXmRsEF8jsDzndzHDj7tIav+JUmvIFB/WHswliFnquxECT/De7GR4yg99ky/NlRKJT82G1y271bw==}
     dev: true
 
   /mvdan-sh/0.5.0:
