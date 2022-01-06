@@ -10,15 +10,11 @@ import {
 } from 'solid-js';
 import { Match, Switch } from 'solid-js/web';
 
-const [urlPath, setUrlPath] = createSignal(location.pathname);
+const [urlPath, setUrlPath] = createSignal(window.location.pathname);
 
-export function routeTo(
-  url: string,
-  replace?: boolean,
-  callback?: () => void,
-): void {
-  history[`${replace ? 'replace' : 'push'}State` as const]({}, '', url);
-  startTransition(() => setUrlPath(/[^#?]*/.exec(url)![0]), callback);
+export function routeTo(url: string, replace?: boolean): Promise<void> {
+  window.history[`${replace ? 'replace' : 'push'}State` as const]({}, '', url);
+  return startTransition(() => setUrlPath(/[^#?]*/.exec(url)![0]));
 }
 
 export type RouteComponent<P = Record<string, any>> = (
@@ -43,7 +39,11 @@ interface RouterProps {
 
 export const Router: Component<RouterProps> = (props) => {
   const handleHistoryState = () => {
-    startTransition(() => setUrlPath(location.pathname), props.onRouted);
+    startTransition(() => setUrlPath(window.location.pathname))
+      .then(props.onRouted)
+      .catch((error) => {
+        throw error;
+      });
   };
 
   const handleClick = (event: MouseEvent): void => {
@@ -64,22 +64,26 @@ export const Router: Component<RouterProps> = (props) => {
     if (
       !href
       || link.target
-      || link.host !== location.host
+      || link.host !== window.location.host
       || href[0] === '#'
     ) {
       return;
     }
 
     event.preventDefault();
-    routeTo(href, false, props.onRouted);
+    routeTo(href, false)
+      .then(props.onRouted)
+      .catch((error) => {
+        throw error;
+      });
   };
 
-  addEventListener('popstate', handleHistoryState);
-  addEventListener('click', handleClick);
+  window.addEventListener('popstate', handleHistoryState);
+  window.addEventListener('click', handleClick);
 
   onCleanup(() => {
-    removeEventListener('popstate', handleHistoryState);
-    removeEventListener('click', handleClick);
+    window.removeEventListener('popstate', handleHistoryState);
+    window.removeEventListener('click', handleClick);
   });
 
   return (
@@ -90,7 +94,7 @@ export const Router: Component<RouterProps> = (props) => {
         return (
           <Match when={pattern.exec(urlPath())}>
             {(matches) => {
-              const search = location.search.slice(1);
+              const search = window.location.search.slice(1);
               const params: Record<string, string | null> = {};
               let index = 0;
 
