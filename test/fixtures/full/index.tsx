@@ -16,7 +16,7 @@ const routes: Route[] = [
   { path: '/', component: Home },
   {
     path: '/redirect',
-    component: () => routeTo('/page1/a/b?c=d#e', true) as JSX.Element,
+    component: () => routeTo('/page1/a/b?c=d#e', true) as unknown as JSX.Element,
   },
 ];
 

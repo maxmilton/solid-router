@@ -9,15 +9,6 @@ const abcRoutes = [
   { path: '/c', component: () => <>c</> },
 ];
 
-// Starting from solid v1.1.6, transitions use queueMicrotask so it's now
-// necessary to wait a tick before any changes are reflected
-// @see https://github.com/solidjs/solid/commit/be5ac4f204871739b2399a50852f454353194841
-function routeToAsync(url: string, replace?: boolean) {
-  return new Promise((resolve) => {
-    routeTo(url, replace, () => resolve(1));
-  });
-}
-
 afterEach(cleanup);
 
 test('throws without required props', () => {
@@ -41,7 +32,7 @@ test('renders matching route', async () => {
   // function but note that currently there's a global createSignal with a
   // location.pathname value which means the signal is created when the file
   // is first imported!
-  await routeToAsync('/c');
+  await routeTo('/c');
   const rendered = render(() => <Router routes={abcRoutes} />);
   expect(rendered.container.textContent).toBe('c');
 });
