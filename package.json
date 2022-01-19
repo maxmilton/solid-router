@@ -45,7 +45,7 @@
     "eslint-config-airbnb-typescript": "16.1.0",
     "eslint-plugin-import": "2.25.4",
     "eslint-plugin-jest": "25.3.4",
-    "eslint-plugin-unicorn": "40.0.0",
+    "eslint-plugin-unicorn": "40.1.0",
     "get-port": "6.0.0",
     "jest": "27.4.7",
     "jest-resolve": "27.4.6",
