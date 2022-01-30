@@ -79,13 +79,6 @@ import { NavLink, Route, Router, routeTo } from '@maxmilton/solid-router';
 import { Component, JSX, lazy } from 'solid-js';
 import { ErrorBoundary, render, Suspense } from 'solid-js/web';
 
-// Scroll to top on route change
-const oldHistoryPush = window.history.pushState;
-window.history.pushState = function () {
-  oldHistoryPush.apply(this, arguments);
-  window.scrollTo(0, 0);
-};
-
 interface ErrorPageProps {
   code?: number;
   message?: string;
@@ -150,6 +143,7 @@ const App = (): JSX.Element => (
             error.code = 404;
             throw error;
           }}
+          // Scroll to top on route change
           onRouted={() => window.scrollTo(0, 0)}
         />
       </Suspense>
