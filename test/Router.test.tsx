@@ -82,9 +82,7 @@ test.todo('does not handle click with ctrl key');
 test.todo('does not handle click with meta key');
 test.todo('does not handle click with alt key');
 test.todo('does not handle click with shift key');
-test.todo(
-  'does not handle click when mouse button pressed is not the main button',
-);
+test.todo('does not handle click when mouse button pressed is not the main button');
 test.todo('does not handle click when default already prevented');
 test.todo('does not handle click when not on or inside a <a>');
 test.todo('does not handle click when <a> has target attribute');
