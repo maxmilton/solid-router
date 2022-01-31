@@ -14,7 +14,7 @@ A lightweight History API based router for [Solid](https://github.com/solidjs/so
 - Simple — single top level router, no nesting, no context, handles all `<a>` clicks
 - Light — [few dependencies](https://npm.anvaka.com/#/view/2d/%2540maxmilton%252Fsolid-router); under the hood it's mostly an abstraction on top of Solid's built-in Switch and Match components + a little handling logic
 - Flexible path matching — static paths, parameters, optional parameters, wildcards, and no match fallback
-- URL search query params parsing
+- Optional URL search query params parsing
 
 > Note: This package is not designed to work with SSR or DOM-less pre-rendering. If you need a universal solution use [solid-app-router](https://github.com/solidjs/solid-app-router) instead.
 
@@ -32,7 +32,7 @@ yarn add @maxmilton/solid-router
 
 ## Usage
 
-Simple + JavaScript:
+### Simple + JavaScript
 
 ```jsx
 import { NavLink, Router, routeTo } from '@maxmilton/solid-router';
@@ -72,11 +72,17 @@ const App = () => (
 render(App, document.body);
 ```
 
-All features + TypeScript:
+### All features + TypeScript
 
 ```tsx
-import { NavLink, Route, Router, routeTo } from '@maxmilton/solid-router';
-import { Component, JSX, lazy } from 'solid-js';
+import {
+  NavLink,
+  Router,
+  useURLParams,
+  routeTo,
+  type Route,
+} from '@maxmilton/solid-router';
+import { lazy, type Component, type JSX } from 'solid-js';
 import { ErrorBoundary, render, Suspense } from 'solid-js/web';
 
 interface ErrorPageProps {
@@ -108,8 +114,18 @@ const routes: Route[] = [
   {
     path: '/xx/:x1/:x2?',
     component: (props) => {
-      console.log('PARAMS', props.params);
-      console.log('QUERY', props.query);
+      console.log(props.params); // -> { x1: "...", x2: ... }
+
+      const [urlParams, setUrlParams] = useURLParams();
+      console.log(urlParams()); // -> { ... }
+
+      // Add new URL params
+      setUrlParams({ ...urlParams(), name: 'example', x: [1, 2] }); // -> location.search == "?name=example&x=1&x=2"
+
+      // Delete URL params (set to `undefined`)
+      setUrlParams({ ...urlParams(), x: undefined }); // -> location.search == "?name=example"
+
+      // Regular links are still handled by the router
       return <a href="/">I'm still handled correctly!</a>;
     },
   },
@@ -161,9 +177,21 @@ TODO: Write me
 <!-- [regexparam](https://github.com/lukeed/regexparam) -->
 <!-- [qss](https://github.com/lukeed/qss) -->
 
+## Browser support
+
+No particularly modern JavaScript APIs are used so browser support should be excellent. However, keep in mind [Solid's official browser support](https://github.com/solidjs/solid#browser-support) only targets modern evergreen browsers.
+
+## Bugs
+
+Report any bugs you encounter on the [GitHub issue tracker](https://github.com/maxmilton/new-tab/issues).
+
+## Changelog
+
+See [releases on GitHub](https://github.com/maxmilton/solid-router/releases).
+
 ## License
 
-`@maxmilton/solid-router` is an MIT licensed open source project. See [LICENSE](https://github.com/maxmilton/solid-router/blob/master/LICENSE).
+MIT license. See [LICENSE](https://github.com/maxmilton/solid-router/blob/master/LICENSE).
 
 ---
 
