@@ -1,19 +1,20 @@
-import { decode } from 'qss';
+import { decode, encode } from 'qss';
 import { parse } from 'regexparam';
 import {
-  Component,
   createSignal,
-  JSX,
   onCleanup,
   splitProps,
   startTransition,
+  type Accessor,
+  type Component,
+  type JSX,
 } from 'solid-js';
 import { Match, Switch } from 'solid-js/web';
 
 const [urlPath, setUrlPath] = createSignal(window.location.pathname);
 
 export function routeTo(url: string, replace?: boolean): Promise<void> {
-  window.history[`${replace ? 'replace' : 'push'}State` as const]({}, '', url);
+  window.history[`${replace ? 'replace' : 'push'}State`](null, '', url);
   return startTransition(() => setUrlPath(/[^#?]*/.exec(url)![0]));
 }
 
@@ -21,7 +22,6 @@ export type RouteComponent<P = Record<string, any>> = (
   props: P & {
     children?: JSX.Element;
     readonly params: Record<string, string | null>;
-    readonly query: Partial<Record<string, any>>;
   },
 ) => JSX.Element;
 
@@ -94,7 +94,6 @@ export const Router: Component<RouterProps> = (props) => {
         return (
           <Match when={pattern.exec(urlPath())}>
             {(matches) => {
-              const search = window.location.search.slice(1);
               const params: Record<string, string | null> = {};
               let index = 0;
 
@@ -103,12 +102,7 @@ export const Router: Component<RouterProps> = (props) => {
               }
 
               // FIXME: Lazy loaded components do not trigger <Suspense>
-              return (
-                <route.component
-                  params={params}
-                  query={search ? decode(search) : {}}
-                />
-              );
+              return <route.component params={params} />;
             }}
           </Match>
         );
@@ -154,4 +148,36 @@ export const NavLink: Component<NavLinkProps> = (props) => {
       }
     />
   );
+};
+
+export type URLParams = Record<
+string,
+string | number | boolean | (string | number | boolean)[] | undefined
+>;
+
+/**
+ * The current URL search query params parsed into a reactive object.
+ *
+ * When updating the object via the setter function, the URL will be updated
+ * as well.
+ *
+ * Note that the object is _not live_, meaning that if the URL query params
+ * change externally (e.g., with `history.replaceState`), the object will not
+ * update automatically.
+ */
+export const useURLParams = (): [
+  Accessor<URLParams>,
+  /**
+   * @param params - The new URL search query params to set. Properties set as
+   * `undefined` will not be included in the URL.
+   */
+  (params: URLParams) => void,
+] => {
+  const [params, set] = createSignal(decode(window.location.search.slice(1)));
+
+  const setParams = (urlParams: URLParams) => {
+    window.history.replaceState(null, '', encode(set(urlParams), '?'));
+  };
+
+  return [params, setParams];
 };

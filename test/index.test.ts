@@ -4,31 +4,26 @@
 import * as allExports from '../src/index';
 
 const publicExports = [
-  ['routeTo', 'function'],
-  ['Router', 'function'],
-  ['NavLink', 'function'],
+  ['routeTo', 'Function'],
+  ['Router', 'Function'],
+  ['NavLink', 'Function'],
+  ['useURLParams', 'Function'],
 ] as const;
 
 for (const [name, type] of publicExports) {
   test(`exports public "${name}" ${type}`, () => {
     expect.assertions(2);
-    expect(name in allExports).toBe(true);
-    expect(typeof allExports[name]).toBe(type);
+    expect(allExports).toHaveProperty(name);
+    expect(Object.prototype.toString.call(allExports[name])).toBe(`[object ${type}]`);
   });
 }
 
 test('does not export any private internals', () => {
-  expect.assertions(2);
-  const allPublicExportNames = [
-    ...publicExports.map((x) => x[0]),
-    'default', // synthetic default created by TS at test runtime
-  ];
-  const remainingExports = Object.keys(allExports);
-  expect(remainingExports.length >= publicExports.length).toBe(true);
-  for (const name of allPublicExportNames) {
-    remainingExports.splice(remainingExports.indexOf(name), 1);
-  }
-  expect(remainingExports).toHaveLength(0);
+  expect.assertions(5);
+  const allPublicExportNames = publicExports.map((x) => x[0]);
+  expect(allPublicExportNames).toHaveLength(Object.keys(allExports).length);
+  // eslint-disable-next-line guard-for-in
+  for (const name in allExports) expect(allPublicExportNames).toContain(name);
 });
 
 test('has no default export', () => {
