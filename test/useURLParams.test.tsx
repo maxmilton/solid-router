@@ -15,7 +15,7 @@ function setURL(url: string) {
   };
 }
 
-// TODO: Break up tests + more and better tests
+// TODO: Break up tests + more tests + better test names
 
 test('read works as expected', () => {
   expect.assertions(3);
@@ -44,21 +44,35 @@ test('read works as expected', () => {
   reset3();
 });
 
-test('set works as expected', () => {
+test('set works when passed an object', () => {
   expect.assertions(10);
   const [read, set] = useURLParams();
-  expect(window.location.search).toBe('');
   expect(read()).toEqual({});
+  expect(window.location.search).toBe('');
   set({ a: 1 });
-  expect(window.location.search).toBe('?a=1');
   expect(read()).toEqual({ a: 1 });
+  expect(window.location.search).toBe('?a=1');
   set({ ...read(), b: 2 });
-  expect(window.location.search).toBe('?a=1&b=2');
   expect(read()).toEqual({ a: 1, b: 2 });
+  expect(window.location.search).toBe('?a=1&b=2');
   set({ ...read(), a: undefined });
-  expect(window.location.search).toBe('?b=2');
   expect(read()).toEqual({ a: undefined, b: 2 });
+  expect(window.location.search).toBe('?b=2');
   set({});
-  expect(window.location.search).toBe('');
   expect(read()).toEqual({});
+  expect(window.location.search).toBe('');
+});
+
+test('set works when passed a function', () => {
+  expect.assertions(5);
+  const [read, set] = useURLParams();
+  expect(read()).toEqual({});
+  set(() => ({ a: 1 }));
+  set((prev) => ({ ...prev, b: 1 }));
+  set((prev) => ({ ...prev, c: 1 }));
+  expect(read()).toEqual({ a: 1, b: 1, c: 1 });
+  expect(window.location.search).toBe('?a=1&b=1&c=1');
+  set((prev) => ({ ...prev, b: undefined }));
+  expect(read()).toEqual({ a: 1, c: 1 });
+  expect(window.location.search).toBe('?a=1&c=1');
 });

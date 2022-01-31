@@ -155,6 +155,8 @@ string,
 string | number | boolean | (string | number | boolean)[] | undefined
 >;
 
+// TODO: Improve types so values flow through
+
 /**
  * The current URL search query params parsed into a reactive object.
  *
