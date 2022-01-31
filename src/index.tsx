@@ -171,11 +171,13 @@ export const useURLParams = (): [
    * @param params - The new URL search query params to set. Properties set as
    * `undefined` will not be included in the URL.
    */
-  (params: URLParams) => void,
+  (params: URLParams | ((prev: URLParams) => URLParams)) => void,
 ] => {
   const [params, set] = createSignal(decode(window.location.search.slice(1)));
 
-  const setParams = (urlParams: URLParams) => {
+  const setParams = (
+    urlParams: ((prev: URLParams) => URLParams) | URLParams,
+  ) => {
     window.history.replaceState(null, '', encode(set(urlParams), '?'));
   };
 
