@@ -18,7 +18,7 @@ specifiers:
   eslint-plugin-import: 2.25.4
   eslint-plugin-jest: 26.1.1
   eslint-plugin-unicorn: 41.0.0
-  get-port: 6.0.0
+  get-port: 6.1.1
   jest: 27.5.1
   jest-resolve: 27.5.1
   kleur: 4.1.4
@@ -56,7 +56,7 @@ devDependencies:
   eslint-plugin-import: 2.25.4_eslint@8.9.0
   eslint-plugin-jest: 26.1.1_3752e6ed166ea4b70c84280a6f65effd
   eslint-plugin-unicorn: 41.0.0_eslint@8.9.0
-  get-port: 6.0.0
+  get-port: 6.1.1
   jest: 27.5.1
   jest-resolve: 27.5.1
   kleur: 4.1.4
@@ -2337,8 +2337,8 @@ packages:
     engines: {node: '>=8.0.0'}
     dev: true
 
-  /get-port/6.0.0:
-    resolution: {integrity: sha512-qSVkVF6Eq1GdL/cBNiFuP4nUHMF7OEMTqEjC6alR2N90u8BFOoO0PFhNTX2QtAUoGrz8NnrSWj85TZ8YXZ6LOA==}
+  /get-port/6.1.1:
+    resolution: {integrity: sha512-RQOsDPSd2PcoLwakY1dwEtLiAbTR7IfmnxsKswfcHEfRKKbhWAG2R5Qo7C8ga6Ne4Mq4lFbogXfDGNfqFxwAaw==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dev: true
 
