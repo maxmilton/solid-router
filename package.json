@@ -29,8 +29,8 @@
     "regexparam": "^2.0.0"
   },
   "devDependencies": {
-    "@babel/core": "7.17.5",
-    "@babel/plugin-transform-modules-commonjs": "7.16.8",
+    "@babel/core": "7.17.9",
+    "@babel/plugin-transform-modules-commonjs": "7.17.9",
     "@babel/preset-typescript": "7.16.7",
     "@rollup/plugin-babel": "5.3.1",
     "@rollup/plugin-node-resolve": "13.1.3",
