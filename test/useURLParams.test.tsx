@@ -45,13 +45,15 @@ test('read works as expected', () => {
 });
 
 test('set works when passed an object', () => {
-  expect.assertions(10);
+  expect.assertions(11);
   const [read, set] = useURLParams();
   expect(read()).toEqual({});
   expect(window.location.search).toBe('');
   set({ a: 1 });
   expect(read()).toEqual({ a: 1 });
   expect(window.location.search).toBe('?a=1');
+  set({ ...read(), b: 1 });
+  expect(read()).toEqual({ a: 1, b: 1 });
   set({ ...read(), b: 2 });
   expect(read()).toEqual({ a: 1, b: 2 });
   expect(window.location.search).toBe('?a=1&b=2');
@@ -64,15 +66,17 @@ test('set works when passed an object', () => {
 });
 
 test('set works when passed a function', () => {
-  expect.assertions(5);
-  const [read, set] = useURLParams();
+  expect.assertions(6);
+  const [read, set] = useURLParams<{ a: number; b: number; c: number }>();
   expect(read()).toEqual({});
   set(() => ({ a: 1 }));
   set((prev) => ({ ...prev, b: 1 }));
-  set((prev) => ({ ...prev, c: 1 }));
-  expect(read()).toEqual({ a: 1, b: 1, c: 1 });
-  expect(window.location.search).toBe('?a=1&b=1&c=1');
+  expect(read()).toEqual({ a: 1, b: 1 });
+  set((prev) => ({ ...prev, b: 2 }));
+  set((prev) => ({ ...prev, c: 3 }));
+  expect(read()).toEqual({ a: 1, b: 2, c: 3 });
+  expect(window.location.search).toBe('?a=1&b=2&c=3');
   set((prev) => ({ ...prev, b: undefined }));
-  expect(read()).toEqual({ a: 1, c: 1 });
-  expect(window.location.search).toBe('?a=1&c=1');
+  expect(read()).toEqual({ a: 1, c: 3 });
+  expect(window.location.search).toBe('?a=1&c=3');
 });

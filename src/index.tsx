@@ -155,7 +155,19 @@ string,
 string | number | boolean | (string | number | boolean)[] | undefined
 >;
 
-// TODO: Improve types so values flow through
+type Optional<T> = {
+  [P in keyof T]?: T[P] | undefined;
+};
+
+type Setter<T> =
+  /**
+   * @param params - The new URL search query params to set. Properties set as
+   * `undefined` will be removed from the URL.
+   */
+  <U extends Optional<T>>(
+    // eslint-disable-next-line @typescript-eslint/ban-types
+    params: Exclude<U, Function> | ((prev: Partial<T>) => U),
+  ) => void;
 
 /**
  * The current URL search query params parsed into a reactive object.
@@ -167,21 +179,17 @@ string | number | boolean | (string | number | boolean)[] | undefined
  * change externally (e.g., with `history.replaceState`), the object will not
  * update automatically.
  */
-export const useURLParams = (): [
-  Accessor<URLParams>,
-  /**
-   * @param params - The new URL search query params to set. Properties set as
-   * `undefined` will not be included in the URL.
-   */
-  (params: URLParams | ((prev: URLParams) => URLParams)) => void,
+export const useURLParams = <T extends URLParams>(): [
+  Accessor<Partial<T>>,
+  Setter<T>,
 ] => {
-  const [params, set] = createSignal(decode(window.location.search.slice(1)));
+  const [getParams, set] = createSignal<Partial<T>>(
+    decode(window.location.search.slice(1)),
+  );
 
-  const setParams = (
-    urlParams: ((prev: URLParams) => URLParams) | URLParams,
-  ) => {
-    window.history.replaceState(null, '', encode(set(urlParams), '?'));
+  const setParams: Setter<T> = (newParams) => {
+    window.history.replaceState(null, '', encode(set(newParams), '?'));
   };
 
-  return [params, setParams];
+  return [getParams, setParams];
 };
