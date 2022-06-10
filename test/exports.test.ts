@@ -23,12 +23,13 @@ test('does not export any private internals', () => {
   const allPublicExportNames = publicExports.map((x) => x[0]);
   expect(allPublicExportNames).toHaveLength(Object.keys(allExports).length);
   // eslint-disable-next-line guard-for-in
-  for (const name in allExports) expect(allPublicExportNames).toContain(name);
+  for (const name in allExports) {
+    expect(allPublicExportNames).toContain(name);
+  }
 });
 
 test('has no default export', () => {
   expect.assertions(3);
-  // XXX: `allExports.default` is a synthetic default created by TS at test runtime
   // @ts-expect-error - yes default does not exist
   expect(allExports.default).toBeUndefined();
   expect(typeof require('../dist/index.jsx')).toBe('object'); // eslint-disable-line
