@@ -2,6 +2,7 @@ const OFF = 0;
 const WARN = 1;
 const ERROR = 2;
 
+// TODO: Types
 // eslint-disable-next-line max-len
 // /** @type {import('eslint').Linter.Config & { parserOptions: import('@typescript-eslint/types').ParserOptions }} */
 module.exports = {
@@ -9,8 +10,8 @@ module.exports = {
   reportUnusedDisableDirectives: true,
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    extraFileExtensions: ['.mjs', '.cjs'],
     project: ['./test/tsconfig.json'],
+    tsconfigRootDir: __dirname,
   },
   extends: [
     'eslint:recommended',
@@ -21,10 +22,10 @@ module.exports = {
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'plugin:unicorn/recommended',
   ],
-  // add .tsx to airbnb-typescript/base
   settings: {
     'import/resolver': {
       node: {
+        // add .tsx to airbnb-typescript/base
         extensions: ['.js', '.jsx', '.json', '.ts', '.tsx', '.d.ts'],
       },
     },
@@ -51,6 +52,7 @@ module.exports = {
       extends: ['plugin:jest/recommended', 'plugin:jest/style'],
       rules: {
         '@typescript-eslint/unbound-method': 'off', // replaced by jest/unbound-method
+        'import/no-extraneous-dependencies': OFF,
         'jest/unbound-method': 'error',
       },
     },
