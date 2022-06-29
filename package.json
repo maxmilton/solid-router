@@ -55,7 +55,7 @@
     "kleur": "4.1.4",
     "playwright-chromium": "1.22.2",
     "prettier": "2.7.1",
-    "prettier-plugin-pkg": "0.14.0",
+    "prettier-plugin-pkg": "0.14.1",
     "prettier-plugin-sh": "0.11.0",
     "rollup": "2.75.7",
     "sirv": "2.0.2",
