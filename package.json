@@ -52,7 +52,7 @@
     "jest": "28.1.1",
     "jest-environment-jsdom": "28.1.1",
     "jest-resolve": "28.1.1",
-    "kleur": "4.1.4",
+    "kleur": "4.1.5",
     "playwright-chromium": "1.22.2",
     "prettier": "2.7.1",
     "prettier-plugin-pkg": "0.14.1",
