@@ -11,7 +11,7 @@ specifiers:
   '@rollup/plugin-babel': 5.3.1
   '@rollup/plugin-node-resolve': 13.3.0
   '@types/babel__core': 7.1.19
-  '@types/jest': 28.1.3
+  '@types/jest': 28.1.4
   '@types/node': 18.0.0
   '@typescript-eslint/eslint-plugin': 5.30.5
   '@typescript-eslint/parser': 5.30.5
@@ -24,8 +24,8 @@ specifiers:
   eslint-plugin-security: 1.5.0
   eslint-plugin-unicorn: 42.0.0
   get-port: 6.1.2
-  jest: 28.1.1
-  jest-environment-jsdom: 28.1.1
+  jest: 28.1.2
+  jest-environment-jsdom: 28.1.2
   jest-resolve: 28.1.1
   kleur: 4.1.5
   playwright-chromium: 1.23.0
@@ -52,7 +52,7 @@ devDependencies:
   '@rollup/plugin-babel': 5.3.1_zzqvmqiktqmnpexyz2zwlicqam
   '@rollup/plugin-node-resolve': 13.3.0_rollup@2.75.7
   '@types/babel__core': 7.1.19
-  '@types/jest': 28.1.3
+  '@types/jest': 28.1.4
   '@types/node': 18.0.0
   '@typescript-eslint/eslint-plugin': 5.30.5_6zdoc3rn4mpiddqwhppni2mnnm
   '@typescript-eslint/parser': 5.30.5_4x5o4skxv6sl53vpwefgt23khm
@@ -61,12 +61,12 @@ devDependencies:
   eslint-config-airbnb-base: 15.0.0_q2xwze32dd33a2fc2qubwr4ie4
   eslint-config-airbnb-typescript: 17.0.0_2udmfovz45i65rsm2dczrbtkaa
   eslint-plugin-import: 2.26.0_iom7pm3yknyiblqpw2vvqvxs5i
-  eslint-plugin-jest: 26.5.3_wavyjrnhwz3eifrmdtxdskm6lq
+  eslint-plugin-jest: 26.5.3_cbxtyx3d4qwpnm7p4q4ovvhj5y
   eslint-plugin-security: 1.5.0
   eslint-plugin-unicorn: 42.0.0_eslint@8.19.0
   get-port: 6.1.2
-  jest: 28.1.1_@types+node@18.0.0
-  jest-environment-jsdom: 28.1.1
+  jest: 28.1.2_@types+node@18.0.0
+  jest-environment-jsdom: 28.1.2
   jest-resolve: 28.1.1
   kleur: 4.1.5
   playwright-chromium: 1.23.0
@@ -1006,8 +1006,8 @@ packages:
       '@types/istanbul-lib-report': 3.0.0
     dev: true
 
-  /@types/jest/28.1.3:
-    resolution: {integrity: sha512-Tsbjk8Y2hkBaY/gJsataeb4q9Mubw9EOz7+4RjPkzD5KjTvHHs7cpws22InaoXxAVAhF5HfFbzJjo6oKWqSZLw==}
+  /@types/jest/28.1.4:
+    resolution: {integrity: sha512-telv6G5N7zRJiLcI3Rs3o+ipZ28EnE+7EvF0pSrt2pZOMnAVI/f+6/LucDxOvcBcTeTL3JMF744BbVQAVBUQRA==}
     dependencies:
       jest-matcher-utils: 28.1.1
       pretty-format: 28.1.1
@@ -2005,7 +2005,7 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-plugin-jest/26.5.3_wavyjrnhwz3eifrmdtxdskm6lq:
+  /eslint-plugin-jest/26.5.3_cbxtyx3d4qwpnm7p4q4ovvhj5y:
     resolution: {integrity: sha512-sICclUqJQnR1bFRZGLN2jnSVsYOsmPYYnroGCIMVSvTS3y8XR3yjzy1EcTQmk6typ5pRgyIWzbjqxK6cZHEZuQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
@@ -2021,7 +2021,7 @@ packages:
       '@typescript-eslint/eslint-plugin': 5.30.5_6zdoc3rn4mpiddqwhppni2mnnm
       '@typescript-eslint/utils': 5.30.0_4x5o4skxv6sl53vpwefgt23khm
       eslint: 8.19.0
-      jest: 28.1.1_@types+node@18.0.0
+      jest: 28.1.2_@types+node@18.0.0
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -2880,8 +2880,8 @@ packages:
       pretty-format: 28.1.1
     dev: true
 
-  /jest-environment-jsdom/28.1.1:
-    resolution: {integrity: sha512-41ZvgSoPNcKG5q3LuuOcAczdBxRq9DbZkPe24okN6ZCmiZdAfFtPg3z+lOtsT1fM6OAERApKT+3m0MRDQH2zIA==}
+  /jest-environment-jsdom/28.1.2:
+    resolution: {integrity: sha512-Ujhx/xFZGVPuxAVpseQ7KqdBErenuWH3Io2HujkGOKMS2VWmpnTGYHzv+73p21QJ9yYQlJkeg06rTe1svV+u0g==}
     engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
     dependencies:
       '@jest/environment': 28.1.2
@@ -3155,8 +3155,8 @@ packages:
       supports-color: 8.1.1
     dev: true
 
-  /jest/28.1.1_@types+node@18.0.0:
-    resolution: {integrity: sha512-qw9YHBnjt6TCbIDMPMpJZqf9E12rh6869iZaN08/vpOGgHJSAaLLUn6H8W3IAEuy34Ls3rct064mZLETkxJ2XA==}
+  /jest/28.1.2_@types+node@18.0.0:
+    resolution: {integrity: sha512-Tuf05DwLeCh2cfWCQbcz9UxldoDyiR1E9Igaei5khjonKncYdc6LDfynKCEWozK0oLE3GD+xKAo2u8x/0s6GOg==}
     engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
     hasBin: true
     peerDependencies:
