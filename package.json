@@ -62,10 +62,5 @@
     "solid-js": "1.4.6",
     "solid-testing-library": "0.3.0",
     "typescript": "4.7.4"
-  },
-  "pnpm": {
-    "overrides": {
-      "source-map": "~0.8.0-beta.0"
-    }
   }
 }
