@@ -59,7 +59,7 @@
     "prettier-plugin-sh": "0.12.6",
     "rollup": "2.76.0",
     "sirv": "2.0.2",
-    "solid-js": "1.4.6",
+    "solid-js": "1.4.7",
     "solid-testing-library": "0.3.0",
     "typescript": "4.7.4"
   }
