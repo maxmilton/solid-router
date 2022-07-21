@@ -47,7 +47,7 @@
     "eslint-plugin-import": "2.26.0",
     "eslint-plugin-jest": "26.5.3",
     "eslint-plugin-security": "1.5.0",
-    "eslint-plugin-unicorn": "43.0.1",
+    "eslint-plugin-unicorn": "43.0.2",
     "get-port": "6.1.2",
     "jest": "28.1.2",
     "jest-environment-jsdom": "28.1.2",
