@@ -25,7 +25,7 @@ specifiers:
   jest-environment-jsdom: 28.1.3
   jest-resolve: 28.1.3
   kleur: 4.1.5
-  playwright-chromium: 1.23.4
+  playwright-chromium: 1.24.1
   prettier: 2.7.1
   prettier-plugin-pkg: 0.16.0
   prettier-plugin-sh: 0.12.6
@@ -66,7 +66,7 @@ devDependencies:
   jest-environment-jsdom: 28.1.3
   jest-resolve: 28.1.3
   kleur: 4.1.5
-  playwright-chromium: 1.23.4
+  playwright-chromium: 1.24.1
   prettier: 2.7.1
   prettier-plugin-pkg: 0.16.0_prettier@2.7.1
   prettier-plugin-sh: 0.12.6_prettier@2.7.1
@@ -3711,17 +3711,17 @@ packages:
       find-up: 4.1.0
     dev: true
 
-  /playwright-chromium/1.23.4:
-    resolution: {integrity: sha512-aqiOpX76107knxZqydyd0snNHiU6wgGwmQUFA8MEbG6sVjvjF8fS8Uy6n39z9U52pSpRFGPBP8dfkTkXBokkqQ==}
+  /playwright-chromium/1.24.1:
+    resolution: {integrity: sha512-4dPVbwICijhEZ21zXMGu/CF+shWhcmARx3jNFlBUREKJhq9jwQDPRXploJkUQiKLZ69E63wfE5tx5P/bLLr7Tw==}
     engines: {node: '>=14'}
     hasBin: true
     requiresBuild: true
     dependencies:
-      playwright-core: 1.23.4
+      playwright-core: 1.24.1
     dev: true
 
-  /playwright-core/1.23.4:
-    resolution: {integrity: sha512-h5V2yw7d8xIwotjyNrkLF13nV9RiiZLHdXeHo+nVJIYGVlZ8U2qV0pMxNJKNTvfQVT0N8/A4CW6/4EW2cOcTiA==}
+  /playwright-core/1.24.1:
+    resolution: {integrity: sha512-1RoSDe/oTQS1Ct7Pb8i+vcFKbKYpmVIBXk0IUiD8RvCUMnNl7EJF1OSQ9E8TZ5RYamWkW2Psir9e8Doyz1FnhQ==}
     engines: {node: '>=14'}
     hasBin: true
     dev: true
