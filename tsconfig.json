@@ -28,8 +28,7 @@
     "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": true,
     "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "useDefineForClassFields": true
+    "noUnusedParameters": true
   },
   "exclude": [
     "*.config.js",

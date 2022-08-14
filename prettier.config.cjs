@@ -4,10 +4,7 @@ module.exports = {
   endOfLine: 'lf',
   singleQuote: true,
   trailingComma: 'all',
-  plugins: [
-    './node_modules/prettier-plugin-pkg',
-    './node_modules/prettier-plugin-sh',
-  ],
+  pluginSearchDirs: ['.'], // fixes pnpm
   overrides: [
     {
       files: ['*.test.tsx', '*.test.ts'],
