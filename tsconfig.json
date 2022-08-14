@@ -31,11 +31,11 @@
     "noUnusedParameters": true
   },
   "exclude": [
-    "*.config.js",
+    "*.config.cjs",
     "**/dist",
     "**/node_modules",
     "coverage",
-    "jest-resolver.js",
+    "jest-resolver.cjs",
     "test"
   ]
 }
