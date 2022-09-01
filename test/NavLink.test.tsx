@@ -15,7 +15,7 @@ test('renders without props', () => {
 test('renders correctly with required props', () => {
   expect.assertions(1);
   const rendered = render(() => <NavLink href="">x</NavLink>);
-  expect(rendered.container.innerHTML).toMatchInlineSnapshot('"<a href=\\"\\">x</a>"');
+  expect(rendered.container.innerHTML).toMatchInlineSnapshot('"<a href="">x</a>"');
 });
 
 test.todo('renders "aria-current" attribute when location matches');
