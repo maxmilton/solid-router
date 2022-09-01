@@ -92,7 +92,7 @@ export const Router: Component<RouterProps> = (props) => {
         const { keys, pattern } = parse(route.path);
 
         return (
-          <Match when={pattern.exec(urlPath())}>
+          <Match when={pattern.exec(urlPath())} keyed>
             {(matches) => {
               const params: Record<string, string | null> = {};
               let index = 0;
