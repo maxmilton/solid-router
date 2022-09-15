@@ -6,7 +6,7 @@ specifiers:
   '@babel/preset-typescript': 7.18.6
   '@jest/types': 29.0.2
   '@rollup/plugin-babel': 5.3.1
-  '@rollup/plugin-node-resolve': 14.0.0
+  '@rollup/plugin-node-resolve': 14.1.0
   '@types/babel__core': 7.1.19
   '@types/jest': 29.0.0
   '@types/node': 18.7.14
@@ -47,7 +47,7 @@ devDependencies:
   '@babel/preset-typescript': 7.18.6_@babel+core@7.19.0
   '@jest/types': 29.0.2
   '@rollup/plugin-babel': 5.3.1_iah4uoahcy6ozo3utze5fgzgri
-  '@rollup/plugin-node-resolve': 14.0.0_rollup@2.79.0
+  '@rollup/plugin-node-resolve': 14.1.0_rollup@2.79.0
   '@types/babel__core': 7.1.19
   '@types/jest': 29.0.0
   '@types/node': 18.7.14
@@ -949,8 +949,8 @@ packages:
       rollup: 2.79.0
     dev: true
 
-  /@rollup/plugin-node-resolve/14.0.0_rollup@2.79.0:
-    resolution: {integrity: sha512-XkWfpgp/zGiFu8LS+JAiQeZN4oYYA4/ViFJiZhwQegTg5ZbzKTvM9YyKXVBNnmZ8Et76WnlVgwRUu1rhKF4ayw==}
+  /@rollup/plugin-node-resolve/14.1.0_rollup@2.79.0:
+    resolution: {integrity: sha512-5G2niJroNCz/1zqwXtk0t9+twOSDlG00k1Wfd7bkbbXmwg8H8dvgHdIWAun53Ps/rckfvOC7scDBjuGFg5OaWw==}
     engines: {node: '>= 10.0.0'}
     peerDependencies:
       rollup: ^2.78.0
