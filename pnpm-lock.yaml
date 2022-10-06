@@ -12,7 +12,7 @@ specifiers:
   '@types/node': 18.7.14
   '@typescript-eslint/eslint-plugin': 5.39.0
   '@typescript-eslint/parser': 5.39.0
-  babel-preset-solid: 1.5.6
+  babel-preset-solid: 1.5.7
   eslint: 8.24.0
   eslint-config-airbnb-base: 15.0.0
   eslint-config-airbnb-typescript: 17.0.0
@@ -33,7 +33,7 @@ specifiers:
   regexparam: ^2.0.1
   rollup: 2.79.1
   sirv: 2.0.2
-  solid-js: 1.5.6
+  solid-js: 1.5.7
   solid-testing-library: 0.3.0
   typescript: 4.8.4
 
@@ -53,7 +53,7 @@ devDependencies:
   '@types/node': 18.7.14
   '@typescript-eslint/eslint-plugin': 5.39.0_xyciw6oqjoiiono4dhv3uhn5my
   '@typescript-eslint/parser': 5.39.0_ypn2ylkkyfa5i233caldtndbqa
-  babel-preset-solid: 1.5.6_@babel+core@7.19.3
+  babel-preset-solid: 1.5.7_@babel+core@7.19.3
   eslint: 8.24.0
   eslint-config-airbnb-base: 15.0.0_dg2pe6kqkrddxbf2funb723kue
   eslint-config-airbnb-typescript: 17.0.0_ymprkoqxvcjxwk4fmuhzvt42hm
@@ -72,8 +72,8 @@ devDependencies:
   prettier-plugin-sh: 0.12.8_prettier@2.7.1
   rollup: 2.79.1
   sirv: 2.0.2
-  solid-js: 1.5.6
-  solid-testing-library: 0.3.0_solid-js@1.5.6
+  solid-js: 1.5.7
+  solid-testing-library: 0.3.0_solid-js@1.5.7
   typescript: 4.8.4
 
 packages:
@@ -1452,8 +1452,8 @@ packages:
       babel-preset-current-node-syntax: 1.0.1_@babel+core@7.19.3
     dev: true
 
-  /babel-preset-solid/1.5.6_@babel+core@7.19.3:
-    resolution: {integrity: sha512-DETqhEygtRq627y5jII5szev495CvbPZJDTaosCbRWdbBh7nMBPI9JuVBUdWs56M2D4mqYa6Z2vH4mdIS6srwA==}
+  /babel-preset-solid/1.5.7_@babel+core@7.19.3:
+    resolution: {integrity: sha512-BUE7SOawUNMcw4QDJHWSRWAzmzZKoYNuduAKx8GfdaUhtW+50LTh2ZkHXEPZiQrSpxmvT0zP7e1cKnTYN6iiqw==}
     peerDependencies:
       '@babel/core': ^7.0.0
     dependencies:
@@ -3977,20 +3977,20 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /solid-js/1.5.6:
-    resolution: {integrity: sha512-EA7hjMIEdDUuV6Fk3WUQ2fPx7sRnhjl+3M59zj6Sh+c7c3JF3N1cSViBvX8MYJG9vEBEqKQBZUfKHPe/9JgKvQ==}
+  /solid-js/1.5.7:
+    resolution: {integrity: sha512-L1UuyMuZZARAwzXo5NZDhE6yxc14aqNbVOUoGzvlcxRZo1Cm4ExhPV0diEfwDyiKG/igqNNLkNurHkXiI5sVEg==}
     dependencies:
       csstype: 3.1.1
     dev: true
 
-  /solid-testing-library/0.3.0_solid-js@1.5.6:
+  /solid-testing-library/0.3.0_solid-js@1.5.7:
     resolution: {integrity: sha512-6NWVbySNVzyReBm2N6p3eF8bzxRZXHZTAmPix4vFWYol16QWVjNQsEUxvr+ZOutb0yuMZmNuGx3b6WIJYmjwMQ==}
     engines: {node: '>= 14'}
     peerDependencies:
       solid-js: '>=1.0.0'
     dependencies:
       '@testing-library/dom': 7.31.2
-      solid-js: 1.5.6
+      solid-js: 1.5.7
     dev: true
 
   /source-map-support/0.5.13:
