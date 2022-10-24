@@ -1,6 +1,8 @@
-import babel from '@rollup/plugin-babel';
-import { nodeResolve } from '@rollup/plugin-node-resolve';
-import path from 'path';
+/* eslint-disable @typescript-eslint/no-var-requires */
+
+const babel = require('@rollup/plugin-babel').default;
+const { nodeResolve } = require('@rollup/plugin-node-resolve');
+const path = require('node:path');
 
 const fixtures = ['full', 'lazyload', 'minimal', 'simple'];
 const extensions = ['.ts', '.tsx', '.js', '.jsx', '.mjs', '.cjs'];
@@ -8,7 +10,7 @@ const htmlTemplate = `<!doctype html>
 <meta charset=utf-8>
 <script src=index.js type=module defer></script>`;
 
-export default fixtures.map((name) => ({
+module.exports = fixtures.map((name) => ({
   input: path.join(__dirname, name, 'index.tsx'),
   output: {
     assetFileNames: '[name][extname]',
