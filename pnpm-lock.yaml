@@ -8,7 +8,7 @@ specifiers:
   '@rollup/plugin-babel': 6.0.3
   '@rollup/plugin-node-resolve': 15.0.1
   '@types/babel__core': 7.1.20
-  '@types/jest': 29.2.3
+  '@types/jest': 29.2.4
   '@types/node': 18.11.11
   '@typescript-eslint/eslint-plugin': 5.45.1
   '@typescript-eslint/parser': 5.45.1
@@ -49,7 +49,7 @@ devDependencies:
   '@rollup/plugin-babel': 6.0.3_fddtgi6ti7mypcmqfuqvfbnu3u
   '@rollup/plugin-node-resolve': 15.0.1_rollup@3.5.1
   '@types/babel__core': 7.1.20
-  '@types/jest': 29.2.3
+  '@types/jest': 29.2.4
   '@types/node': 18.11.11
   '@typescript-eslint/eslint-plugin': 5.45.1_tdm6ms4ntwhlpozn7kjqrhum74
   '@typescript-eslint/parser': 5.45.1_s5ps7njkmjlaqajutnox5ntcla
@@ -1023,8 +1023,8 @@ packages:
       '@types/istanbul-lib-report': 3.0.0
     dev: true
 
-  /@types/jest/29.2.3:
-    resolution: {integrity: sha512-6XwoEbmatfyoCjWRX7z0fKMmgYKe9+/HrviJ5k0X/tjJWHGAezZOfYaxqQKuzG/TvQyr+ktjm4jgbk0s4/oF2w==}
+  /@types/jest/29.2.4:
+    resolution: {integrity: sha512-PipFB04k2qTRPePduVLTRiPzQfvMeLwUN3Z21hsAKaB/W9IIzgB2pizCL466ftJlcyZqnHoC9ZHpxLGl3fS86A==}
     dependencies:
       expect: 29.3.1
       pretty-format: 29.3.1
