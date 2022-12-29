@@ -38,7 +38,7 @@
     "@rollup/plugin-node-resolve": "15.0.1",
     "@types/babel__core": "7.1.20",
     "@types/jest": "29.2.4",
-    "@types/node": "18.11.17",
+    "@types/node": "18.11.18",
     "@typescript-eslint/eslint-plugin": "5.47.0",
     "@typescript-eslint/parser": "5.47.0",
     "babel-preset-solid": "1.6.6",
