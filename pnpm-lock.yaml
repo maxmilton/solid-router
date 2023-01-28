@@ -7,7 +7,7 @@ specifiers:
   '@jest/types': 29.3.1
   '@rollup/plugin-babel': 6.0.3
   '@rollup/plugin-node-resolve': 15.0.1
-  '@types/babel__core': 7.1.20
+  '@types/babel__core': 7.20.0
   '@types/jest': 29.2.5
   '@types/node': 18.11.18
   '@typescript-eslint/eslint-plugin': 5.49.0
@@ -46,9 +46,9 @@ devDependencies:
   '@babel/plugin-transform-modules-commonjs': 7.20.11_@babel+core@7.20.12
   '@babel/preset-typescript': 7.18.6_@babel+core@7.20.12
   '@jest/types': 29.3.1
-  '@rollup/plugin-babel': 6.0.3_y2224qee3klo2a7uqmwnmcb22i
+  '@rollup/plugin-babel': 6.0.3_x3iqbsypk6e5j2ujyommbvnhim
   '@rollup/plugin-node-resolve': 15.0.1_rollup@3.11.0
-  '@types/babel__core': 7.1.20
+  '@types/babel__core': 7.20.0
   '@types/jest': 29.2.5
   '@types/node': 18.11.18
   '@typescript-eslint/eslint-plugin': 5.49.0_iu322prlnwsygkcra5kbpy22si
@@ -871,7 +871,7 @@ packages:
     resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==}
     dev: true
 
-  /@rollup/plugin-babel/6.0.3_y2224qee3klo2a7uqmwnmcb22i:
+  /@rollup/plugin-babel/6.0.3_x3iqbsypk6e5j2ujyommbvnhim:
     resolution: {integrity: sha512-fKImZKppa1A/gX73eg4JGo+8kQr/q1HBQaCGKECZ0v4YBBv3lFqi14+7xyApECzvkLTHCifx+7ntcrvtBIRcpg==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
@@ -887,7 +887,7 @@ packages:
       '@babel/core': 7.20.12
       '@babel/helper-module-imports': 7.18.6
       '@rollup/pluginutils': 5.0.2_rollup@3.11.0
-      '@types/babel__core': 7.1.20
+      '@types/babel__core': 7.20.0
       rollup: 3.11.0
     dev: true
 
@@ -963,8 +963,8 @@ packages:
     resolution: {integrity: sha512-XTIieEY+gvJ39ChLcB4If5zHtPxt3Syj5rgZR+e1ctpmK8NjPf0zFqsz4JpLJT0xla9GFDKjy8Cpu331nrmE1Q==}
     dev: true
 
-  /@types/babel__core/7.1.20:
-    resolution: {integrity: sha512-PVb6Bg2QuscZ30FvOU7z4guG6c926D9YRvOxEaelzndpMsvP+YM74Q/dAFASpg2l6+XLalxSGxcq/lrgYWZtyQ==}
+  /@types/babel__core/7.20.0:
+    resolution: {integrity: sha512-+n8dL/9GWblDO0iU6eZAwEIJVr5DWigtle+Q6HLOrh/pdbXOhOtqzq8VPPE2zvNJzSKY4vH/z3iT3tn0A3ypiQ==}
     dependencies:
       '@babel/parser': 7.20.7
       '@babel/types': 7.20.7
@@ -1426,7 +1426,7 @@ packages:
     dependencies:
       '@babel/core': 7.20.12
       '@jest/transform': 29.3.1
-      '@types/babel__core': 7.1.20
+      '@types/babel__core': 7.20.0
       babel-plugin-istanbul: 6.1.1
       babel-preset-jest: 29.2.0_@babel+core@7.20.12
       chalk: 4.1.2
@@ -1455,7 +1455,7 @@ packages:
     dependencies:
       '@babel/template': 7.20.7
       '@babel/types': 7.20.7
-      '@types/babel__core': 7.1.20
+      '@types/babel__core': 7.20.0
       '@types/babel__traverse': 7.18.3
     dev: true
 
