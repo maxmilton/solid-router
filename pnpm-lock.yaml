@@ -12,7 +12,7 @@ specifiers:
   '@types/node': 18.11.18
   '@typescript-eslint/eslint-plugin': 5.50.0
   '@typescript-eslint/parser': 5.50.0
-  babel-preset-solid: 1.6.9
+  babel-preset-solid: 1.6.10
   eslint: 8.33.0
   eslint-config-airbnb-base: 15.0.0
   eslint-config-airbnb-typescript: 17.0.0
@@ -33,7 +33,7 @@ specifiers:
   regexparam: ^2.0.1
   rollup: 3.14.0
   sirv: 2.0.2
-  solid-js: 1.6.9
+  solid-js: 1.6.10
   solid-testing-library: 0.5.1
   typescript: 4.9.5
 
@@ -53,7 +53,7 @@ devDependencies:
   '@types/node': 18.11.18
   '@typescript-eslint/eslint-plugin': 5.50.0_go4drrxstycfikanvu45pi4vgq
   '@typescript-eslint/parser': 5.50.0_4vsywjlpuriuw3tl5oq6zy5a64
-  babel-preset-solid: 1.6.9_@babel+core@7.20.12
+  babel-preset-solid: 1.6.10_@babel+core@7.20.12
   eslint: 8.33.0
   eslint-config-airbnb-base: 15.0.0_ohdts44xlqyeyrlje4qnefqeay
   eslint-config-airbnb-typescript: 17.0.0_kh22gsft6r4fkunxdzqyqzlvzy
@@ -72,8 +72,8 @@ devDependencies:
   prettier-plugin-sh: 0.12.8_prettier@2.8.3
   rollup: 3.14.0
   sirv: 2.0.2
-  solid-js: 1.6.9
-  solid-testing-library: 0.5.1_solid-js@1.6.9
+  solid-js: 1.6.10
+  solid-testing-library: 0.5.1_solid-js@1.6.10
   typescript: 4.9.5
 
 packages:
@@ -1467,8 +1467,8 @@ packages:
       '@types/babel__traverse': 7.18.3
     dev: true
 
-  /babel-plugin-jsx-dom-expressions/0.35.13_@babel+core@7.20.12:
-    resolution: {integrity: sha512-UlbzUP/2kFxwaEs1VDrPjCr84/oGDQUohf+vbyD8u8Ct3tSpfQz+OGrj+GBqf0Ib1Rxz7dSH+1mZz+kuxzeCSA==}
+  /babel-plugin-jsx-dom-expressions/0.35.15_@babel+core@7.20.12:
+    resolution: {integrity: sha512-33GQnanjYKefOTO2lQK6EaKXPJ1W8vtzvBneGfhKaOZHQJLqe61P93jP0TLTz67sqsA0m1ph1cNdGpLc/Nx2Xg==}
     peerDependencies:
       '@babel/core': ^7.20.12
     dependencies:
@@ -1477,7 +1477,7 @@ packages:
       '@babel/plugin-syntax-jsx': 7.18.6_@babel+core@7.20.12
       '@babel/types': 7.20.7
       html-entities: 2.3.3
-      validate-html-nesting: 1.1.0
+      validate-html-nesting: 1.2.1
     dev: true
 
   /babel-preset-current-node-syntax/1.0.1_@babel+core@7.20.12:
@@ -1511,13 +1511,13 @@ packages:
       babel-preset-current-node-syntax: 1.0.1_@babel+core@7.20.12
     dev: true
 
-  /babel-preset-solid/1.6.9_@babel+core@7.20.12:
-    resolution: {integrity: sha512-Dz4xROTGtAZ2B9+79KYUzi/bhjNGsx+8c+AD3VO/Cg1CisM1qq29XsnkWrRJeTMMn3XZkAI/Bf5Rz37d/gvPVQ==}
+  /babel-preset-solid/1.6.10_@babel+core@7.20.12:
+    resolution: {integrity: sha512-qBLjzeWmgY5jX11sJg/lriXABYdClfJrJJrIHaT6G5EuGhxhm6jn7XjqXjLBZHBgy5n/Z+iqJ5YfQj8KG2jKTA==}
     peerDependencies:
       '@babel/core': ^7.0.0
     dependencies:
       '@babel/core': 7.20.12
-      babel-plugin-jsx-dom-expressions: 0.35.13_@babel+core@7.20.12
+      babel-plugin-jsx-dom-expressions: 0.35.15_@babel+core@7.20.12
     dev: true
 
   /balanced-match/1.0.2:
@@ -4203,13 +4203,13 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /solid-js/1.6.9:
-    resolution: {integrity: sha512-kV3fMmm+1C2J95c8eDOPKGfZHnuAkHUBLG4hX1Xu08bXeAIPqmxuz/QdH3B8SIdTp3EatBVIyA6RCes3hrGzpg==}
+  /solid-js/1.6.10:
+    resolution: {integrity: sha512-Sf0e6PQCEFkFtbPq0L+93Ua81YQOefBEbvDJ0YXT92b6Lzw0k7UvzSd2l1BbYM+yzE3UmepU1tyMDc/3nIByjA==}
     dependencies:
       csstype: 3.1.1
     dev: true
 
-  /solid-testing-library/0.5.1_solid-js@1.6.9:
+  /solid-testing-library/0.5.1_solid-js@1.6.10:
     resolution: {integrity: sha512-CfcCWsI5zIJz2zcyZQz2weq+6cCS5QrcmWeEmUEy03fElJ/BV5Ly4MMTsmwdOK803zY3wJP5pPf026C40VrE1Q==}
     engines: {node: '>= 14'}
     deprecated: This package is now available at @solidjs/testing-library
@@ -4217,7 +4217,7 @@ packages:
       solid-js: '>=1.0.0'
     dependencies:
       '@testing-library/dom': 8.19.1
-      solid-js: 1.6.9
+      solid-js: 1.6.10
     dev: true
 
   /source-map-support/0.5.13:
@@ -4547,8 +4547,8 @@ packages:
       convert-source-map: 1.9.0
     dev: true
 
-  /validate-html-nesting/1.1.0:
-    resolution: {integrity: sha512-m+tQ7mVs2AMXRP0hFFQzmdG2BRMyLJtH39AtCpJDhiHM4oL6eccFnNhnNnwrBRNlPr78Opgh3CC9am2bnaJ2Tg==}
+  /validate-html-nesting/1.2.1:
+    resolution: {integrity: sha512-T1ab131NkP3BfXB7KUSgV7Rhu81R2id+L6NaJ7NypAAG5iV6gXnPpQE5RK1fvb+3JYsPTL+ihWna5sr5RN9gaQ==}
     dev: true
 
   /validate-npm-package-license/3.0.4:
