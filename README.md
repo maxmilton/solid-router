@@ -1,4 +1,4 @@
-[![Build status](https://img.shields.io/github/workflow/status/maxmilton/solid-router/ci)](https://github.com/maxmilton/solid-router/actions)
+[![Build status](https://img.shields.io/github/actions/workflow/status/maxmilton/solid-router/ci.yml?branch=master)](https://github.com/maxmilton/solid-router/actions)
 [![Coverage status](https://img.shields.io/codeclimate/coverage/maxmilton/solid-router)](https://codeclimate.com/github/maxmilton/solid-router)
 [![NPM version](https://img.shields.io/npm/v/@maxmilton/solid-router.svg)](https://www.npmjs.com/package/@maxmilton/solid-router)
 [![NPM bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/@maxmilton/solid-router.svg)](https://bundlephobia.com/result?p=@maxmilton/solid-router)
