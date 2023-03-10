@@ -26,7 +26,7 @@
     "solid-js": "^1.5.0"
   },
   "dependencies": {
-    "qss": "^2.0.3",
+    "qss": "^3.0.0",
     "regexparam": "^2.0.1"
   },
   "devDependencies": {
