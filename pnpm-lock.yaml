@@ -29,7 +29,7 @@ specifiers:
   prettier: 2.8.4
   prettier-plugin-pkg: 0.17.1
   prettier-plugin-sh: 0.12.8
-  qss: ^2.0.3
+  qss: ^3.0.0
   regexparam: ^2.0.1
   rollup: 3.19.0
   sirv: 2.0.2
@@ -38,7 +38,7 @@ specifiers:
   typescript: 4.9.5
 
 dependencies:
-  qss: 2.0.3
+  qss: 3.0.0
   regexparam: 2.0.1
 
 devDependencies:
@@ -4059,8 +4059,8 @@ packages:
     resolution: {integrity: sha512-rLSBxJjP+4DQOgcJAx6RZHT2he2pkhQdSnofG5VWyVl6GRq/K02ISOuOLcsMOrtKDIJb8JN2zm3FFzWNbezdPw==}
     dev: true
 
-  /qss/2.0.3:
-    resolution: {integrity: sha512-j48ZBT5IZbSqJiSU8EX4XrN8nXiflHvmMvv2XpFc31gh7n6EpSs75bNr6+oj3FOLWyT8m09pTmqLNl34L7/uPQ==}
+  /qss/3.0.0:
+    resolution: {integrity: sha512-ZHoCB3M/3Voev64zhLLUOKDtaEdJ/lymsJJ7R3KBusVZ2ovNiIB7XOq3Xh6V1a8O+Vho+g2B5YElq9zW7D8aQw==}
     engines: {node: '>=4'}
     dev: false
 
