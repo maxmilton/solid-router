@@ -33,7 +33,7 @@ specifiers:
   regexparam: ^2.0.1
   rollup: 3.19.1
   sirv: 2.0.2
-  solid-js: 1.6.13
+  solid-js: 1.6.14
   solid-testing-library: 0.5.1
   typescript: 4.9.5
 
@@ -72,8 +72,8 @@ devDependencies:
   prettier-plugin-sh: 0.12.8_prettier@2.8.4
   rollup: 3.19.1
   sirv: 2.0.2
-  solid-js: 1.6.13
-  solid-testing-library: 0.5.1_solid-js@1.6.13
+  solid-js: 1.6.14
+  solid-testing-library: 0.5.1_solid-js@1.6.14
   typescript: 4.9.5
 
 packages:
@@ -4216,13 +4216,13 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /solid-js/1.6.13:
-    resolution: {integrity: sha512-/zcyeect3QnmcD58754IpOU/SzX3s9N19RlRVoKRz3tNpzvel7QKO4FX/PpIFQH6n/pxWq6rSh6b9fwe20XUvw==}
+  /solid-js/1.6.14:
+    resolution: {integrity: sha512-9SSpGWZqzq8n/JhIt2PsYzLreG4PySmAexLnRM386oMeG5oSWa9QIRoiok45rLNJg148USEfI9wlkJkMrA2qGg==}
     dependencies:
       csstype: 3.1.1
     dev: true
 
-  /solid-testing-library/0.5.1_solid-js@1.6.13:
+  /solid-testing-library/0.5.1_solid-js@1.6.14:
     resolution: {integrity: sha512-CfcCWsI5zIJz2zcyZQz2weq+6cCS5QrcmWeEmUEy03fElJ/BV5Ly4MMTsmwdOK803zY3wJP5pPf026C40VrE1Q==}
     engines: {node: '>= 14'}
     deprecated: This package is now available at @solidjs/testing-library
@@ -4230,7 +4230,7 @@ packages:
       solid-js: '>=1.0.0'
     dependencies:
       '@testing-library/dom': 8.20.0
-      solid-js: 1.6.13
+      solid-js: 1.6.14
     dev: true
 
   /source-map-support/0.5.13:
