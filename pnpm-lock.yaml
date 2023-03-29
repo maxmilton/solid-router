@@ -43,8 +43,8 @@ devDependencies:
     specifier: 5.57.0
     version: 5.57.0(eslint@8.37.0)(typescript@4.9.5)
   babel-preset-solid:
-    specifier: 1.6.13
-    version: 1.6.13(@babel/core@7.21.3)
+    specifier: 1.6.16
+    version: 1.6.16(@babel/core@7.21.3)
   eslint:
     specifier: 8.37.0
     version: 8.37.0
@@ -100,11 +100,11 @@ devDependencies:
     specifier: 2.0.2
     version: 2.0.2
   solid-js:
-    specifier: 1.6.15
-    version: 1.6.15
+    specifier: 1.6.16
+    version: 1.6.16
   solid-testing-library:
     specifier: 0.5.1
-    version: 0.5.1(solid-js@1.6.15)
+    version: 0.5.1(solid-js@1.6.16)
   typescript:
     specifier: 4.9.5
     version: 4.9.5
@@ -1529,8 +1529,8 @@ packages:
       '@types/babel__traverse': 7.18.3
     dev: true
 
-  /babel-plugin-jsx-dom-expressions@0.35.19(@babel/core@7.21.3):
-    resolution: {integrity: sha512-Y1Qg6Yt5XaRfGewxmF0ac6bnqo2xdsIdPd1J6/El4E+7m5Ej76jcHYeHWJsoPbVmbZXc5TGenwZMP9ueHjja/g==}
+  /babel-plugin-jsx-dom-expressions@0.35.23(@babel/core@7.21.3):
+    resolution: {integrity: sha512-KaBiZPm2riB5jyRUy5BVaz8TkKcyAx2frePOG2lj5vbYsBpZHIknQkUU/csWr+EeV75h/mRHIOzLo2mX4Dxq3g==}
     peerDependencies:
       '@babel/core': ^7.20.12
     dependencies:
@@ -1573,13 +1573,13 @@ packages:
       babel-preset-current-node-syntax: 1.0.1(@babel/core@7.21.3)
     dev: true
 
-  /babel-preset-solid@1.6.13(@babel/core@7.21.3):
-    resolution: {integrity: sha512-W78rLK4xv48k2Jb/VFynu42oCQufcDYFz6gmhMYslKy/PJCfNxdp85QCg1wTcrmCoPQK2TcHMVcL8nVvvTBHxQ==}
+  /babel-preset-solid@1.6.16(@babel/core@7.21.3):
+    resolution: {integrity: sha512-xVEmdgvS5mNAdk7uoKFVRfdjihuhPl9n4MGEaicFRafAraaPr49/y7yLBaOZfeJbL0AVwDlLximseZbtoME4cQ==}
     peerDependencies:
       '@babel/core': ^7.0.0
     dependencies:
       '@babel/core': 7.21.3
-      babel-plugin-jsx-dom-expressions: 0.35.19(@babel/core@7.21.3)
+      babel-plugin-jsx-dom-expressions: 0.35.23(@babel/core@7.21.3)
     dev: true
 
   /balanced-match@1.0.2:
@@ -4249,13 +4249,13 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /solid-js@1.6.15:
-    resolution: {integrity: sha512-xEuMUIdDf4YRFT4i3XEJCNg4Y21lZiWWPSEqj0R3UnLLpENGJVXkqpmbIyRU5CuMImKPIEu5CYgmFKL7Npfe1A==}
+  /solid-js@1.6.16:
+    resolution: {integrity: sha512-Ng4CahvLlpGA3BXIMiiMdwhI8WpObZ8gXqm97GCKR4+MpnODs6Pdpco+tmVCY/4ZDFaEKDxz7WRLAAdoXdlY7w==}
     dependencies:
       csstype: 3.1.1
     dev: true
 
-  /solid-testing-library@0.5.1(solid-js@1.6.15):
+  /solid-testing-library@0.5.1(solid-js@1.6.16):
     resolution: {integrity: sha512-CfcCWsI5zIJz2zcyZQz2weq+6cCS5QrcmWeEmUEy03fElJ/BV5Ly4MMTsmwdOK803zY3wJP5pPf026C40VrE1Q==}
     engines: {node: '>= 14'}
     deprecated: This package is now available at @solidjs/testing-library
@@ -4263,7 +4263,7 @@ packages:
       solid-js: '>=1.0.0'
     dependencies:
       '@testing-library/dom': 8.20.0
-      solid-js: 1.6.15
+      solid-js: 1.6.16
     dev: true
 
   /source-map-support@0.5.13:
