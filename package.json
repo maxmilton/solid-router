@@ -4,7 +4,7 @@
   "type": "module",
   "description": "A lightweight History API based router for Solid",
   "repository": "maxmilton/solid-router",
-  "author": "Max Milton <max@happycode.ltd>",
+  "author": "Max Milton <max@happyhackers.xyz>",
   "license": "MIT",
   "main": "dist/index.jsx",
   "types": "dist/index.d.ts",
