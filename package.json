@@ -30,7 +30,7 @@
     "regexparam": "^2.0.1"
   },
   "devDependencies": {
-    "@babel/core": "7.21.5",
+    "@babel/core": "7.22.1",
     "@babel/plugin-transform-modules-commonjs": "7.21.5",
     "@babel/preset-typescript": "7.21.5",
     "@jest/types": "29.5.0",
