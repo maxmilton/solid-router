@@ -1,9 +1,5 @@
-/** @jest-environment jsdom */
-
-// eslint-disable-next-line jest/no-export
-export {};
-
-// import { routeTo } from '../src';
+import { test } from 'vitest';
+// import { routeTo } from '../../src/index';
 
 test.todo('navigates to new route adding a new history entry');
 test.todo('navigates to new route replacing current history entry');

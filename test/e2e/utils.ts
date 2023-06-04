@@ -1,65 +1,25 @@
-/* eslint-disable no-console, no-multi-assign */
-
-import getPort from 'get-port';
-import http, { Server } from 'http';
-import * as colors from 'kleur';
-import path from 'path';
-import {
-  Browser, chromium, ConsoleMessage, Page,
-} from 'playwright-chromium';
+// import type { ConsoleMessage } from '@playwright/test';
+import http, { type Server } from 'node:http';
+import type { AddressInfo } from 'node:net';
+import path from 'node:path';
 import sirv from 'sirv';
 
-// declare global {
-//   // eslint-disable-next-line @typescript-eslint/no-namespace
-//   namespace NodeJS {
-//     interface Global {
-//       browser: Browser;
-//     }
-//   }
-// }
-// TODO: Once types are fixed in @types/jest maybe switch back to standard way of extending global
-declare global {
-  // eslint-disable-next-line no-var, vars-on-top
-  var browser: Browser;
-}
-
-export interface TestContext {
-  consoleMessages: ConsoleMessage[];
+export interface FixtureContext {
   dir: string;
   name: string;
-  page: Page | null;
   port: number;
   server: Server;
-  unhandledErrors: Error[];
+  // consoleMessages: ConsoleMessage[];
+  // unhandledErrors: Error[];
 }
 
-export function sleep(ms: number): Promise<void> {
-  return new Promise((resolve) => {
-    setTimeout(resolve, ms);
-  });
-}
+// eslint-disable-next-line no-underscore-dangle, @typescript-eslint/naming-convention
+const __dirname = path.dirname(new URL(import.meta.url).pathname);
 
-export async function setup(): Promise<void> {
-  if (global.browser) {
-    throw new Error(
-      'Browser instance already exists, did you forget to call cleanup()?',
-    );
-  }
-
-  global.browser = await chromium.launch();
-}
-
-export async function teardown(): Promise<void> {
-  await global.browser.close();
-  // @ts-expect-error - destroy browser reference
-  global.browser = null;
-}
-
-export async function loadFixture(name: string): Promise<TestContext> {
-  const filesDir = path.join(__dirname, '../fixtures/dist', name);
-  const port = await getPort();
+export function loadFixture(name: string): FixtureContext {
+  const dir = path.join(__dirname, '../fixtures/dist', name);
   const server = http.createServer(
-    sirv(filesDir, {
+    sirv(dir, {
       onNoMatch(req) {
         throw new Error(`No matching URL: ${req.url!}`);
       },
@@ -68,65 +28,37 @@ export async function loadFixture(name: string): Promise<TestContext> {
   server.on('error', (err) => {
     if (err) throw err;
   });
-  server.listen(port);
+  server.listen(0);
 
   return {
-    consoleMessages: [],
-    dir: filesDir,
+    dir,
     name,
-    page: null,
-    port,
+    port: (server.address() as AddressInfo).port,
     server,
-    unhandledErrors: [],
+    // consoleMessages: [],
+    // unhandledErrors: [],
   };
 }
 
-export function destroyFixture(context: TestContext): void {
+// export function resetFixture(context: FixtureContext): void {
+//   context.consoleMessages = [];
+//   context.unhandledErrors = [];
+// }
+
+export function destroyFixture(context: FixtureContext): void {
   if (!context.server) {
     throw new Error(
-      'No file server exists, did you forget to call loadFixture()?',
+      'No file server exists, did you forget to call "loadFixture()"?',
     );
   }
 
   context.server.close();
 }
 
-export async function createPage(context: TestContext): Promise<Page> {
-  if (context.page) {
-    throw new Error(
-      'Page already exists, did you forget to call cleanupEach()?',
-    );
-  }
-
-  const page = await global.browser.newPage();
-  context.page = page;
-  context.unhandledErrors = [];
-  context.consoleMessages = [];
-  page.on('crash', (crashedPage) => {
-    throw new Error(`Page crashed: ${crashedPage.url()}`);
+/** @deprecated - FIXME: Refactor out the need for this completely. */
+// FIXME: https://playwright.dev/docs/best-practices#use-web-first-assertions
+export function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms);
   });
-  page.on('pageerror', (err) => {
-    console.error(colors.red('Page Error:'), err);
-    context.unhandledErrors.push(err);
-  });
-  page.on('console', (msg) => {
-    const loc = msg.location();
-    console.log(
-      colors.dim(
-        `${loc.url}:${loc.lineNumber}:${loc.columnNumber} [${msg.type()}]`,
-      ),
-      msg.text(),
-    );
-    context.consoleMessages.push(msg);
-  });
-  await page.goto(`http://localhost:${context.port}`);
-  return page;
-}
-
-export async function cleanupPage(context: TestContext): Promise<void> {
-  if (context.page) {
-    await context.page.close();
-    // @ts-expect-error - reset for next createPage
-    context.unhandledErrors = context.consoleMessages = context.page = null;
-  }
 }

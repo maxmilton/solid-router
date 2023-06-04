@@ -2,12 +2,13 @@ const OFF = 0;
 const WARN = 1;
 const ERROR = 2;
 
+/** @type {import('eslint/lib/shared/types').ConfigData & { parserOptions: import('@typescript-eslint/types').ParserOptions }} */
 module.exports = {
   root: true,
   reportUnusedDisableDirectives: true,
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    project: ['./test/tsconfig.json'],
+    project: ['tsconfig.json', 'tsconfig.node.json'],
     tsconfigRootDir: __dirname,
   },
   extends: [
@@ -18,13 +19,14 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'plugin:unicorn/recommended',
-    'plugin:security/recommended',
+    'prettier',
   ],
+  plugins: ['prettier'],
   settings: {
     'import/resolver': {
       node: {
         // add .tsx to airbnb-typescript/base
-        extensions: ['.js', '.jsx', '.json', '.ts', '.tsx', '.d.ts'],
+        extensions: ['.mjs', '.js', '.jsx', '.json', '.ts', '.tsx', '.d.ts'],
       },
     },
   },
@@ -32,6 +34,7 @@ module.exports = {
     '@typescript-eslint/explicit-module-boundary-types': ERROR,
     // used safely in this project
     '@typescript-eslint/no-non-null-assertion': OFF,
+    'import/prefer-default-export': OFF,
     'no-plusplus': OFF,
     'no-restricted-globals': WARN,
     'unicorn/filename-case': OFF,
@@ -46,12 +49,18 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['test/**'],
-      extends: ['plugin:jest/recommended', 'plugin:jest/style'],
+      files: ['*.config.ts', 'test/**'],
       rules: {
-        '@typescript-eslint/unbound-method': 'off', // replaced by jest/unbound-method
         'import/no-extraneous-dependencies': OFF,
-        'jest/unbound-method': 'error',
+      },
+    },
+    {
+      files: ['*.test.tsx', '*.test.ts'],
+      extends: ['plugin:vitest/all'],
+      rules: {
+        'vitest/max-expects': OFF,
+        'vitest/no-hooks': OFF,
+        'vitest/require-top-level-describe': OFF,
       },
     },
   ],

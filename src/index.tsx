@@ -48,12 +48,12 @@ export const Router: Component<RouterProps> = (props) => {
 
   const handleClick = (event: MouseEvent): void => {
     if (
-      event.ctrlKey
-      || event.metaKey
-      || event.altKey
-      || event.shiftKey
-      || event.button
-      || event.defaultPrevented
+      event.ctrlKey ||
+      event.metaKey ||
+      event.altKey ||
+      event.shiftKey ||
+      event.button ||
+      event.defaultPrevented
     ) {
       return;
     }
@@ -62,10 +62,10 @@ export const Router: Component<RouterProps> = (props) => {
     const href = link && link.getAttribute('href');
 
     if (
-      !href
-      || link.target
-      || link.host !== window.location.host
-      || href[0] === '#'
+      !href ||
+      link.target ||
+      link.host !== window.location.host ||
+      href[0] === '#'
     ) {
       return;
     }
@@ -151,8 +151,8 @@ export const NavLink: Component<NavLinkProps> = (props) => {
 };
 
 export type URLParams = Record<
-string,
-string | number | boolean | (string | number | boolean)[] | undefined
+  string,
+  string | number | boolean | (string | number | boolean)[] | undefined
 >;
 
 type Optional<T> = {

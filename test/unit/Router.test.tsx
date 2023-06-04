@@ -1,7 +1,7 @@
-/** @jest-environment jsdom */
-
-import { cleanup, render } from 'solid-testing-library';
-import { Router, routeTo } from '../src';
+import { cleanup, render } from '@solidjs/testing-library';
+import type { JSX } from 'solid-js';
+import { afterEach, expect, test, vi } from 'vitest';
+import { Router, routeTo } from '../../src/index';
 
 const abcRoutes = [
   { path: '/a', component: () => <>a</> },
@@ -16,7 +16,7 @@ test('throws without required props', () => {
   expect(() => {
     // @ts-expect-error - Missing prop is intentional
     render(<Router />);
-  }).toThrow();
+  }).toThrow("Cannot read properties of undefined (reading 'map')");
 });
 
 test('renders correctly with required props', () => {
@@ -45,7 +45,7 @@ test('renders component fallback when no matching path', () => {
 
 test('calls fallback function when no matching path', () => {
   expect.assertions(1);
-  const mock = jest.fn();
+  const mock = vi.fn() as unknown as JSX.Element;
   render(() => <Router routes={[]} fallback={mock} />);
   expect(mock).toHaveBeenCalledTimes(1);
 });
