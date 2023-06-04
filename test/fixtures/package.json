@@ -2,10 +2,15 @@
   "name": "fixtures",
   "version": "0.0.0",
   "scripts": {
-    "build": "pnpm run prebuild && ../../node_modules/.bin/rollup --config",
+    "build": "pnpm run prebuild && rollup --config",
     "prebuild": "rm -rf dist"
   },
   "dependencies": {
+    "@babel/preset-typescript": "7.21.5",
+    "@rollup/plugin-babel": "6.0.3",
+    "@rollup/plugin-node-resolve": "15.1.0",
+    "babel-preset-solid": "1.7.4",
+    "rollup": "3.23.0",
     "solid-js": "*"
   }
 }

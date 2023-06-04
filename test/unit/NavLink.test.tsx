@@ -1,7 +1,6 @@
-/** @jest-environment jsdom */
-
-import { cleanup, render } from 'solid-testing-library';
-import { NavLink } from '../src';
+import { cleanup, render } from '@solidjs/testing-library';
+import { afterEach, expect, test } from 'vitest';
+import { NavLink } from '../../src/index';
 
 afterEach(cleanup);
 
@@ -15,7 +14,7 @@ test('renders without props', () => {
 test('renders correctly with required props', () => {
   expect.assertions(1);
   const rendered = render(() => <NavLink href="">x</NavLink>);
-  expect(rendered.container.innerHTML).toMatchInlineSnapshot('"<a href="">x</a>"');
+  expect(rendered.container.innerHTML).toMatchInlineSnapshot('"<a href=\\"\\">x</a>"');
 });
 
 test.todo('renders "aria-current" attribute when location matches');

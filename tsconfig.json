@@ -1,41 +1,28 @@
 {
   "compilerOptions": {
-    "rootDir": "src",
-    "outDir": "dist",
-
-    "target": "es2020",
+    "target": "esnext",
     "module": "esnext",
-    "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
+    "moduleResolution": "bundler",
+    "esModuleInterop": false,
     "resolveJsonModule": true,
-    "isolatedModules": true,
     "skipLibCheck": true,
-    "allowJs": true,
-    "checkJs": true,
-
-    "jsx": "preserve",
-    "jsxImportSource": "solid-js",
-
-    "declaration": true,
-    "sourceMap": true,
+    "allowJs": false,
 
     "strict": true,
     "allowUnreachableCode": false,
     "exactOptionalPropertyTypes": true,
     "forceConsistentCasingInFileNames": true,
-    "importsNotUsedAsValues": "error",
-    "noFallthroughCasesInSwitch": true,
+    "noFallthroughCasesInSwitch": false, // covered by eslint
     "noImplicitOverride": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true
+    "noUnusedLocals": false, // covered by eslint
+    "noUnusedParameters": false, // covered by eslint
+    "verbatimModuleSyntax": true,
+
+    "rootDir": "src",
+    "outDir": "dist",
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js"
   },
-  "exclude": [
-    "*.config.cjs",
-    "**/dist",
-    "**/node_modules",
-    "coverage",
-    "jest-resolver.cjs",
-    "test"
-  ]
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.node.json" }]
 }
