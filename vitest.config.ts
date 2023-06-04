@@ -4,6 +4,9 @@ import { defineConfig } from 'vitest/config';
 export default defineConfig({
   plugins: [solid()],
   test: {
+    coverage: {
+      reporter: ['text', 'lcov'],
+    },
     deps: {
       registerNodeLoader: true,
       inline: [/solid-js/],
