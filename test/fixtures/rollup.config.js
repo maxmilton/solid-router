@@ -8,7 +8,7 @@ const fixtures = ['full', 'lazyload', 'minimal', 'simple'];
 const extensions = ['.ts', '.tsx', '.js', '.jsx', '.mjs', '.cjs'];
 const htmlTemplate = `<!doctype html>
 <meta charset=utf-8>
-<script src=index.js type=module defer></script>`;
+<script src=index.js type=module></script>`;
 
 module.exports = fixtures.map((name) => ({
   input: path.join(__dirname, name, 'index.tsx'),
