@@ -1,7 +1,7 @@
-// import type { ConsoleMessage } from '@playwright/test';
+import type { ConsoleMessage, Page } from '@playwright/test';
 import http, { type Server } from 'node:http';
 import type { AddressInfo } from 'node:net';
-import path from 'node:path';
+import { dirname, join } from 'node:path';
 import sirv from 'sirv';
 
 export interface FixtureContext {
@@ -9,24 +9,24 @@ export interface FixtureContext {
   name: string;
   port: number;
   server: Server;
-  // consoleMessages: ConsoleMessage[];
-  // unhandledErrors: Error[];
+  consoleMessages: ConsoleMessage[];
+  unhandledErrors: Error[];
 }
 
 // eslint-disable-next-line no-underscore-dangle, @typescript-eslint/naming-convention
-const __dirname = path.dirname(new URL(import.meta.url).pathname);
+const __dirname = dirname(new URL(import.meta.url).pathname);
 
 export function loadFixture(name: string): FixtureContext {
-  const dir = path.join(__dirname, '../fixtures/dist', name);
+  const dir = join(__dirname, '../fixtures/dist', name);
   const server = http.createServer(
     sirv(dir, {
-      onNoMatch(req) {
-        throw new Error(`No matching URL: ${req.url!}`);
+      onNoMatch(request) {
+        throw new Error(`No matching URL: ${request.url!}`);
       },
     }),
   );
-  server.on('error', (err) => {
-    if (err) throw err;
+  server.on('error', (error) => {
+    if (error) throw error;
   });
   server.listen(0);
 
@@ -35,21 +35,26 @@ export function loadFixture(name: string): FixtureContext {
     name,
     port: (server.address() as AddressInfo).port,
     server,
-    // consoleMessages: [],
-    // unhandledErrors: [],
+    consoleMessages: [],
+    unhandledErrors: [],
   };
 }
 
-// export function resetFixture(context: FixtureContext): void {
-//   context.consoleMessages = [];
-//   context.unhandledErrors = [];
-// }
+export function connectPage(context: FixtureContext, page: Page): void {
+  context.consoleMessages.length = 0;
+  context.unhandledErrors.length = 0;
+
+  page.on('console', (message) => {
+    context.consoleMessages.push(message);
+  });
+  page.on('pageerror', (error) => {
+    context.unhandledErrors.push(error);
+  });
+}
 
 export function destroyFixture(context: FixtureContext): void {
   if (!context.server) {
-    throw new Error(
-      'No file server exists, did you forget to call "loadFixture()"?',
-    );
+    throw new Error('Invalid server, did you forget to call "loadFixture()"?');
   }
 
   context.server.close();
