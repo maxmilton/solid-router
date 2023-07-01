@@ -6,6 +6,13 @@
   "plugins": ["prettier-plugin-pkg"],
   "overrides": [
     {
+      "files": ["*.html", "*.md"],
+      "options": {
+        "singleQuote": false,
+        "trailingComma": "none"
+      }
+    },
+    {
       "files": ["*.spec.tsx", "*.test.tsx", "*.spec.ts", "*.test.ts"],
       "options": {
         "printWidth": 100
