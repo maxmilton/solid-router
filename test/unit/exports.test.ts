@@ -30,9 +30,8 @@ test('has no default export', async () => {
   expect.assertions(3);
   // @ts-expect-error - default does not exist
   expect(allExports.default).toBeUndefined();
-  // eslint-disable-next-line
-  expect(typeof (await import('../../dist/index.js'))).toBe('object');
-  // @ts-expect-error - default does not exist
-  // eslint-disable-next-line
-  expect(await import('../../dist/index.js').default).toBeUndefined();
+  // eslint-disable-next-line import/extensions
+  const distJS = await import('../../dist/index.js');
+  expect(typeof distJS).toBe('object');
+  expect(distJS.default).toBeUndefined();
 });

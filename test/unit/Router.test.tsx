@@ -2,6 +2,7 @@ import { cleanup, render } from '@solidjs/testing-library';
 import type { JSX } from 'solid-js';
 import { afterEach, expect, test, vi } from 'vitest';
 import { Router, routeTo } from '../../src/index';
+// import { setURL } from './utils';
 
 const abcRoutes = [
   { path: '/a', component: () => <>a</> },
@@ -28,10 +29,10 @@ test('renders correctly with required props', () => {
 
 test('renders matching route', async () => {
   expect.assertions(1);
-  // TODO: Set URL via jest or manually rather than relying on an internal
-  // function but note that currently there's a global createSignal with a
-  // location.pathname value which means the signal is created when the file
-  // is first imported!
+  // TODO: Set URL in test environment rather than relying on an internal
+  // function. But be aware there's a global createSignal with a `location.pathname`
+  // value which means the signal is created when the file is first imported.
+  // setURL('/c');
   await routeTo('/c');
   const rendered = render(() => <Router routes={abcRoutes} />);
   expect(rendered.container.textContent).toBe('c');
