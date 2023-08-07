@@ -5,8 +5,12 @@ let context: FixtureContext;
 test.beforeAll(() => {
   context = loadFixture('full');
 });
-test.afterAll(() => destroyFixture(context));
-test.beforeEach(({ page }) => connectPage(context, page));
+test.afterAll(() => {
+  destroyFixture(context);
+});
+test.beforeEach(({ page }) => {
+  connectPage(context, page);
+});
 
 test('renders app', async ({ page }) => {
   await page.goto(`http://localhost:${context.port}`);

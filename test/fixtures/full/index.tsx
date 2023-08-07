@@ -44,7 +44,9 @@ const App = () => (
         <Router
           routes={routes}
           fallback={'Not Found'}
-          onRouted={() => window.scrollTo(0, 0)}
+          onRouted={() => {
+            window.scrollTo(0, 0);
+          }}
         />
       </Suspense>
     </main>

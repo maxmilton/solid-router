@@ -1,18 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { useURLParams } from '../../src/index';
-
-function setURL(url: string) {
-  const oldLocation = window.location;
-  const location = new URL(url);
-  // @ts-expect-error - replace with mock
-  delete window.location;
-  // @ts-expect-error - simple mock
-  window.location = location;
-
-  return () => {
-    window.location = oldLocation;
-  };
-}
+import { setURL } from './utils';
 
 // TODO: Break up tests + more tests + better test names
 

@@ -21,12 +21,12 @@ export function loadFixture(name: string): FixtureContext {
   const server = http.createServer(
     sirv(dir, {
       onNoMatch(request) {
-        throw new Error(`No matching URL: ${request.url!}`);
+        throw new Error(`No matching URL: ${request.url}`);
       },
     }),
   );
   server.on('error', (error) => {
-    if (error) throw error;
+    throw error;
   });
   server.listen(0);
 
@@ -53,6 +53,7 @@ export function connectPage(context: FixtureContext, page: Page): void {
 }
 
 export function destroyFixture(context: FixtureContext): void {
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   if (!context.server) {
     throw new Error('Invalid server, did you forget to call "loadFixture()"?');
   }
