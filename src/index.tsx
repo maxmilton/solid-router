@@ -18,7 +18,7 @@ export function routeTo(url: string, replace?: boolean): Promise<void> {
   return startTransition(() => setUrlPath(/[^#?]*/.exec(url)![0]));
 }
 
-export type RouteComponent<P = Record<string, any>> = (
+export type RouteComponent<P = Record<string, unknown>> = (
   props: P & {
     children?: JSX.Element;
     readonly params: Record<string, string | null>;
