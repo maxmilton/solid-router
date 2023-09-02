@@ -47,7 +47,7 @@
     "eslint-plugin-unicorn": "48.0.1",
     "eslint-plugin-vitest": "0.2.8",
     "jsdom": "22.1.0",
-    "prettier": "3.0.1",
+    "prettier": "3.0.3",
     "prettier-plugin-pkg": "0.18.0",
     "sirv": "2.0.3",
     "solid-js": "1.7.9",
