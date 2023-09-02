@@ -14,7 +14,7 @@ export default defineConfig({
     deps: {}, // HACK: Magically fixes issues with @solidjs/testing-library
     environment: 'jsdom', // 'happy-dom' doesn't support features we need to test
     include: ['test/unit/**/*.test.{ts,tsx}'],
-    setupFiles: ['node_modules/@testing-library/jest-dom/extend-expect'],
+    setupFiles: ['node_modules/@testing-library/jest-dom/vitest'],
 
     // XXX: If you're having really funky issues in tests, try uncommenting these
     // threads: false,
