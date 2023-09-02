@@ -31,7 +31,7 @@
     "regexparam": "^2.0.1"
   },
   "devDependencies": {
-    "@playwright/test": "1.37.0",
+    "@playwright/test": "1.37.1",
     "@solidjs/testing-library": "0.8.4",
     "@testing-library/jest-dom": "5.17.0",
     "@types/node": "20.5.0",
