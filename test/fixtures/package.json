@@ -6,11 +6,11 @@
     "prebuild": "rm -rf dist"
   },
   "dependencies": {
-    "@babel/preset-typescript": "7.23.0",
+    "@babel/preset-typescript": "7.23.3",
     "@rollup/plugin-babel": "6.0.4",
     "@rollup/plugin-node-resolve": "15.2.3",
-    "babel-preset-solid": "1.7.12",
-    "rollup": "4.0.2",
-    "solid-js": "1.7.12"
+    "babel-preset-solid": "1.8.4",
+    "rollup": "4.5.1",
+    "solid-js": "1.8.5"
   }
 }
