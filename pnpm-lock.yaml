@@ -82,8 +82,8 @@ importers:
         specifier: 5.0.5
         version: 5.0.5(@types/node@20.10.2)
       vite-plugin-solid:
-        specifier: 2.7.0
-        version: 2.7.0(solid-js@1.8.5)(vite@5.0.5)
+        specifier: 2.8.0
+        version: 2.8.0(solid-js@1.8.5)(vite@5.0.5)
       vitest:
         specifier: 0.34.6
         version: 0.34.6(jsdom@23.0.1)
@@ -4065,11 +4065,11 @@ packages:
       - terser
     dev: true
 
-  /vite-plugin-solid@2.7.0(solid-js@1.8.5)(vite@5.0.5):
-    resolution: {integrity: sha512-avp/Jl5zOp/Itfo67xtDB2O61U7idviaIp4mLsjhCa13PjKNasz+IID0jYTyqUp9SFx6/PmBr6v4KgDppqompg==}
+  /vite-plugin-solid@2.8.0(solid-js@1.8.5)(vite@5.0.5):
+    resolution: {integrity: sha512-n5FAm7ZmTl94VWUoiJCgG7bouF2NlC9CA1wY/qbVnkFbYDWk++bFWyNoU48aLJ+lMtzNeYzJypJXOHzFKxL9xA==}
     peerDependencies:
       solid-js: ^1.7.2
-      vite: ^3.0.0 || ^4.0.0
+      vite: ^3.0.0 || ^4.0.0 || ^5.0.0
     dependencies:
       '@babel/core': 7.23.5
       '@babel/preset-typescript': 7.23.3(@babel/core@7.23.5)
