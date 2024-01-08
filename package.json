@@ -45,7 +45,7 @@
     "eslint-plugin-import": "2.29.1",
     "eslint-plugin-prettier": "5.0.1",
     "eslint-plugin-unicorn": "49.0.0",
-    "eslint-plugin-vitest": "0.3.10",
+    "eslint-plugin-vitest": "0.3.20",
     "jsdom": "23.0.1",
     "prettier": "3.1.1",
     "prettier-plugin-pkg": "0.18.0",
