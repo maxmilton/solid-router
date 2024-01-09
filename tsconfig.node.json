@@ -2,10 +2,11 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "composite": true,
-    "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
-
-    "rootDir": "."
+    "moduleResolution": "node10",
+    "allowSyntheticDefaultImports": true
   },
-  "include": ["*.config.ts", ".eslintrc.cjs", "package.json", "test"]
+  "include": [
+    ".eslintrc.cjs",
+    "package.json" // may be imported
+  ]
 }
