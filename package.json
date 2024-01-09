@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "qss": "^3.0.0",
-    "regexparam": "^2.0.1"
+    "regexparam": "^3.0.0"
   },
   "devDependencies": {
     "@playwright/test": "1.40.1",
