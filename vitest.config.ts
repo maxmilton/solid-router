@@ -11,12 +11,20 @@ export default defineConfig({
       reporter: ['text', 'lcov'],
       provider: 'v8',
     },
-    deps: {}, // HACK: Magically fixes issues with @solidjs/testing-library
     environment: 'jsdom', // 'happy-dom' doesn't support features we need to test
     include: ['test/unit/**/*.test.{ts,tsx}'],
     setupFiles: ['node_modules/@testing-library/jest-dom/vitest'],
 
-    // XXX: If you're having really funky issues in tests, try uncommenting these
+    server: {
+      // HACK: Fixes issues with @solidjs/testing-library
+      deps: {
+        // Solid needs to be inline to work around a resolution issue in vitest
+        // with node v20+; https://github.com/solidjs/solid-testing-library/issues/38
+        inline: [/solid-js/],
+      },
+    },
+
+    // XXX: If you're having funky issues in tests, try uncommenting these
     // threads: false,
     // isolate: false,
     // globals: true,
