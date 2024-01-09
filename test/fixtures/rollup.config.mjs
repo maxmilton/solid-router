@@ -1,22 +1,24 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
+import babel from '@rollup/plugin-babel';
+import { nodeResolve } from '@rollup/plugin-node-resolve';
+import { join } from 'node:path';
 
-const babel = require('@rollup/plugin-babel').default;
-const { nodeResolve } = require('@rollup/plugin-node-resolve');
-const path = require('node:path');
+const dir = new URL('.', import.meta.url).pathname; // __dirname
 
 const fixtures = ['full', 'lazyload', 'minimal', 'simple'];
 const extensions = ['.ts', '.tsx', '.js', '.jsx', '.mjs', '.cjs'];
-const htmlTemplate = `<!doctype html>
+const htmlTemplate = `
+<!doctype html>
 <meta charset=utf-8>
-<script src=index.js type=module></script>`;
+<script src=index.js type=module></script>
+`.trim();
 
-module.exports = fixtures.map((name) => ({
-  input: path.join(__dirname, name, 'index.tsx'),
+export default fixtures.map((name) => ({
+  input: join(dir, name, 'index.tsx'),
   output: {
     assetFileNames: '[name][extname]',
     entryFileNames: '[name].js',
     chunkFileNames: '[name].js',
-    dir: path.join(__dirname, 'dist', name),
+    dir: join(dir, 'dist', name),
     format: 'esm',
     sourcemap: true,
   },
