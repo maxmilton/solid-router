@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
+    "moduleDetection": "force",
     "moduleResolution": "bundler",
     "esModuleInterop": false,
     "resolveJsonModule": true,
@@ -21,6 +22,6 @@
     "jsx": "preserve",
     "jsxImportSource": "solid-js"
   },
-  "include": ["src"],
+  "include": ["src", "test", "*.config.ts", "*.d.ts", "*.mjs"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
