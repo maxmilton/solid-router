@@ -17,7 +17,7 @@
     "lint": "pnpm run lint:js && pnpm run lint:ts",
     "lint:js": "eslint --ignore-path .gitignore --ext .cjs,.js,.jsx,.mjs,.ts,.tsx .",
     "lint:ts": "tsc --noEmit",
-    "postbuild": "tsc --emitDeclarationOnly --declaration",
+    "postbuild": "tsc --project tsconfig.d.json",
     "prebuild": "rm -rf dist",
     "pretest:e2e": "pnpm run --dir test/fixtures build",
     "test": "TZ=UTC vitest run --coverage",

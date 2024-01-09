@@ -18,8 +18,6 @@
     "noUnusedParameters": false, // covered by eslint
     "verbatimModuleSyntax": true,
 
-    "rootDir": "src",
-    "outDir": "dist",
     "jsx": "preserve",
     "jsxImportSource": "solid-js"
   },
