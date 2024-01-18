@@ -10,7 +10,7 @@
     "@rollup/plugin-babel": "6.0.4",
     "@rollup/plugin-node-resolve": "15.2.3",
     "babel-preset-solid": "1.8.9",
-    "rollup": "4.9.4",
-    "solid-js": "1.8.9"
+    "rollup": "4.9.5",
+    "solid-js": "1.8.11"
   }
 }
