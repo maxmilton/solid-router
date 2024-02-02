@@ -19,8 +19,8 @@ importers:
         specifier: 1.41.2
         version: 1.41.2
       '@solidjs/testing-library':
-        specifier: 0.8.5
-        version: 0.8.5(@solidjs/router@0.10.9)(solid-js@1.8.11)
+        specifier: 0.8.6
+        version: 0.8.6(@solidjs/router@0.10.9)(solid-js@1.8.11)
       '@testing-library/jest-dom':
         specifier: 6.4.1
         version: 6.4.1(vitest@1.2.2)
@@ -928,11 +928,11 @@ packages:
       solid-js: 1.8.11
     dev: true
 
-  /@solidjs/testing-library@0.8.5(@solidjs/router@0.10.9)(solid-js@1.8.11):
-    resolution: {integrity: sha512-L9TowCoqdRQGB8ikODh9uHXrYTjCUZseVUG0tIVa836//qeSqXP4m0BKG66v9Zp1y1wRxok5qUW97GwrtEBMcw==}
+  /@solidjs/testing-library@0.8.6(@solidjs/router@0.10.9)(solid-js@1.8.11):
+    resolution: {integrity: sha512-MnDGfUw38SjE+lmCDZ44HeZq5WbDU7s/BTa7uvqv55GKatddoWiJmHanUAbuEtmwMdEv+fFQQzftkqrFXEn1BQ==}
     engines: {node: '>= 14'}
     peerDependencies:
-      '@solidjs/router': '>=0.6.0'
+      '@solidjs/router': '>=0.9.0'
       solid-js: '>=1.0.0'
     dependencies:
       '@solidjs/router': 0.10.9(solid-js@1.8.11)

@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@playwright/test": "1.41.2",
-    "@solidjs/testing-library": "0.8.5",
+    "@solidjs/testing-library": "0.8.6",
     "@testing-library/jest-dom": "6.4.1",
     "@types/node": "20.11.16",
     "@typescript-eslint/eslint-plugin": "6.20.0",
