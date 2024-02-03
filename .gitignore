@@ -1,8 +1,9 @@
 *-lock.json*
 *.lock
 *.log
+/bun.lockb
 /coverage/
+/dist/
+/node_modules/
 /playwright-report/
 /test-results/
-dist/
-node_modules/
