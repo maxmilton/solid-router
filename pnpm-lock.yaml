@@ -82,8 +82,8 @@ importers:
         specifier: 5.2.7
         version: 5.2.7(@types/node@20.12.2)
       vite-plugin-solid:
-        specifier: 2.9.1
-        version: 2.9.1(@testing-library/jest-dom@6.4.1)(solid-js@1.8.11)(vite@5.2.7)
+        specifier: 2.10.2
+        version: 2.10.2(@testing-library/jest-dom@6.4.1)(solid-js@1.8.11)(vite@5.2.7)
       vitest:
         specifier: 1.4.0
         version: 1.4.0(@types/node@20.12.2)(jsdom@24.0.0)
@@ -166,7 +166,7 @@ packages:
     dependencies:
       '@babel/types': 7.23.9
       '@jridgewell/gen-mapping': 0.3.3
-      '@jridgewell/trace-mapping': 0.3.22
+      '@jridgewell/trace-mapping': 0.3.25
       jsesc: 2.5.2
 
   /@babel/helper-annotate-as-pure@7.22.5:
@@ -740,7 +740,6 @@ packages:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.1
       '@jridgewell/sourcemap-codec': 1.4.15
-    dev: true
 
   /@nodelib/fs.scandir@2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -4234,8 +4233,8 @@ packages:
       - terser
     dev: true
 
-  /vite-plugin-solid@2.9.1(@testing-library/jest-dom@6.4.1)(solid-js@1.8.11)(vite@5.2.7):
-    resolution: {integrity: sha512-RC4hj+lbvljw57BbMGDApvEOPEh14lwrr/GeXRLNQLcR1qnOdzOwwTSFy13Gj/6FNIZpBEl0bWPU+VYFawrqUw==}
+  /vite-plugin-solid@2.10.2(@testing-library/jest-dom@6.4.1)(solid-js@1.8.11)(vite@5.2.7):
+    resolution: {integrity: sha512-AOEtwMe2baBSXMXdo+BUwECC8IFHcKS6WQV/1NEd+Q7vHPap5fmIhLcAzr+DUJ04/KHx/1UBU0l1/GWP+rMAPQ==}
     peerDependencies:
       '@testing-library/jest-dom': ^5.16.6 || ^5.17.0 || ^6.*
       solid-js: ^1.7.2
