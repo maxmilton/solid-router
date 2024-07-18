@@ -6,7 +6,7 @@
     "allowSyntheticDefaultImports": true
   },
   "include": [
-    ".eslintrc.cjs",
-    "package.json" // may be imported
+    "**/*.cjs",
+    "**/package.json" // may be imported
   ]
 }
