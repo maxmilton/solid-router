@@ -8,20 +8,19 @@
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": [
-    "dist",
-    "src"
-  ],
+  "files": ["dist", "src"],
+  "workspaces": ["test/fixtures"],
   "scripts": {
-    "build": "pnpm run prebuild && vite build && pnpm run postbuild",
-    "lint": "pnpm run lint:js && pnpm run lint:ts",
-    "lint:js": "eslint --ignore-path .gitignore --ext .cjs,.js,.jsx,.mjs,.ts,.tsx .",
+    "build": "vite build",
+    "lint": "bun lint:fmt && bun lint:js && bun lint:ts",
+    "lint:fmt": "biome check",
+    "lint:js": "eslint",
     "lint:ts": "tsc --noEmit",
     "postbuild": "tsc --project tsconfig.d.json",
     "prebuild": "rm -rf dist",
-    "pretest:e2e": "pnpm run --dir test/fixtures build",
-    "test": "TZ=UTC vitest run --coverage",
-    "test:e2e": "pnpm run pretest:e2e && TZ=UTC playwright test"
+    "pretest:e2e": "bun --cwd test/fixtures build",
+    "test": "vitest run --coverage",
+    "test:e2e": "playwright test"
   },
   "peerDependencies": {
     "solid-js": "^1.0.0"
