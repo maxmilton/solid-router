@@ -1,24 +1,24 @@
+import path from 'node:path';
 import babel from '@rollup/plugin-babel';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
-import { join } from 'node:path';
-
-const dir = new URL('.', import.meta.url).pathname; // __dirname
 
 const fixtures = ['full', 'lazyload', 'minimal', 'simple'];
 const extensions = ['.ts', '.tsx', '.js', '.jsx', '.mjs', '.cjs'];
 const htmlTemplate = `
-<!doctype html>
-<meta charset=utf-8>
-<script src=index.js type=module></script>
-`.trim();
+  <!doctype html>
+  <meta charset=utf-8>
+  <script src=index.js type=module></script>
+`
+  .replace(/\n\s+/g, '\n')
+  .trim();
 
 export default fixtures.map((name) => ({
-  input: join(dir, name, 'index.tsx'),
+  input: path.join(import.meta.dirname, name, 'index.tsx'),
   output: {
     assetFileNames: '[name][extname]',
     entryFileNames: '[name].js',
     chunkFileNames: '[name].js',
-    dir: join(dir, 'dist', name),
+    dir: path.join(import.meta.dirname, 'dist', name),
     format: 'esm',
     sourcemap: true,
   },

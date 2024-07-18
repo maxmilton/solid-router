@@ -1,7 +1,7 @@
-import type { ConsoleMessage, Page } from '@playwright/test';
 import http, { type Server } from 'node:http';
 import type { AddressInfo } from 'node:net';
-import { dirname, join } from 'node:path';
+import path from 'node:path';
+import type { ConsoleMessage, Page } from '@playwright/test';
 import sirv from 'sirv';
 
 export interface FixtureContext {
@@ -13,15 +13,14 @@ export interface FixtureContext {
   unhandledErrors: Error[];
 }
 
-// eslint-disable-next-line no-underscore-dangle, @typescript-eslint/naming-convention
-const __dirname = dirname(new URL(import.meta.url).pathname);
+const dirname = path.dirname(new URL(import.meta.url).pathname);
 
 export function loadFixture(name: string): FixtureContext {
-  const dir = join(__dirname, '../fixtures/dist', name);
+  const dir = path.join(dirname, '../fixtures/dist', name);
   const server = http.createServer(
     sirv(dir, {
       onNoMatch(request) {
-        throw new Error(`No matching URL: ${request.url}`);
+        throw new Error(`No matching URL: ${String(request.url)}`);
       },
     }),
   );

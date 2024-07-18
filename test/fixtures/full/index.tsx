@@ -1,6 +1,6 @@
-import { lazy, type JSX } from 'solid-js';
+import { type JSX, lazy } from 'solid-js';
 import { Suspense, render } from 'solid-js/web';
-import { NavLink, Router, routeTo, type Route } from '../../../src';
+import { NavLink, type Route, Router, routeTo } from '../../../src';
 
 const Page1 = lazy(() => import('./page1'));
 const Page1SubPath = lazy(() => import('./page1-sub'));
@@ -14,8 +14,7 @@ const routes: Route[] = [
   { path: '/', component: Home },
   {
     path: '/redirect',
-    component: () =>
-      routeTo('/page1/a/b?c=d#e', true) as unknown as JSX.Element,
+    component: () => routeTo('/page1/a/b?c=d#e', true) as unknown as JSX.Element,
   },
 ];
 

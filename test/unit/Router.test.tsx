@@ -76,6 +76,8 @@ test.todo('calls onRouted function after location pushstate event');
 test.todo('calls onRouted function after location replacestate event');
 test.todo('calls onRouted function after location popstate event');
 test.todo('calls onRouted function after link click');
+test.todo('calls onError function when onRouted function throws');
+test.todo('calls onError function when routeTo function throws');
 
 test.todo('handles click on <a>');
 test.todo('handles click inside <a>');
