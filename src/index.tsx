@@ -1,13 +1,13 @@
 import { decode, encode } from 'qss';
 import { parse } from 'regexparam';
 import {
+  type Accessor,
+  type Component,
+  type JSX,
   createSignal,
   onCleanup,
   splitProps,
   startTransition,
-  type Accessor,
-  type Component,
-  type JSX,
 } from 'solid-js';
 import { Match, Switch } from 'solid-js/web';
 
@@ -35,15 +35,14 @@ interface RouterProps {
   routes: Route[];
   /** Optional callback function that is called after the route has changed. */
   onRouted?: () => void;
+  onError?: (error: unknown) => void;
 }
 
 export const Router: Component<RouterProps> = (props) => {
   const handleHistoryState = () => {
     startTransition(() => setUrlPath(window.location.pathname))
       .then(props.onRouted)
-      .catch((error) => {
-        throw error;
-      });
+      .catch((error: unknown) => props.onError?.(error));
   };
 
   const handleClick = (event: MouseEvent): void => {
@@ -73,9 +72,7 @@ export const Router: Component<RouterProps> = (props) => {
     event.preventDefault();
     routeTo(href, false)
       .then(props.onRouted)
-      .catch((error) => {
-        throw error;
-      });
+      .catch((error: unknown) => props.onError?.(error));
   };
 
   window.addEventListener('popstate', handleHistoryState);
