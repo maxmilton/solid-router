@@ -195,4 +195,4 @@ MIT license. See [LICENSE](https://github.com/maxmilton/solid-router/blob/master
 
 ---
 
-© 2022 [Max Milton](https://maxmilton.com)
+© 2024 [Max Milton](https://maxmilton.com)
