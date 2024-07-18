@@ -161,6 +161,7 @@ const App = (): JSX.Element => (
           }}
           // Scroll to top on route change
           onRouted={() => window.scrollTo(0, 0)}
+          onError={(error) => console.error(error)}
         />
       </Suspense>
     </ErrorBoundary>
