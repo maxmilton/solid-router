@@ -1,5 +1,5 @@
 import { render } from 'solid-js/web';
-import { NavLink, Router, type Route } from '../../../src';
+import { NavLink, type Route, Router } from '../../../src';
 
 const Page1 = () => <div>Page 1</div>;
 const Page2 = () => <div>Page 2</div>;

@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test';
-import { connectPage, destroyFixture, loadFixture, sleep, type FixtureContext } from './utils';
+import { type FixtureContext, connectPage, destroyFixture, loadFixture, sleep } from './utils';
 
 let context: FixtureContext;
 test.beforeAll(() => {
@@ -13,7 +13,7 @@ test.beforeEach(({ page }) => {
 });
 
 test('renders app', async ({ page }) => {
-  await page.goto(`http://localhost:${context.port}`);
+  await page.goto(`http://localhost:${String(context.port)}`);
   const html = await page.innerHTML('html');
   expect(html.length > 230).toBe(true);
   expect(await page.$('nav')).not.toBeNull();
@@ -24,7 +24,7 @@ test('renders app', async ({ page }) => {
 });
 
 test('updates URL when clicking nav items', async ({ page }) => {
-  const urlBase = `http://localhost:${context.port}`;
+  const urlBase = `http://localhost:${String(context.port)}`;
   await page.goto(urlBase);
   await expect(page).toHaveURL(`${urlBase}/`);
   await page.click('nav>.page1');
@@ -38,7 +38,7 @@ test('updates URL when clicking nav items', async ({ page }) => {
 });
 
 test('updates content when clicking nav items', async ({ page }) => {
-  await page.goto(`http://localhost:${context.port}`);
+  await page.goto(`http://localhost:${String(context.port)}`);
   await expect(page.locator('main')).toHaveText('Home');
   await page.click('nav>.page1');
   await expect(page.locator('main')).toHaveText('Page 1');
@@ -53,7 +53,7 @@ test('updates content when clicking nav items', async ({ page }) => {
 // FIXME: Solid suspense does not trigger when we want it
 //  ↳ https://github.com/solidjs/solid/blob/main/packages/solid/src/static/rendering.ts#L406
 test.fixme("renders loading state when loading a lazy route's bundle", async ({ page }) => {
-  await page.goto(`http://localhost:${context.port}`);
+  await page.goto(`http://localhost:${String(context.port)}`);
   const client = await page.context().newCDPSession(page);
   // throttle network speeds
   await client.send('Network.emulateNetworkConditions', {

@@ -1,6 +1,6 @@
 import { lazy } from 'solid-js';
-import { render, Suspense } from 'solid-js/web';
-import { NavLink, Router, type Route } from '../../../src';
+import { Suspense, render } from 'solid-js/web';
+import { NavLink, type Route, Router } from '../../../src';
 
 const Page1 = lazy(() => import('./page1'));
 const Page2 = lazy(() => import('./page2'));

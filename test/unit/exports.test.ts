@@ -1,5 +1,3 @@
-/* eslint-disable no-restricted-syntax */
-
 import { expect, test } from 'vitest';
 import * as allExports from '../../src/index';
 
