@@ -1,7 +1,8 @@
 *-lock.json*
+*-lock.yaml
+*.bak
 *.lock
 *.log
-/bun.lockb
 /coverage/
 /playwright-report/
 /test-results/
