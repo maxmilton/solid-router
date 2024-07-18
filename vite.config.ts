@@ -1,4 +1,4 @@
-import { resolve } from 'node:path';
+import path from 'node:path';
 import { defineConfig } from 'vite';
 import solid from 'vite-plugin-solid';
 
@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [solid({ ssr: false })],
   build: {
     lib: {
-      entry: resolve(__dirname, 'src/index.tsx'),
+      entry: path.resolve(import.meta.dirname, 'src/index.tsx'),
       formats: ['es'],
       fileName: 'index',
     },
