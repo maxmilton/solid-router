@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
@@ -22,21 +22,15 @@ jobs:
       - run: bun run test
       - name: Report coverage
         if: ${{ github.repository_owner == 'maxmilton' }}
-        run: |
-          curl -LO https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 \
-               -LO https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64.sha256
-          grep test-reporter-latest-linux-amd64 test-reporter-latest-linux-amd64.sha256 | shasum -a 256 -c -
-          mv test-reporter-latest-linux-amd64 test-reporter
-          chmod +x ./test-reporter
-          ./test-reporter format-coverage -t lcov -o coverage/codeclimate.json coverage/lcov.info
-          ./test-reporter upload-coverage
-        env:
-          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+        uses: qltysh/qlty-action/coverage@v2
+        with:
+          token: ${{ secrets.QLTY_COVERAGE_TOKEN }}
+          files: coverage/lcov.info
   e2e:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
@@ -54,7 +48,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
