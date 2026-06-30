@@ -6,6 +6,5 @@
     "github>maxmilton/renovate-config",
     "github>maxmilton/renovate-config:auto",
     "schedule:monthly"
-  ],
-  "enabled": false
+  ]
 }
