@@ -1,3 +1,5 @@
+/* eslint-disable unicorn/no-global-object-property-assignment */
+
 export function setURL(url: string): () => void {
   const oldLocation = window.location;
   const location = new URL(url);
@@ -7,6 +9,7 @@ export function setURL(url: string): () => void {
   window.location = location;
 
   return () => {
+    // @ts-expect-error - replace with original
     window.location = oldLocation;
   };
 }

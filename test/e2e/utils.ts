@@ -1,8 +1,8 @@
-import http, { type Server } from 'node:http';
-import type { AddressInfo } from 'node:net';
-import path from 'node:path';
-import type { ConsoleMessage, Page } from '@playwright/test';
-import sirv from 'sirv';
+import http, { type Server } from "node:http";
+import type { AddressInfo } from "node:net";
+import path from "node:path";
+import type { ConsoleMessage, Page } from "@playwright/test";
+import sirv from "sirv";
 
 export interface FixtureContext {
   dir: string;
@@ -16,7 +16,7 @@ export interface FixtureContext {
 const dirname = path.dirname(new URL(import.meta.url).pathname);
 
 export function loadFixture(name: string): FixtureContext {
-  const dir = path.join(dirname, '../fixtures/dist', name);
+  const dir = path.join(dirname, "../fixtures/dist", name);
   const server = http.createServer(
     sirv(dir, {
       onNoMatch(request) {
@@ -24,7 +24,7 @@ export function loadFixture(name: string): FixtureContext {
       },
     }),
   );
-  server.on('error', (error) => {
+  server.on("error", (error) => {
     throw error;
   });
   server.listen(0);
@@ -43,10 +43,10 @@ export function connectPage(context: FixtureContext, page: Page): void {
   context.consoleMessages.length = 0;
   context.unhandledErrors.length = 0;
 
-  page.on('console', (message) => {
+  page.on("console", (message) => {
     context.consoleMessages.push(message);
   });
-  page.on('pageerror', (error) => {
+  page.on("pageerror", (error) => {
     context.unhandledErrors.push(error);
   });
 }

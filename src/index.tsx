@@ -1,20 +1,20 @@
-import { decode, encode } from 'qss';
-import { parse } from 'regexparam';
+import { decode, encode } from "qss";
+import { parse } from "regexparam";
 import {
   type Accessor,
   type Component,
-  type JSX,
   createSignal,
+  type JSX,
   onCleanup,
   splitProps,
   startTransition,
-} from 'solid-js';
-import { Match, Switch } from 'solid-js/web';
+} from "solid-js";
+import { Match, Switch } from "solid-js/web";
 
 const [urlPath, setUrlPath] = createSignal(window.location.pathname);
 
 export function routeTo(url: string, replace?: boolean): Promise<void> {
-  window.history[`${replace ? 'replace' : 'push'}State`](null, '', url);
+  window.history[`${replace ? "replace" : "push"}State`](null, "", url);
   return startTransition(() => setUrlPath(/[^#?]*/.exec(url)![0]));
 }
 
@@ -47,25 +47,20 @@ export const Router: Component<RouterProps> = (props) => {
 
   const handleClick = (event: MouseEvent): void => {
     if (
-      event.ctrlKey ||
-      event.metaKey ||
-      event.altKey ||
-      event.shiftKey ||
-      event.button ||
-      event.defaultPrevented
+      event.ctrlKey
+      || event.metaKey
+      || event.altKey
+      || event.shiftKey
+      || event.button
+      || event.defaultPrevented
     ) {
       return;
     }
 
-    const link = (event.target as Element).closest('a');
-    const href = link && link.getAttribute('href');
+    const link = (event.target as Element).closest("a");
+    const href = link?.getAttribute("href");
 
-    if (
-      !href ||
-      link.target ||
-      link.host !== window.location.host ||
-      href[0] === '#'
-    ) {
+    if (!href || link!.target || link!.host !== window.location.host || href.startsWith("#")) {
       return;
     }
 
@@ -75,12 +70,12 @@ export const Router: Component<RouterProps> = (props) => {
       .catch((error: unknown) => props.onError?.(error));
   };
 
-  window.addEventListener('popstate', handleHistoryState);
-  window.addEventListener('click', handleClick);
+  window.addEventListener("popstate", handleHistoryState);
+  window.addEventListener("click", handleClick);
 
   onCleanup(() => {
-    window.removeEventListener('popstate', handleHistoryState);
-    window.removeEventListener('click', handleClick);
+    window.removeEventListener("popstate", handleHistoryState);
+    window.removeEventListener("click", handleClick);
   });
 
   return (
@@ -132,10 +127,9 @@ interface NavLinkProps extends JSX.AnchorHTMLAttributes<HTMLAnchorElement> {
  * regular `<a ...>` HTMLAnchorElement. The router will still react to clicks.
  */
 export const NavLink: Component<NavLinkProps> = (props) => {
-  const [, rest] = splitProps(props, ['deepMatch']);
+  const [, rest] = splitProps(props, ["deepMatch"]);
 
   return (
-    // @ts-expect-error - FIXME: aria-current should also accept undefined|null
     <a
       {...rest}
       aria-current={
@@ -161,10 +155,8 @@ type Setter<T> =
    * @param params - The new URL search query params to set. Properties set as
    * `undefined` will be removed from the URL.
    */
-  <U extends Optional<T>>(
-    // eslint-disable-next-line @typescript-eslint/ban-types
-    params: Exclude<U, Function> | ((prev: Partial<T>) => U),
-  ) => void;
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
+  <U extends Optional<T>>(params: Exclude<U, Function> | ((prev: Partial<T>) => U)) => void;
 
 /**
  * The current URL search query params parsed into a reactive object.
@@ -176,16 +168,11 @@ type Setter<T> =
  * change externally (e.g., with `history.replaceState`), the object will not
  * update automatically.
  */
-export const useURLParams = <T extends URLParams>(): [
-  Accessor<Partial<T>>,
-  Setter<T>,
-] => {
-  const [getParams, set] = createSignal<Partial<T>>(
-    decode(window.location.search.slice(1)),
-  );
+export const useURLParams = <T extends URLParams>(): [Accessor<Partial<T>>, Setter<T>] => {
+  const [getParams, set] = createSignal<Partial<T>>(decode(window.location.search.slice(1)));
 
   const setParams: Setter<T> = (newParams) => {
-    window.history.replaceState(null, '', encode(set(newParams), '?'));
+    window.history.replaceState(null, "", encode(set(newParams), "?"));
   };
 
   return [getParams, setParams];

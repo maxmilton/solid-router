@@ -1,4 +1,4 @@
-import type { RouteComponent } from '../../../src';
+import type { RouteComponent } from "../../../src/index.tsx";
 
 const Page1Sub: RouteComponent = ({ params }) => (
   <div>

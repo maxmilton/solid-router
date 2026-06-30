@@ -1,4 +1,4 @@
-import type { Component } from 'solid-js';
+import type { Component } from "solid-js";
 
 const Page1: Component = () => <div>Page 1</div>;
 
