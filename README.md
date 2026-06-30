@@ -1,8 +1,8 @@
-[![Build status](https://img.shields.io/github/actions/workflow/status/maxmilton/solid-router/ci.yml?branch=master)](https://github.com/maxmilton/solid-router/actions)
-[![Coverage status](https://img.shields.io/codeclimate/coverage/maxmilton/solid-router)](https://codeclimate.com/github/maxmilton/solid-router)
-[![NPM version](https://img.shields.io/npm/v/@maxmilton/solid-router.svg)](https://www.npmjs.com/package/@maxmilton/solid-router)
-[![NPM bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/@maxmilton/solid-router.svg)](https://bundlephobia.com/result?p=@maxmilton/solid-router)
-[![Licence](https://img.shields.io/github/license/maxmilton/solid-router.svg)](https://github.com/maxmilton/solid-router/blob/master/LICENSE)
+
+[![CI status](https://badgen.net/github/checks/maxmilton/solid-router?label=ci)](https://github.com/maxmilton/solid-router/actions)
+[![NPM version](https://badgen.net/npm/v/@maxmilton/solid-router)](https://www.npmjs.com/package/@maxmilton/solid-router)
+[![Licence](https://badgen.net/github/license/maxmilton/solid-router)](./LICENSE)
+
 
 # @maxmilton/solid-router
 
@@ -192,8 +192,8 @@ See [releases on GitHub](https://github.com/maxmilton/solid-router/releases).
 
 ## License
 
-MIT license. See [LICENSE](https://github.com/maxmilton/solid-router/blob/master/LICENSE).
+MIT license. See [LICENSE](./LICENSE).
 
 ---
 
-© 2024 [Max Milton](https://maxmilton.com)
+© [Max Milton](https://maxmilton.com)
