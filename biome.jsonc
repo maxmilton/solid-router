@@ -1,0 +1,63 @@
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "vcs": { "enabled": true, "clientKind": "git", "useIgnoreFile": true },
+  "assist": {
+    "actions": {
+      "preset": "recommended",
+      "source": { "useSortedProperties": "on" }
+    }
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "lineWidth": 100
+  },
+  "linter": {
+    "enabled": true,
+    "domains": {
+      "project": "all"
+    },
+    "rules": {
+      "preset": "recommended",
+      "correctness": {
+        "noUnresolvedImports": "off" // covered by typescript
+      },
+      "style": {
+        "noNonNullAssertion": "off",
+        "useTemplate": "off"
+      },
+      "suspicious": {
+        "noAssignInExpressions": "off",
+        "noConstEnum": "off",
+        "useIterableCallbackReturn": "off" // byte savings
+      }
+    }
+  },
+  "javascript": {
+    "formatter": {
+      "operatorLinebreak": "before"
+    }
+  },
+  "overrides": [
+    {
+      "includes": ["**/*.jsonc", ".vscode/*.json", "tsconfig*.json"],
+      "json": {
+        "parser": {
+          "allowComments": true,
+          "allowTrailingCommas": true
+        }
+      }
+    },
+    {
+      "includes": ["**/*.spec.tsx", "**/*.spec.ts", "**/*.test.tsx", "**/*.test.ts", "test/**"],
+      "linter": {
+        "domains": {
+          "test": "all"
+        }
+      },
+      "javascript": {
+        "globals": ["$console", "Bun", "happyDOM", "Loader"]
+      }
+    }
+  ]
+}

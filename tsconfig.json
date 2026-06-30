@@ -1,27 +1,33 @@
 {
+  "$schema": "https://www.schemastore.org/tsconfig.json",
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
     "moduleDetection": "force",
     "moduleResolution": "bundler",
-    "esModuleInterop": false,
     "resolveJsonModule": true,
+    "allowImportingTsExtensions": true,
     "skipLibCheck": true,
-    "allowJs": false,
+    "allowJs": true,
+    "checkJs": true,
+    "noEmit": true,
 
     "strict": true,
     "allowUnreachableCode": false,
     "exactOptionalPropertyTypes": true,
     "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": false, // covered by eslint
+    "noFallthroughCasesInSwitch": false, // covered by linters
     "noImplicitOverride": true,
-    "noUnusedLocals": false, // covered by eslint
-    "noUnusedParameters": false, // covered by eslint
+    "noUncheckedSideEffectImports": true,
+    "noUnusedLocals": false, // covered by linters
+    "noUnusedParameters": false, // covered by linters
     "verbatimModuleSyntax": true,
+
+    "types": ["bun"],
 
     "jsx": "preserve",
     "jsxImportSource": "solid-js"
   },
-  "include": ["*.config.ts", "*.d.ts", "*.mjs", "src", "test"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": ["*.config.js", "src", "test"],
+  "exclude": ["**/dist"]
 }
