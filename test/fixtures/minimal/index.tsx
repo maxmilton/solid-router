@@ -1,14 +1,14 @@
-import { render } from 'solid-js/web';
-import { type Route, Router } from '../../../src';
+import { render } from "solid-js/web";
+import { type Route, Router } from "../../../src/index.tsx";
 
 const Page1 = () => <div>Page 1</div>;
 const Page2 = () => <div>Page 2</div>;
 const Home = () => <div>Home</div>;
 
 const routes: Route[] = [
-  { path: '/page1', component: Page1 },
-  { path: '/page2', component: Page2 },
-  { path: '/', component: Home },
+  { path: "/page1", component: Page1 },
+  { path: "/page2", component: Page2 },
+  { path: "/", component: Home },
 ];
 
 const App = () => (

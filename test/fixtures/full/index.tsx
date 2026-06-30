@@ -1,20 +1,20 @@
-import { type JSX, lazy } from 'solid-js';
-import { Suspense, render } from 'solid-js/web';
-import { NavLink, type Route, Router, routeTo } from '../../../src';
+import { type JSX, lazy } from "solid-js";
+import { render, Suspense } from "solid-js/web";
+import { NavLink, type Route, Router, routeTo } from "../../../src/index.tsx";
 
-const Page1 = lazy(() => import('./page1'));
-const Page1SubPath = lazy(() => import('./page1-sub'));
-const Page2 = lazy(() => import('./page2'));
-const Home = lazy(() => import('./home'));
+const Page1 = lazy(() => import("./page1.tsx"));
+const Page1SubPath = lazy(() => import("./page1-sub.tsx"));
+const Page2 = lazy(() => import("./page2.tsx"));
+const Home = lazy(() => import("./home.tsx"));
 
 const routes: Route[] = [
-  { path: '/page1', component: Page1 },
-  { path: '/page1/:subPath1/:subPath2?', component: Page1SubPath },
-  { path: '/page2', component: Page2 },
-  { path: '/', component: Home },
+  { path: "/page1", component: Page1 },
+  { path: "/page1/:subPath1/:subPath2?", component: Page1SubPath },
+  { path: "/page2", component: Page2 },
+  { path: "/", component: Home },
   {
-    path: '/redirect',
-    component: () => routeTo('/page1/a/b?c=d#e', true) as unknown as JSX.Element,
+    path: "/redirect",
+    component: () => routeTo("/page1/a/b?c=d#e", true) as unknown as JSX.Element,
   },
 ];
 
@@ -39,10 +39,10 @@ const App = () => (
     </nav>
 
     <main>
-      <Suspense fallback={'Loading...'}>
+      <Suspense fallback={"Loading..."}>
         <Router
           routes={routes}
-          fallback={'Not Found'}
+          fallback={"Not Found"}
           onRouted={() => {
             window.scrollTo(0, 0);
           }}

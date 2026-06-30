@@ -1,15 +1,15 @@
-import { lazy } from 'solid-js';
-import { Suspense, render } from 'solid-js/web';
-import { NavLink, type Route, Router } from '../../../src';
+import { lazy } from "solid-js";
+import { render, Suspense } from "solid-js/web";
+import { NavLink, type Route, Router } from "../../../src/index.tsx";
 
-const Page1 = lazy(() => import('./page1'));
-const Page2 = lazy(() => import('./page2'));
-const Home = lazy(() => import('./home'));
+const Page1 = lazy(() => import("./page1.tsx"));
+const Page2 = lazy(() => import("./page2.tsx"));
+const Home = lazy(() => import("./home.tsx"));
 
 const routes: Route[] = [
-  { path: '/page1', component: Page1 },
-  { path: '/page2', component: Page2 },
-  { path: '/', component: Home },
+  { path: "/page1", component: Page1 },
+  { path: "/page2", component: Page2 },
+  { path: "/", component: Home },
 ];
 
 const App = () => (
@@ -27,8 +27,8 @@ const App = () => (
     </nav>
 
     <main>
-      <Suspense fallback={'Loading...'}>
-        <Router routes={routes} fallback={'Not Found'} />
+      <Suspense fallback={"Loading..."}>
+        <Router routes={routes} fallback={"Not Found"} />
       </Suspense>
     </main>
   </>
