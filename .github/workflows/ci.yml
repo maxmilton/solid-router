@@ -1,19 +1,27 @@
 name: ci
+
 on:
   push:
-    branches: [master]
-    paths-ignore: ['**.md']
-  pull_request: {}
-  workflow_dispatch: {}
+    branches:
+      - master
+    paths-ignore:
+      - "**.md"
+  pull_request:
+  merge_group:
+  workflow_dispatch:
+
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.head.label || github.run_id }}
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+permissions: {}
+
 jobs:
   test:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
@@ -26,16 +34,19 @@ jobs:
         with:
           token: ${{ secrets.QLTY_COVERAGE_TOKEN }}
           files: coverage/lcov.info
+
   e2e:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    permissions:
+      contents: read
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
       - run: bun install --frozen-lockfile
-      - run: bun playwright install chromium
+      - run: bun playwright install --no-shell chromium firefox
       - run: bun run build
       - run: bun run test:e2e --reporter=github,html
       - uses: actions/upload-artifact@v4
@@ -44,11 +55,12 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 30
+
   lint:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
